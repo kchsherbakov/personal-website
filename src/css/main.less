@@ -1,0 +1,215 @@
+@import "bootstrap-grid.min.css";
+
+// Global parameters
+@accent-color: #1e7fc6;
+@background-color: #f8f8f8;
+@mobile-left-right-margin: 30px;
+@mobile-top-bottom-margin: 40px;
+
+html {
+  font-size: 62.5%;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+
+  body {
+    margin: 0;
+  }
+}
+
+.page-home {
+  height: 100%;
+  font-size: 1.3rem;
+  color: #000;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+
+  .header {
+    .nav {
+      background-color: @accent-color;
+
+      &__logo {
+        position: absolute;
+        z-index: 20;
+        top: 24px;
+        left: 30px;
+        text-decoration: none;
+        outline: none;
+        align-content: center;
+      }
+
+      &__menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        height: 45px;
+        width: 45px;
+        background: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        pointer-events: all;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+      }
+
+      &__menu-toggle-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(50%, -50%);
+        transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+      }
+
+      &__menu-toggle-icon-line {
+        background-color: #000;
+        height: 2px;
+        margin-top: 2px;
+        float: right;
+        clear: right;
+
+        &:nth-child(1) {
+          margin-top: 0;
+          width: 15px;
+        }
+
+        &:nth-child(2) {
+          width: 20px;
+        }
+
+        &:nth-child(3) {
+          width: 10px;
+        }
+      }
+    }
+  }
+
+  .app {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+
+    .app__container {
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 100px;
+      position: relative;
+      background: @background-color;
+      overflow: hidden;
+      transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+
+      .intro {
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        background-color: @accent-color;
+
+        .hello {
+          &__padding {
+            height: 100vh;
+            transform: translateX(0%);
+            transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+          }
+
+          &__text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            margin: 0;
+            font-family: "Gilroy ExtraBold", sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 9rem;
+            z-index: 10;
+
+            svg {
+              width: 200px;
+              height: 160px;
+              overflow: hidden;
+              display: block;
+              transform-origin: 0 0 0;
+
+              .line {
+                fill: none;
+                stroke: #000;
+                stroke-width: 41px;
+                stroke-dashoffset: 2e-05;
+                stroke-dasharray: none;
+              }
+
+              .dot {
+                fill: @accent-color;
+              }
+            }
+          }
+
+          &__page-color {
+            position: absolute;
+            height: 250vh;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            background-color: @background-color;
+            z-index: 0;
+            transform: translateX(0%);
+            transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+          }
+        }
+
+        .greetings {
+          font-size: 1.4rem;
+
+          &__text {
+            margin: 0;
+            line-height: 1.2;
+            color: white;
+
+            &:first-child {
+              margin-bottom: 10px;
+            }
+
+            &:last-child {
+              margin-top: 10px;
+            }
+          }
+
+          &__text-weight-bold {
+            font-weight: bold;
+          }
+
+          &__text-color-black {
+            color: #000;
+          }
+
+          &__text-size-m {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Styles without namespaces
+.__padding {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  padding: @mobile-left-right-margin @mobile-left-right-margin;
+}
+
+.__console-font {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+.__title-font {
+  font-family: "Gilroy ExtraBold", sans-serif;
+}

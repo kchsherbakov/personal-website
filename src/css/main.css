@@ -1,0 +1,206 @@
+@import "bootstrap-grid.min.css";
+
+html {
+    font-size: 62.5%;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+
+html body {
+    margin: 0;
+}
+
+.page-home {
+    height: 100%;
+    font-size: 1.3rem;
+    color: #000;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff;
+}
+
+.page-home .header .nav {
+    background-color: #1e7fc6;
+}
+
+.page-home .header .nav__logo {
+    position: absolute;
+    z-index: 20;
+    top: 24px;
+    left: 30px;
+    text-decoration: none;
+    outline: none;
+    align-content: center;
+}
+
+.page-home .header .nav__menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    background: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    pointer-events: all;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+}
+
+.page-home .header .nav__menu-toggle-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+}
+
+.page-home .header .nav__menu-toggle-icon-line {
+    background-color: #000;
+    height: 2px;
+    margin-top: 2px;
+    float: right;
+    clear: right;
+}
+
+.page-home .header .nav__menu-toggle-icon-line:nth-child(1) {
+    margin-top: 0;
+    width: 15px;
+}
+
+.page-home .header .nav__menu-toggle-icon-line:nth-child(2) {
+    width: 20px;
+}
+
+.page-home .header .nav__menu-toggle-icon-line:nth-child(3) {
+    width: 10px;
+}
+
+.page-home .app {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+
+.page-home .app .app__container {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+    position: relative;
+    background: #f8f8f8;
+    overflow: hidden;
+    transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+
+.page-home .app .app__container .intro {
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background-color: #1e7fc6;
+}
+
+.page-home .app .app__container .intro .hello__padding {
+    height: 100vh;
+    transform: translateX(0%);
+    transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+}
+
+.page-home .app .app__container .intro .hello__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    margin: 0;
+    font-family: "Gilroy ExtraBold", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 9rem;
+    z-index: 10;
+}
+
+.page-home .app .app__container .intro .hello__text svg {
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+    display: block;
+    transform-origin: 0 0 0;
+}
+
+.page-home .app .app__container .intro .hello__text svg .line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 41px;
+    stroke-dashoffset: -3 e;
+    stroke-dasharray: none;
+}
+
+.page-home .app .app__container .intro .hello__text svg .dot {
+    fill: #1e7fc6;
+}
+
+.page-home .app .app__container .intro .hello__page-color {
+    position: absolute;
+    height: 250vh;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    background-color: #f8f8f8;
+    z-index: 0;
+    transform: translateX(0%);
+    transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
+}
+
+.page-home .app .app__container .intro .greetings {
+    font-size: 1.4rem;
+}
+
+.page-home .app .app__container .intro .greetings__text {
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+}
+
+.page-home .app .app__container .intro .greetings__text:first-child {
+    margin-bottom: 10px;
+}
+
+.page-home .app .app__container .intro .greetings__text:last-child {
+    margin-top: 10px;
+}
+
+.page-home .app .app__container .intro .greetings__text-weight-bold {
+    font-weight: bold;
+}
+
+.page-home .app .app__container .intro .greetings__text-color-black {
+    color: #000;
+}
+
+.page-home .app .app__container .intro .greetings__text-size-m {
+    font-size: 2rem;
+}
+
+.__padding {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    padding: 30px 30px;
+}
+
+.__console-font {
+    font-family: "Roboto Mono", sans-serif;
+}
+
+.__title-font {
+    font-family: "Gilroy ExtraBold", sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */
