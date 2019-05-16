@@ -1,15 +1,12 @@
 @import "bootstrap-grid.min.css";
-
 html {
     font-size: 62.5%;
     font-family: Roboto, sans-serif;
     margin: 0;
 }
-
 html body {
     margin: 0;
 }
-
 .page-home {
     height: 100%;
     font-size: 1.3rem;
@@ -19,11 +16,9 @@ html body {
     -webkit-overflow-scrolling: touch;
     background-color: #fff;
 }
-
 .page-home .header .nav {
     background-color: #1e7fc6;
 }
-
 .page-home .header .nav__logo {
     position: absolute;
     z-index: 20;
@@ -33,7 +28,6 @@ html body {
     outline: none;
     align-content: center;
 }
-
 .page-home .header .nav__menu-toggle {
     position: fixed;
     top: 20px;
@@ -49,14 +43,12 @@ html body {
     z-index: 1000;
     transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 }
-
 .page-home .header .nav__menu-toggle-icon {
     position: absolute;
     top: 50%;
     transform: translate(50%, -50%);
     transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 }
-
 .page-home .header .nav__menu-toggle-icon-line {
     background-color: #000;
     height: 2px;
@@ -64,27 +56,22 @@ html body {
     float: right;
     clear: right;
 }
-
 .page-home .header .nav__menu-toggle-icon-line:nth-child(1) {
     margin-top: 0;
     width: 15px;
 }
-
 .page-home .header .nav__menu-toggle-icon-line:nth-child(2) {
     width: 20px;
 }
-
 .page-home .header .nav__menu-toggle-icon-line:nth-child(3) {
     width: 10px;
 }
-
 .page-home .app {
     position: relative;
     z-index: 1;
     overflow: hidden;
     transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
 }
-
 .page-home .app .app__container {
     width: 100%;
     padding-right: 0;
@@ -97,20 +84,17 @@ html body {
     overflow: hidden;
     transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
 }
-
 .page-home .app .app__container .intro {
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
     background-color: #1e7fc6;
 }
-
 .page-home .app .app__container .intro .hello__padding {
     height: 100vh;
     transform: translateX(0%);
     transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 }
-
 .page-home .app .app__container .intro .hello__text {
     position: absolute;
     top: 50%;
@@ -124,7 +108,6 @@ html body {
     font-size: 9rem;
     z-index: 10;
 }
-
 .page-home .app .app__container .intro .hello__text svg {
     width: 200px;
     height: 160px;
@@ -132,7 +115,6 @@ html body {
     display: block;
     transform-origin: 0 0 0;
 }
-
 .page-home .app .app__container .intro .hello__text svg .line {
     fill: none;
     stroke: #000;
@@ -140,11 +122,9 @@ html body {
     stroke-dashoffset: -3 e;
     stroke-dasharray: none;
 }
-
 .page-home .app .app__container .intro .hello__text svg .dot {
     fill: #1e7fc6;
 }
-
 .page-home .app .app__container .intro .hello__page-color {
     position: absolute;
     height: 250vh;
@@ -157,50 +137,124 @@ html body {
     transform: translateX(0%);
     transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 50ms;
 }
-
 .page-home .app .app__container .intro .greetings {
     font-size: 1.4rem;
 }
-
 .page-home .app .app__container .intro .greetings__text {
     margin: 0;
     line-height: 1.2;
     color: white;
 }
-
 .page-home .app .app__container .intro .greetings__text:first-child {
     margin-bottom: 10px;
 }
-
 .page-home .app .app__container .intro .greetings__text:last-child {
     margin-top: 10px;
 }
 
-.page-home .app .app__container .intro .greetings__text-weight-bold {
+.page-home .app .app__container .intro .greetings__text_weight_bold {
     font-weight: bold;
 }
 
-.page-home .app .app__container .intro .greetings__text-color-black {
+.page-home .app .app__container .intro .greetings__text_color_black {
     color: #000;
 }
 
-.page-home .app .app__container .intro .greetings__text-size-m {
+.page-home .app .app__container .intro .greetings__text_size_m {
     font-size: 2rem;
 }
 
-.__padding {
+.page-home .app .app__container .image-section-parallax__bgimage {
     width: 100%;
+    height: 180px;
+    background-image: url("../img/landscape-mountains.jpg");
+    background-size: cover;
+}
+
+.page-home .app .app__container .about__heading {
+    margin-bottom: 10px;
+}
+
+.page-home .app .app__container .about__order-number {
+    color: #1e7fc6;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-home .app .app__container .about__title {
+    text-transform: uppercase;
+    color: #1e7fc6;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-home .app .app__container .about__content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.page-home .app .app__container .about__text {
+    color: #606060;
+    font-size: 1.6rem;
+}
+
+.page-home .app .app__container .about__skills {
+    margin-left: -30px;
+    margin-right: -30px;
+    background-color: #1c1b20;
+}
+
+.page-home .app .app__container .about .skills__frontend {
+    margin-bottom: 30px;
+}
+
+.page-home .app .app__container .about .skills__backend {
+    margin-bottom: 30px;
+}
+
+.page-home .app .app__container .about .skills__mobile {
+    margin-bottom: 30px;
+}
+
+.page-home .app .app__container .about .skills__desktop {
+    margin-bottom: 30px;
+}
+
+.page-home .app .app__container .about .skills__title {
+    margin-top: 0;
+}
+
+.page-home .app .app__container .about .skills__title_color_white {
+    color: white;
+}
+
+.page-home .app .app__container .about .skills__title_size_m {
+    font-size: 1.6rem;
+}
+
+.page-home .app .app__container .about .skills__text {
+    font-size: 1.4rem;
+    color: #dcdcdc;
+    line-height: 2;
+}
+.__padding {
     position: relative;
     z-index: 10;
     padding: 30px 30px;
 }
-
 .__console-font {
     font-family: "Roboto Mono", sans-serif;
 }
-
 .__title-font {
     font-family: "Gilroy ExtraBold", sans-serif;
 }
 
+.__parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /*# sourceMappingURL=main.css.map */
