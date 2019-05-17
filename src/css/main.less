@@ -345,6 +345,38 @@ html {
             }
           }
 
+          // Card specific styles
+          &__item_type_legend {
+            // Custom Legend card styles
+          }
+
+          &__item_type_position {
+            // Custom Position card styles
+          }
+
+          &__item_type_education {
+            // Custom Education card styles
+            .timeline-item__title {
+              margin-top: 10px;
+            }
+
+            .timeline-item__text {
+              padding-left: 0;
+            }
+
+            .timeline-item__logo {
+              max-width: 100% !important;
+            }
+          }
+
+          &__item_type_open-source {
+            // Custom Open source card styles
+          }
+
+          &__item_type_milestone {
+            // Custom Milestone card styles
+          }
+
           .timeline-item {
             &__header {
               .__title-font!important;
@@ -399,6 +431,12 @@ html {
               padding-right: 0;
             }
 
+            &__text_type_ellipsis {
+              .timeline-item__expander-label {
+                display: block;
+              }
+            }
+
             &__text_type_link {
               color: @accent-color;
               text-decoration: none;
@@ -435,8 +473,58 @@ html {
               margin-bottom: 0;
             }
 
+            &__description_size_truncated {
+              max-height: 108px;
+              overflow: hidden;
+
+              &:after {
+                content: "";
+                text-align: right;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 78%;
+                height: 1.5em;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+              }
+            }
+
             &__description_hidden {
               display: none;
+            }
+
+            &__expander {
+              display: none;
+
+              // Change label content
+              // Show less description
+              & ~ .timeline-item__expander-label:after {
+                content: attr(data-more);
+              }
+
+              // Change label content
+              // Show full description
+              &:checked ~ .timeline-item__expander-label:after {
+                content: attr(data-less);
+              }
+
+              &:checked ~ .timeline-item__paragraph > .timeline-item__description_size_truncated {
+                display: none;
+              }
+
+              &:checked ~ .timeline-item__paragraph > .timeline-item__description_size_full {
+                display: block;
+              }
+            }
+
+            &__expander-label {
+              display: none;
+              color: @accent-color;
+              margin-top: 10px;
+
+              &:after {
+                width: auto;
+              }
             }
           }
         }
