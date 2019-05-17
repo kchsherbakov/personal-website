@@ -1,32 +1,13 @@
 [
   {
-    "type": "legend",
-    "items": [
-      {
-        "icon": "hello-img.png",
-        "name": "position"
-      },
-      {
-        "icon": "hello-img.png",
-        "name": "education"
-      },
-      {
-        "icon": "hello-img.png",
-        "name": "open source"
-      },
-      {
-        "icon": "hello-img.png",
-        "name": "milestone"
-      }
-    ]
-  },
-  {
     "type": "position",
     "start_date": "01.08.2018",
     "end_date": "",
     "title": "Middle back end software developer",
-    "company_name": "Ticketon",
-    "company_link": "https://ticketon.kz",
+    "org_logo": "alfa-bank-logo.png",
+    "org_logo_alt_name": "JSC Alfa-Bank",
+    "org_name": "Ticketon",
+    "org_link": "https://ticketon.kz",
     "tags": [
       "php",
       "go",

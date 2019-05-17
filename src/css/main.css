@@ -284,6 +284,7 @@ html body {
   font-family: "Gilroy ExtraBold", sans-serif !important;
   padding-bottom: 10px;
   border-bottom: 1px solid #dcdcdc;
+    text-transform: capitalize;
 }
 .page-home .app .app__container .experience .timeline .timeline-item__date:before {
   content: " \02022 ";
