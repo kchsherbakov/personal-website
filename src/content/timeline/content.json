@@ -1,11 +1,12 @@
 [
   {
     "type": "position",
-    "start_date": "01.08.2018",
-    "end_date": "",
+    "start_date": "01.01.2018",
+    "end_date": "08.01.2018",
+    "date_show_type": 2,
     "title": "Middle back end software developer",
-    "org_logo": "alfa-bank-logo.png",
-    "org_logo_alt_name": "JSC Alfa-Bank",
+    "org_logo": "ticketon-logo.png",
+    "org_logo_alt_name": "Ticketon",
     "org_name": "Ticketon",
     "org_link": "https://ticketon.kz",
     "tags": [
@@ -16,5 +17,46 @@
       "elastic-stack"
     ],
     "description": "Back end development and designing database architecture from scratch, taking into account business need and possibility of adding new functionality."
+  },
+  {
+    "type": "position",
+    "start_date": "08.01.2018",
+    "end_date": "",
+    "date_show_type": 2,
+    "title": "Full stack developer",
+    "org_logo": "alfa-bank-logo.png",
+    "org_logo_alt_name": "JSC Alfa-Bank",
+    "org_name": "Alfa-Bank",
+    "org_link": "https://alfabank.kz",
+    "tags": [
+      "C#",
+      "asp.net",
+      "html",
+      "css",
+      "javascript",
+      "entity-framework",
+      "couchbase",
+      "iis"
+    ],
+    "description": "Development of new functionality and full life-cycle support of the monolithic application widely used by the Corporate Bank."
+  },
+  {
+    "type": "education",
+    "start_date": "07.01.2014",
+    "end_date": "05.25.2018",
+    "date_show_type": 0,
+    "title": "Bachelor degree in Computer Science and Software Engineering",
+    "org_logo": "iitu-logo.jpg",
+    "org_logo_alt_name": "The International Information Technology University",
+    "org_name": "The International Information Technology University",
+    "org_link": "http://www.iitu.kz",
+    "tags": [
+      "C#",
+      "c++",
+      "c",
+      "java",
+      "python"
+    ],
+    "description": "In addition to the main course of study, I took an active part in conferences, hackathons and other events dedicated to professional development. While studying at the university, my team won the first place in the hackathon (named \"Halyk FinTech\") conducted by the largest bank in Kazakhstan - Halyk Bank. After some time, the team also won the first place in the internal university hackathon, dedicated to the development of internal technologies of the university and the improvement of the quality of education. At this hackathon, our team presented an automated schedule management system, which later became available to all faculty members and students.\n\nMajor projects: 1. Schedule - automated schedule management system, which consists of three main components - the back end part, admin panel, web application, clients for mobile platforms (iOS, Android). The main features of the Schedule system were a convenient interface for managing the classroom fund, the possibility of semi-automatic scheduling with further adjustments by the department, as well as the ability to view the load of each teacher. 2. NNC - Neural Network Constructor, which provides people, with superficial knowledge in the field of neural networks, the ability to use the designer with a user-friendly interface to fully customize the learning algorithm. After the neural network was configured, the user could download the data set to start the learning process. At the end of the learning process, the system automatically provided the opportunity to publish an auto-generated API, which was accessed through tokens that the owner of the neural network could manage in his panel."
   }
 ]
