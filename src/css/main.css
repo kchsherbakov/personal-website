@@ -438,6 +438,79 @@ html body {
 .page-home .app .app__container .experience .timeline .timeline-item__expander-label:after {
   width: auto;
 }
+
+.page-home .app .app__container .contacts {
+    height: calc(100vh - 100px);
+}
+
+.page-home .app .app__container .contacts__heading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page-home .app .app__container .contacts__order-number {
+    display: inline-block;
+    color: #1e7fc6;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-home .app .app__container .contacts__title {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #1e7fc6;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-home .app .app__container .contacts__content {
+    text-align: center;
+}
+
+.page-home .app .app__container .contacts__hello-text {
+    margin-top: 130px;
+    text-transform: capitalize;
+    font-size: 3rem;
+}
+
+.page-home .app .app__container .contacts__text {
+    color: #606060;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+}
+
+.page-home .app .app__container .contacts__say-hello-button {
+    border: #1e7fc6;
+    color: #1e7fc6;
+    font-size: 1.3rem;
+    padding: 10px 30px;
+    border: 1px solid #1e7fc6;
+    background-color: #f3fdff;
+    text-decoration: none;
+    outline: none;
+}
+
+.page-home .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    text-align: center;
+}
+
+.page-home .footer__text {
+    margin: 0 0 0 10px;
+    font-size: 1rem;
+}
+
+.page-home .footer__link {
+    color: #1e7fc6;
+}
 .__padding {
   position: relative;
   z-index: 10;
