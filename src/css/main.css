@@ -245,6 +245,14 @@ html body {
   position: relative;
   margin-top: 30px;
 }
+.page-home .app .app__container .experience .timeline__line {
+  width: 1px;
+  background-color: #1c1b20;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  bottom: 0;
+}
 .page-home .app .app__container .experience .timeline__item {
   width: calc(100% - 24px);
   display: inline-block;
@@ -257,8 +265,23 @@ html body {
   padding: 10px;
   margin-top: 30px;
 }
-.page-home .app .app__container .experience .timeline__item:first-child {
-  margin-top: 0;
+.page-home .app .app__container .experience .timeline__item:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 27px;
+  height: 27px;
+  border: 2px solid #1c1b20;
+  border-radius: 50%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-home .app .app__container .experience .timeline__item:nth-child(even):before {
+  right: -39px;
+}
+.page-home .app .app__container .experience .timeline__item:nth-child(odd):before {
+  right: -39px;
 }
 .page-home .app .app__container .experience .timeline__item:after {
   content: "";
@@ -271,6 +294,15 @@ html body {
   border-bottom: 6px solid transparent;
   border-left: 6px solid #dcdcdc;
 }
+.page-home .app .app__container .experience .timeline__item_type_legend {
+  margin-top: 0;
+}
+.page-home .app .app__container .experience .timeline__item_type_legend:before {
+  background-image: url("../img/timeline-info-icon.svg");
+}
+.page-home .app .app__container .experience .timeline__item_type_position:before {
+  background-image: url("../img/timeline-position-icon.svg");
+}
 .page-home .app .app__container .experience .timeline__item_type_education .timeline-item__title {
   margin-top: 10px;
 }
@@ -279,6 +311,15 @@ html body {
 }
 .page-home .app .app__container .experience .timeline__item_type_education .timeline-item__logo {
   max-width: 100% !important;
+}
+.page-home .app .app__container .experience .timeline__item_type_education:before {
+  background-image: url("../img/timeline-education-icon.svg");
+}
+.page-home .app .app__container .experience .timeline__item_type_open-source:before {
+  background-image: url("../img/timeline-opensource-icon.svg");
+}
+.page-home .app .app__container .experience .timeline__item_type_milestone:before {
+  background-image: url("../img/timeline-milestone-icon.svg");
 }
 .page-home .app .app__container .experience .timeline .timeline-item__header {
   font-family: "Gilroy ExtraBold", sans-serif !important;

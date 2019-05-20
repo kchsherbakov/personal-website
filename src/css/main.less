@@ -316,6 +316,15 @@ html {
         }
 
         .timeline {
+          &__line {
+            width: 1px;
+            background-color: #1c1b20;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            bottom: 0;
+          }
+
           &__item {
             width: calc(100% - 24px);
             display: inline-block;
@@ -328,8 +337,25 @@ html {
             padding: 10px;
             margin-top: 30px;
 
-            &:first-child {
-              margin-top: 0;
+            &:before {
+              content: "";
+              position: absolute;
+              top: 8px;
+              width: 27px;
+              height: 27px;
+              border: 2px solid #1c1b20;
+              border-radius: 50%;
+              background-color: #fff;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+            &:nth-child(even):before {
+              right: -39px;
+            }
+
+            &:nth-child(odd):before {
+              right: -39px;
             }
 
             &:after {
@@ -348,10 +374,18 @@ html {
           // Card specific styles
           &__item_type_legend {
             // Custom Legend card styles
+            margin-top: 0;
+
+            &:before {
+              background-image: url("../img/timeline-info-icon.svg");
+            }
           }
 
           &__item_type_position {
             // Custom Position card styles
+            &:before {
+              background-image: url("../img/timeline-position-icon.svg");
+            }
           }
 
           &__item_type_education {
@@ -367,14 +401,24 @@ html {
             .timeline-item__logo {
               max-width: 100% !important;
             }
+
+            &:before {
+              background-image: url("../img/timeline-education-icon.svg");
+            }
           }
 
           &__item_type_open-source {
             // Custom Open source card styles
+            &:before {
+              background-image: url("../img/timeline-opensource-icon.svg");
+            }
           }
 
           &__item_type_milestone {
             // Custom Milestone card styles
+            &:before {
+              background-image: url("../img/timeline-milestone-icon.svg");
+            }
           }
 
           .timeline-item {
