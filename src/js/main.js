@@ -4,9 +4,30 @@ const ENUM_DATE_TYPE_MONTH = 1;
 const ENUM_DATE_TYPE_MONTH_AND_YEAR = 2;
 
 // Global events
+window.addEventListener('scroll', function (e) {
+    let page = document.getElementsByClassName('page-home')[0];
+    let helloSectionScrollIcon = document.getElementById('hello-section-scroll-icon');
+
+    // region Hello section
+    if (window.scrollY > 50) {
+        if (!page.classList.contains('hello_visible'))
+            page.classList.add('hello_visible');
+
+        if (!helloSectionScrollIcon.classList.contains('hello__scroll-text_hidden'))
+            helloSectionScrollIcon.classList.add('hello__scroll-text_hidden');
+    } else {
+        if (page.classList.contains('hello_visible'))
+            page.classList.remove('hello_visible');
+
+        if (helloSectionScrollIcon.classList.contains('hello__scroll-text_hidden'))
+            helloSectionScrollIcon.classList.remove('hello__scroll-text_hidden');
+    }
+    // endregion
+});
+
 document.getElementById('menu-toggle').addEventListener('click', function (e) {
-    let menuElement = document.getElementsByClassName('page-home')[0];
-    menuElement.classList.toggle('menu_open');
+    let page = document.getElementsByClassName('page-home')[0];
+    page.classList.toggle('menu_open');
 });
 
 function formatDate(date, type, locale) {
