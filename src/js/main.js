@@ -3,6 +3,12 @@ const ENUM_DATE_TYPE_YEAR = 0;
 const ENUM_DATE_TYPE_MONTH = 1;
 const ENUM_DATE_TYPE_MONTH_AND_YEAR = 2;
 
+// Global events
+document.getElementById('menu-toggle').addEventListener('click', function (e) {
+    let menuElement = document.getElementsByClassName('page-home')[0];
+    menuElement.classList.toggle('menu_open');
+});
+
 function formatDate(date, type, locale) {
     let dt = new Date(date);
 

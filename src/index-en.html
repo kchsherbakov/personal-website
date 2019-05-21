@@ -13,7 +13,7 @@
         <a class="nav__logo" href="https://kchsherbakov.com">
             <img src="./img/logo.svg" alt="Konstantin Chsherbakov">
         </a>
-        <a class="nav__menu-toggle" href="#">
+        <a id="menu-toggle" class="nav__menu-toggle" href="#">
             <i class="nav__menu-toggle-icon">
                 <span class="nav__menu-toggle-icon-line"></span>
                 <span class="nav__menu-toggle-icon-line"></span>
@@ -22,6 +22,51 @@
         </a>
     </div>
 </header>
+<div class="menu">
+    <div class="menu__background"></div>
+    <div class="menu__container __padding">
+        <ul class="menu__lang-switch __console-font">
+            <li class="menu__lang-switch-item menu__lang-switch-item_active">
+                EN.
+            </li>
+            <li class="menu__lang-switch-item">
+                RU.
+            </li>
+        </ul>
+        <ul class="menu__nav menu-nav __console-font">
+            <li class="menu-nav__item">
+                <a class="menu-nav__link" href="#">About</a>
+            </li>
+            <li class="menu-nav__item">
+                <a class="menu-nav__link" href="#">Experience</a>
+            </li>
+            <li class="menu-nav__item">
+                <a class="menu-nav__link" href="#">Contacts</a>
+            </li>
+        </ul>
+        <ul class="menu__socials">
+            <li class="menu__socials-item">
+                <a href="#">
+                    <img src="./img/linkedin-logo.svg" alt="LinkedIn">
+                </a>
+            </li>
+            <li class="menu__socials-item">
+                <a href="#">
+                    <img src="./img/github-logo.svg" alt="GitHub">
+                </a>
+            </li>
+            <li class="menu__socials-item">
+                <a href="#">
+                    <img src="./img/stackoverflow-logo.svg" alt="StackOverflow">
+                </a>
+            </li>
+        </ul>
+        <div class="menu__contacts">
+            <h4 class="menu__contacts-text __console-font">Designed & Build by Konstantin Chsherbakov</h4>
+            <a class="menu__contacts-text menu__contacts-link __console-font" href="mailto:k.chsherbakov@outlook.com">k.chsherbakov@outlook.com</a>
+        </div>
+    </div>
+</div>
 <div class="app">
     <div class="app__container">
         <div class="intro">
@@ -99,7 +144,6 @@
         <section class="about">
             <div class="about__padding __padding">
                 <div class="about__heading">
-                    <h3 class="about__order-number __console-font">00.</h3>
                     <h2 class="about__title __title-font">About</h2>
                 </div>
                 <div class="about__bio">
@@ -188,7 +232,6 @@
         <section class="experience">
             <div class="experience__padding __padding">
                 <div class="experience__heading">
-                    <h3 class="experience__order-number __console-font">01.</h3>
                     <h2 class="experience__title __title-font">Experience</h2>
                 </div>
                 <div id="timeline-feed" class="experience__timeline-feed timeline">
@@ -330,7 +373,6 @@
         <section class="contacts">
             <div class="contacts__padding __padding">
                 <div class="contacts__heading">
-                    <h3 class="contacts__order-number __console-font">02.</h3>
                     <h2 class="contacts__title __title-font">Contacts</h2>
                 </div>
                 <div class="contacts__content">

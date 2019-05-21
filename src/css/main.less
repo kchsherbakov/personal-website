@@ -16,6 +16,46 @@ html {
   }
 }
 
+// region Animated elements
+
+.menu_open {
+  .menu {
+    transform: translateX(0) !important;
+
+    .menu__background {
+      transform: translateX(0) !important;
+    }
+
+    .menu__container {
+      transform: translateX(0) !important;
+    }
+  }
+
+  .nav {
+    &__menu-toggle-icon-line {
+
+      &:nth-child(1) {
+        margin-top: 2px !important;
+        margin-left: 2px !important;
+        width: 20px !important;
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        width: 20px !important;
+        margin-top: -2px !important;
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(3) {
+        width: 0 !important;
+      }
+    }
+  }
+}
+
+// endregion Animated elements
+
 .page-home {
   height: 100%;
   font-size: 1.3rem;
@@ -68,6 +108,7 @@ html {
         margin-top: 2px;
         float: right;
         clear: right;
+        transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
         &:nth-child(1) {
           margin-top: 0;
@@ -85,7 +126,134 @@ html {
     }
   }
 
+  //region Menu
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    z-index: 500;
+    transform: translateX(-100%);
+    transition: transform 700ms cubic-bezier(1, 0, 0, 1) 0ms;
+    background-color: transparent;
+
+    &__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: @accent-color;
+      transform: translateX(-100%);
+      transition: transform 700ms cubic-bezier(1, 0, 0, 1) 0ms
+    }
+
+    &__container {
+      position: relative;
+      // Full width minus size of the menu button, minus left-right to visually center menu button
+      width: calc(100% - 45px - @mobile-left-right-margin * 2);
+      height: 100%;
+      background-color: #fff;
+      z-index: 501;
+      transform: translateX(-100%);
+      transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms
+    }
+
+    &__lang-switch {
+      margin: 0 0 40px 0;
+      list-style: none;
+      padding: 0;
+      color: #dcdcdc;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    &__lang-switch-item {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    &__lang-switch-item_active {
+      color: #000;
+    }
+
+    &__nav {
+      font-size: 1.4rem;
+      margin-top: 140px;
+      margin-bottom: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-nav {
+      counter-reset: nav-section-counter -1;
+
+      &__item {
+        margin-top: 10px;
+      }
+
+      &__link {
+        text-decoration: none;
+        outline: none;
+        color: #000;
+        font-weight: bold;
+
+        &:before {
+          counter-increment: nav-section-counter;
+          content: "0" counter(nav-section-counter) ".";
+          color: @accent-color;
+        }
+      }
+    }
+
+    &__socials {
+      padding: 0;
+      list-style: none;
+    }
+
+    &__socials-item {
+      display: inline-block;
+      max-height: 25px;
+      max-width: 25px;
+      margin-right: 10px;
+
+      a {
+        text-decoration: none;
+        outline: none;
+
+        img {
+          max-height: 25px;
+          width: auto;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__contacts {
+      position: absolute;
+      text-align: left;
+      bottom: @mobile-top-bottom-margin;
+    }
+
+    &__contacts-text {
+      margin: 0 0 10px 0;
+      font-size: 1rem;
+    }
+
+    &__contacts-link {
+      color: @accent-color
+    }
+  }
+
+  //endregion Menu
+
   .app {
+    counter-reset: app-section-counter -1;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -213,19 +381,23 @@ html {
           margin-bottom: 10px;
         }
 
-        &__order-number {
-          color: @accent-color;
-          font-size: 1.4rem;
-          font-weight: bold;
-          margin: 0;
-        }
-
         &__title {
           text-transform: uppercase;
           color: @accent-color;
           font-size: 1.6rem;
           font-weight: bold;
           margin: 0;
+
+          &:before {
+            .__console-font;
+            display: block;
+            counter-increment: app-section-counter;
+            content: "0" counter(app-section-counter) ".";
+            color: @accent-color;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0;
+          }
         }
 
         &__bio {
@@ -294,19 +466,23 @@ html {
           margin-bottom: 10px;
         }
 
-        &__order-number {
-          color: @accent-color;
-          font-size: 1.4rem;
-          font-weight: bold;
-          margin: 0;
-        }
-
         &__title {
           text-transform: uppercase;
           color: @accent-color;
           font-size: 1.6rem;
           font-weight: bold;
           margin: 0;
+
+          &:before {
+            .__console-font;
+            display: block;
+            counter-increment: app-section-counter;
+            content: "0" counter(app-section-counter) ".";
+            color: @accent-color;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0;
+          }
         }
 
         &__timeline-feed {
@@ -591,14 +767,6 @@ html {
           margin-bottom: 10px;
         }
 
-        &__order-number {
-          display: inline-block;
-          color: @accent-color;
-          font-size: 1.4rem;
-          font-weight: bold;
-          margin: 0;
-        }
-
         &__title {
           display: inline-block;
           text-transform: uppercase;
@@ -606,6 +774,16 @@ html {
           font-size: 1.6rem;
           font-weight: bold;
           margin: 0;
+
+          &:before {
+            .__console-font;
+            counter-increment: app-section-counter;
+            content: "0" counter(app-section-counter) ".";
+            color: @accent-color;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0;
+          }
         }
 
         &__content {
@@ -620,6 +798,7 @@ html {
 
         &__text {
           color: #606060;
+          line-height: 1.5;
           margin-top: 30px;
           font-size: 1.4rem;
           margin-bottom: 50px;
@@ -664,7 +843,7 @@ html {
   //width: 100%;
   position: relative;
   z-index: 10;
-  padding: @mobile-left-right-margin @mobile-left-right-margin;
+  padding: @mobile-top-bottom-margin @mobile-left-right-margin;
 }
 
 .__console-font {

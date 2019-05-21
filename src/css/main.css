@@ -7,6 +7,29 @@ html {
 html body {
   margin: 0;
 }
+.menu_open .menu {
+  transform: translateX(0) !important;
+}
+.menu_open .menu .menu__background {
+  transform: translateX(0) !important;
+}
+.menu_open .menu .menu__container {
+  transform: translateX(0) !important;
+}
+.menu_open .nav__menu-toggle-icon-line:nth-child(1) {
+  margin-top: 2px !important;
+  margin-left: 2px !important;
+  width: 20px !important;
+  transform: rotate(45deg);
+}
+.menu_open .nav__menu-toggle-icon-line:nth-child(2) {
+  width: 20px !important;
+  margin-top: -2px !important;
+  transform: rotate(-45deg);
+}
+.menu_open .nav__menu-toggle-icon-line:nth-child(3) {
+  width: 0 !important;
+}
 .page-home {
   height: 100%;
   font-size: 1.3rem;
@@ -55,6 +78,7 @@ html body {
   margin-top: 2px;
   float: right;
   clear: right;
+  transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 }
 .page-home .header .nav__menu-toggle-icon-line:nth-child(1) {
   margin-top: 0;
@@ -66,7 +90,110 @@ html body {
 .page-home .header .nav__menu-toggle-icon-line:nth-child(3) {
   width: 10px;
 }
+.page-home .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  z-index: 500;
+  transform: translateX(-100%);
+  transition: transform 700ms cubic-bezier(1, 0, 0, 1) 0ms;
+  background-color: transparent;
+}
+.page-home .menu__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1e7fc6;
+  transform: translateX(-100%);
+  transition: transform 700ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+.page-home .menu__container {
+  position: relative;
+  width: calc(100% - 45px - 30px * 2);
+  height: 100%;
+  background-color: #fff;
+  z-index: 501;
+  transform: translateX(-100%);
+  transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+.page-home .menu__lang-switch {
+  margin: 0 0 40px 0;
+  list-style: none;
+  padding: 0;
+  color: #dcdcdc;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.page-home .menu__lang-switch-item {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.page-home .menu__lang-switch-item_active {
+  color: #000;
+}
+.page-home .menu__nav {
+  font-size: 1.4rem;
+  margin-top: 140px;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+.page-home .menu-nav {
+  counter-reset: nav-section-counter -1;
+}
+.page-home .menu-nav__item {
+  margin-top: 10px;
+}
+.page-home .menu-nav__link {
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  font-weight: bold;
+}
+.page-home .menu-nav__link:before {
+  counter-increment: nav-section-counter;
+  content: "0" counter(nav-section-counter) ".";
+  color: #1e7fc6;
+}
+.page-home .menu__socials {
+  padding: 0;
+  list-style: none;
+}
+.page-home .menu__socials-item {
+  display: inline-block;
+  max-height: 25px;
+  max-width: 25px;
+  margin-right: 10px;
+}
+.page-home .menu__socials-item a {
+  text-decoration: none;
+  outline: none;
+}
+.page-home .menu__socials-item a img {
+  max-height: 25px;
+  width: auto;
+}
+.page-home .menu__socials-item:last-child {
+  margin-right: 0;
+}
+.page-home .menu__contacts {
+  position: absolute;
+  text-align: left;
+  bottom: 40px;
+}
+.page-home .menu__contacts-text {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+.page-home .menu__contacts-link {
+  color: #1e7fc6;
+}
 .page-home .app {
+  counter-reset: app-section-counter -1;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -172,16 +299,20 @@ html body {
 .page-home .app .app__container .about__heading {
   margin-bottom: 10px;
 }
-.page-home .app .app__container .about__order-number {
-  color: #1e7fc6;
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin: 0;
-}
 .page-home .app .app__container .about__title {
   text-transform: uppercase;
   color: #1e7fc6;
   font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+.page-home .app .app__container .about__title:before {
+  font-family: "Roboto Mono", sans-serif;
+  display: block;
+  counter-increment: app-section-counter;
+  content: "0" counter(app-section-counter) ".";
+  color: #1e7fc6;
+  font-size: 1.4rem;
   font-weight: bold;
   margin: 0;
 }
@@ -227,16 +358,20 @@ html body {
 .page-home .app .app__container .experience__heading {
   margin-bottom: 10px;
 }
-.page-home .app .app__container .experience__order-number {
-  color: #1e7fc6;
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin: 0;
-}
 .page-home .app .app__container .experience__title {
   text-transform: uppercase;
   color: #1e7fc6;
   font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+.page-home .app .app__container .experience__title:before {
+  font-family: "Roboto Mono", sans-serif;
+  display: block;
+  counter-increment: app-section-counter;
+  content: "0" counter(app-section-counter) ".";
+  color: #1e7fc6;
+  font-size: 1.4rem;
   font-weight: bold;
   margin: 0;
 }
@@ -438,83 +573,75 @@ html body {
 .page-home .app .app__container .experience .timeline .timeline-item__expander-label:after {
   width: auto;
 }
-
 .page-home .app .app__container .contacts {
-    height: calc(100vh - 100px);
+  height: calc(100vh - 100px);
 }
-
 .page-home .app .app__container .contacts__heading {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
-
-.page-home .app .app__container .contacts__order-number {
-    display: inline-block;
-    color: #1e7fc6;
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 0;
-}
-
 .page-home .app .app__container .contacts__title {
-    display: inline-block;
-    text-transform: uppercase;
-    color: #1e7fc6;
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin: 0;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #1e7fc6;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
 }
-
+.page-home .app .app__container .contacts__title:before {
+  font-family: "Roboto Mono", sans-serif;
+  counter-increment: app-section-counter;
+  content: "0" counter(app-section-counter) ".";
+  color: #1e7fc6;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
 .page-home .app .app__container .contacts__content {
-    text-align: center;
+  text-align: center;
 }
-
 .page-home .app .app__container .contacts__hello-text {
-    margin-top: 130px;
-    text-transform: capitalize;
-    font-size: 3rem;
+  margin-top: 130px;
+  text-transform: capitalize;
+  font-size: 3rem;
 }
-
 .page-home .app .app__container .contacts__text {
-    color: #606060;
-    margin-top: 30px;
-    font-size: 1.4rem;
-    margin-bottom: 50px;
+  color: #606060;
+  line-height: 1.5;
+  margin-top: 30px;
+  font-size: 1.4rem;
+  margin-bottom: 50px;
 }
-
 .page-home .app .app__container .contacts__say-hello-button {
-    border: #1e7fc6;
-    color: #1e7fc6;
-    font-size: 1.3rem;
-    padding: 10px 30px;
-    border: 1px solid #1e7fc6;
-    background-color: #f3fdff;
-    text-decoration: none;
-    outline: none;
+  border: #1e7fc6;
+  color: #1e7fc6;
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  border: 1px solid #1e7fc6;
+  background-color: #f3fdff;
+  text-decoration: none;
+  outline: none;
 }
-
 .page-home .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 0;
-    text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
 }
-
 .page-home .footer__text {
-    margin: 0 0 0 10px;
-    font-size: 1rem;
+  margin: 0 0 0 10px;
+  font-size: 1rem;
 }
-
 .page-home .footer__link {
-    color: #1e7fc6;
+  color: #1e7fc6;
 }
 .__padding {
   position: relative;
   z-index: 10;
-  padding: 30px 30px;
+  padding: 40px 30px;
 }
 .__console-font {
   font-family: "Roboto Mono", sans-serif;
