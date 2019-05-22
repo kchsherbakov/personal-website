@@ -3,31 +3,79 @@ const ENUM_DATE_TYPE_YEAR = 0;
 const ENUM_DATE_TYPE_MONTH = 1;
 const ENUM_DATE_TYPE_MONTH_AND_YEAR = 2;
 
+const ENUM_CARD_TYPE_POSITION = 'position';
+const ENUM_CARD_TYPE_EDUCATION = 'education';
+
+const VIEWPORT_WIDTH_MEDIUM = 768;
+
 // Global events
-window.addEventListener('scroll', function (e) {
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    let page = document.getElementsByClassName('page-home')[0];
+    page.classList.toggle('menu_open');
+});
+
+let lastScrollYVal = 0;
+let introSectionTransformVal = 0;
+window.addEventListener('scroll', function () {
     let page = document.getElementsByClassName('page-home')[0];
     let helloSectionScrollIcon = document.getElementById('hello-section-scroll-icon');
 
     // region Hello section
     if (window.scrollY > 50) {
-        if (!page.classList.contains('hello_visible'))
-            page.classList.add('hello_visible');
-
-        if (!helloSectionScrollIcon.classList.contains('hello__scroll-text_hidden'))
-            helloSectionScrollIcon.classList.add('hello__scroll-text_hidden');
+        page.classList.add('hello_visible');
+        helloSectionScrollIcon.classList.add('hello__scroll-text_hidden');
     } else {
-        if (page.classList.contains('hello_visible'))
-            page.classList.remove('hello_visible');
-
-        if (helloSectionScrollIcon.classList.contains('hello__scroll-text_hidden'))
-            helloSectionScrollIcon.classList.remove('hello__scroll-text_hidden');
+        page.classList.remove('hello_visible');
+        helloSectionScrollIcon.classList.remove('hello__scroll-text_hidden');
     }
-    // endregion
-});
 
-document.getElementById('menu-toggle').addEventListener('click', function (e) {
-    let page = document.getElementsByClassName('page-home')[0];
-    page.classList.toggle('menu_open');
+    // Control 'intro' div scroll event
+    // Tablets and desktops only
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > VIEWPORT_WIDTH_MEDIUM) {
+        let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        let currentScrollYVal = window.scrollY;
+        let scrollYDelta = currentScrollYVal - lastScrollYVal;
+        let scrollStep = 40;
+
+        if (scrollYDelta > 0) {
+            if (currentScrollYVal > viewportHeight) {
+                if (introSectionTransformVal - scrollYDelta <= -viewportHeight
+                    || introSectionTransformVal - scrollStep <= -viewportHeight)
+                    introSectionTransformVal = -viewportHeight;
+            } else {
+                introSectionTransformVal -= scrollYDelta;
+            }
+        } else {
+            if (currentScrollYVal > viewportHeight) {
+                if (introSectionTransformVal + -scrollYDelta >= 0
+                    || introSectionTransformVal - scrollStep >= 0)
+                    introSectionTransformVal = 0;
+            } else {
+                introSectionTransformVal += -scrollYDelta;
+            }
+        }
+        lastScrollYVal = currentScrollYVal;
+
+        // TODO: Think about mechanic to animate text independently
+        // document.getElementById('hello-section').style.cssText =
+        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 4})`;
+        // document.getElementById('greetings-section').style.cssText =
+        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 4})`;
+        document.getElementById('scroller').style.cssText =
+            `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal})`;
+
+        // Hide intro sections, otherwise 'hello' and 'greetings'
+        // sections will overlay other content
+        let helloSection = document.getElementById('hello-section');
+        let greetingsSection = document.getElementById('greetings-section');
+        if (currentScrollYVal > 2 * viewportHeight) {
+            helloSection.classList.add('__hidden');
+            greetingsSection.style.setProperty('display', 'none', 'important');
+        } else {
+            helloSection.classList.remove('__hidden');
+            greetingsSection.style.setProperty('display', 'block', 'important');
+        }
+    }
 });
 
 function formatDate(date, type, locale) {
@@ -88,10 +136,10 @@ async function initTimeline() {
         let cardTemplateContent;
         let d = timelineData[i];
 
-        if (d['type'] === 'position') {
+        if (d['type'] === ENUM_CARD_TYPE_POSITION) {
             cardTemplateContent = document.importNode(positionCardTemplate.content, true)
                 .querySelector(('div.timeline__item'));
-        } else if (d['type'] === 'education') {
+        } else if (d['type'] === ENUM_CARD_TYPE_EDUCATION) {
             cardTemplateContent = document.importNode(educationCardTemplate.content, true)
                 .querySelector(('div.timeline__item'));
         }
@@ -132,6 +180,13 @@ async function initTimeline() {
             .replace(/{{org_name}}/g, d['org_name'])
             .replace(/{{org_link}}/g, d['org_link'])
             .replace(/{{description}}/g, d['description']);
+
+        // Assign ID
+        let idValue = `timeline-item-${i}`;
+        cardTemplateContent.querySelector('input.timeline-item__expander')
+            .setAttribute('id', idValue);
+        cardTemplateContent.querySelector('label.timeline-item__expander-label')
+            .setAttribute('for', idValue);
 
         // Add tags
         let tagsContainer = cardTemplateContent.querySelector('div.timeline-item__tags-container');

@@ -95,10 +95,8 @@ html {
     transform: translateX(100%) !important;
   }
 
-  @media (min-width: @min-width-m) {
-    .greetings {
-      opacity: 1 !important;
-    }
+  .greetings {
+    opacity: 1 !important;
   }
 }
 
@@ -521,10 +519,14 @@ html {
       .intro {
         z-index: 0;
         pointer-events: none;
+        background-color: @accent-color;
         overflow: hidden;
 
         .hello {
-          background-color: @accent-color;
+          @media (min-width: @min-width-m) {
+            position: fixed;
+            width: 100%;
+          }
 
           &__padding {
             height: 100vh;
@@ -600,26 +602,27 @@ html {
         }
 
         .greetings {
-          opacity: 1;
+          opacity: 0;
           font-size: 1.4rem;
-          transition: opacity 1000ms ease-in-out 500ms;
-
-          &__padding {
-            @media (min-width: @min-width-m) {
-              max-width: 400px;
-            }
-          }
+          transition: opacity 500ms ease-in-out 500ms;
+          background-color: @accent-color;
 
           @media (min-width: @min-width-m) {
-            opacity: 0;
+            position: fixed;
+            background-color: transparent;
             padding-left: 100px;
             padding-right: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: absolute;
             top: 0;
             height: 100vh;
+          }
+
+          &__padding {
+            @media (min-width: @min-width-m) {
+              max-width: 400px;
+            }
           }
 
           &__text {
@@ -656,14 +659,32 @@ html {
             }
           }
         }
+
+        &__scroller {
+          @media (min-width: @min-width-m) {
+            z-index: 2000;
+            background-color: transparent;
+            width: 100%;
+            height: 200vh;
+            overflow: auto;
+          }
+        }
       }
 
       .image-section-parallax {
+        position: relative;
+
         &__bgimage {
           width: 100%;
           height: 180px;
           background-image: url("../img/landscape-mountains.jpg");
           background-size: cover;
+
+          @media (min-width: @min-width-m) {
+            z-index: 100;
+            height: 100vh;
+            width: auto;
+          }
         }
       }
 

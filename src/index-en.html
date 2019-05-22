@@ -115,7 +115,7 @@
 <div class="app">
     <div class="app__container">
         <div class="intro">
-            <section class="intro__hello hello">
+            <section id="hello-section" class="intro__hello hello">
                 <div class="hello__padding __padding">
                     <h1 class="hello__text">
                         <svg xmlns="http://www.w3.org/2000/svg" width="600" height="343"
@@ -168,7 +168,7 @@
                     </span>
                 </div>
             </section>
-            <section class="intro__greetings greetings">
+            <section id="greetings-section" class="intro__greetings greetings">
                 <div class="greetings__padding __padding">
                     <p class="greetings__text __console-font">
                         Hi, my name is
@@ -186,6 +186,7 @@
                     </p>
                 </div>
             </section>
+            <div id="scroller" class="intro__scroller"></div>
         </div>
         <section class="image-section-parallax">
             <div class="image-section-parallax__bgimage"></div>
@@ -359,7 +360,7 @@
                                         </span>
                                     </div>
                                     <div class="timeline-item__tags-container"></div>
-                                    <input id="timeline-item-666" class="timeline-item__expander" type="checkbox">
+                                    <input class="timeline-item__expander" type="checkbox">
                                     <div class="timeline-item__paragraph">
                                         <p class="timeline-item__description timeline-item__description_size_full">
                                             {{description}}
@@ -369,7 +370,7 @@
                                             {{description}}
                                         </p>
                                     </div>
-                                    <label class="timeline-item__expander-label" for="timeline-item-666"
+                                    <label class="timeline-item__expander-label"
                                            data-less="Less" data-more="Read more"></label>
                                 </div>
                             </div>
@@ -396,7 +397,7 @@
                                         </span>
                                     </div>
                                     <div class="timeline-item__tags-container"></div>
-                                    <input id="timeline-item-777" class="timeline-item__expander" type="checkbox">
+                                    <input class="timeline-item__expander" type="checkbox">
                                     <div class="timeline-item__paragraph">
                                         <p class="timeline-item__description timeline-item__description_size_full
                                             timeline-item__description_hidden">
@@ -406,7 +407,7 @@
                                             {{description}}
                                         </p>
                                     </div>
-                                    <label class="timeline-item__expander-label" for="timeline-item-777"
+                                    <label class="timeline-item__expander-label"
                                            data-less="Less" data-more="Read more"></label>
                                 </div>
                             </div>
