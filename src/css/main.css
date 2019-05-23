@@ -54,7 +54,6 @@ html body {
 .hello_visible .hello__page-color {
   transform: translateX(100%) !important;
 }
-
 .hello_visible .greetings {
   opacity: 1 !important;
 }
@@ -66,6 +65,12 @@ html body {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .page-home {
+    font-size: 1.5rem;
+  }
 }
 .page-home .header .nav {
   height: auto;
@@ -275,7 +280,7 @@ html body {
 }
 @media (min-width: 768px) {
   .page-home .menu__container {
-    width: calc(100% - 45px - 70px * 2);
+    width: calc(100% - 45px - 10vw * 2);
   }
 }
 .page-home .menu__lang-switch {
@@ -419,7 +424,6 @@ html body {
   background-color: #1e7fc6;
   overflow: hidden;
 }
-
 @media (min-width: 768px) {
   .page-home .app .app__container .intro .hello {
     position: fixed;
@@ -499,8 +503,6 @@ html body {
   .page-home .app .app__container .intro .greetings {
     position: fixed;
     background-color: transparent;
-    padding-left: 100px;
-    padding-right: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -508,10 +510,9 @@ html body {
     height: 100vh;
   }
 }
-
 @media (min-width: 768px) {
   .page-home .app .app__container .intro .greetings__padding {
-    max-width: 400px;
+    max-width: 60%;
   }
 }
 .page-home .app .app__container .intro .greetings__text {
@@ -544,7 +545,6 @@ html body {
     font-size: 3em;
   }
 }
-
 @media (min-width: 768px) {
   .page-home .app .app__container .intro__scroller {
     z-index: 2000;
@@ -554,7 +554,6 @@ html body {
     overflow: auto;
   }
 }
-
 .page-home .app .app__container .image-section-parallax {
   position: relative;
 }
@@ -563,12 +562,12 @@ html body {
   height: 180px;
   background-image: url("../img/landscape-mountains.jpg");
   background-size: cover;
+  background-position: center;
 }
-
 @media (min-width: 768px) {
   .page-home .app .app__container .image-section-parallax__bgimage {
     z-index: 100;
-    height: 100vh;
+    height: 80vh;
     width: auto;
   }
 }
@@ -585,6 +584,12 @@ html body {
   font-weight: bold;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .about__title {
+    font-size: 2rem;
+  }
+}
 .page-home .app .app__container .about__title:before {
   font-family: "Roboto Mono", sans-serif;
   display: block;
@@ -595,12 +600,18 @@ html body {
   font-weight: bold;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .about__title:before {
+    font-size: 1.8rem;
+  }
+}
 .page-home .app .app__container .about__bio {
   padding: 30px 0;
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .about__bio {
-    padding: 70px 0;
+    padding: 10vw 0;
   }
 }
 .page-home .app .app__container .about__text {
@@ -614,8 +625,32 @@ html body {
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .about__skills {
-    margin-left: -70px;
+    margin-left: -10vw;
+    margin-right: -10vw;
   }
+}
+
+.page-home .app .app__container .about .skills__section-title {
+  font-family: "Gilroy ExtraBold", sans-serif;
+  color: white;
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .about .skills__section-title {
+    font-size: 2.5rem;
+    padding-bottom: 100px;
+  }
+}
+
+.page-home .app .app__container .about .skills__section-title h2 {
+  margin: 0;
+}
+
+.page-home .app .app__container .about .skills__container {
+  margin-left: 0;
+  margin-right: 0;
 }
 .page-home .app .app__container .about .skills__frontend {
   padding-left: 0;
@@ -632,10 +667,22 @@ html body {
   padding-right: 0;
   margin-bottom: 30px;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .about .skills__mobile {
+    margin-bottom: 0;
+  }
+}
 .page-home .app .app__container .about .skills__desktop {
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .about .skills__desktop {
+    margin-bottom: 0;
+  }
 }
 .page-home .app .app__container .about .skills__management-and-percs {
   padding-left: 0;
@@ -665,6 +712,12 @@ html body {
   font-weight: bold;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .experience__title {
+    font-size: 2rem;
+  }
+}
 .page-home .app .app__container .experience__title:before {
   font-family: "Roboto Mono", sans-serif;
   display: block;
@@ -675,10 +728,22 @@ html body {
   font-weight: bold;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .experience__title:before {
+    font-size: 1.8rem;
+  }
+}
 .page-home .app .app__container .experience__timeline-feed {
   max-width: 100%;
   position: relative;
-  margin-top: 30px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .experience__timeline-feed {
+    margin-top: 100px;
+  }
 }
 .page-home .app .app__container .experience .timeline__line {
   width: 1px;
@@ -876,6 +941,18 @@ html body {
 .page-home .app .app__container .contacts {
   height: calc(100vh - 100px);
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .contacts {
+    height: calc(100vh - 180px - 40px * 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .contacts__padding {
+    padding-top: 0 !important;
+  }
+}
 .page-home .app .app__container .contacts__heading {
   text-align: center;
   margin-bottom: 10px;
@@ -888,6 +965,12 @@ html body {
   font-weight: bold;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .contacts__title {
+    font-size: 2rem;
+  }
+}
 .page-home .app .app__container .contacts__title:before {
   font-family: "Roboto Mono", sans-serif;
   counter-increment: app-section-counter;
@@ -897,18 +980,23 @@ html body {
   font-weight: bold;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .page-home .app .app__container .contacts__title:before {
+    font-size: 1.8rem;
+  }
+}
 .page-home .app .app__container .contacts__content {
   text-align: center;
 }
 .page-home .app .app__container .contacts__hello-text {
-  margin-top: 130px;
+  margin-top: 100px;
   text-transform: capitalize;
   font-size: 3rem;
 }
 .page-home .app .app__container .contacts__text {
   color: #606060;
   line-height: 1.5;
-  margin-top: 30px;
   font-size: 1.4rem;
   margin-bottom: 50px;
 }
@@ -918,9 +1006,14 @@ html body {
   font-size: 1.3rem;
   padding: 10px 30px;
   border: 1px solid #1e7fc6;
-  background-color: #f3fdff;
   text-decoration: none;
   outline: none;
+  transition: background-color 300ms ease-in-out 0ms;
+  background-color: white;
+}
+
+.page-home .app .app__container .contacts__say-hello-button:hover {
+  background-color: #f3fdff;
 }
 .page-home .footer {
   position: fixed;
@@ -951,16 +1044,21 @@ html body {
 }
 @media (min-width: 768px) {
   .__padding {
-    padding: 80px 70px;
+    padding: 100px 10vw;
   }
 }
 .__hidden {
   display: none;
 }
+.__title-font {
+  font-family: "Gilroy ExtraBold", sans-serif;
+}
+
 .__console-font {
   font-family: "Roboto Mono", sans-serif;
 }
-.__title-font {
-  font-family: "Gilroy ExtraBold", sans-serif;
+
+.__accent-font {
+  font-family: "Libre Baskerville", serif;
 }
 /*# sourceMappingURL=main.css.map */

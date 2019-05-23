@@ -25,10 +25,10 @@
 @border-size-m: 40px;
 @border-size-l: 40px;
 
-@left-right-margin-xs: 30px;
 @top-bottom-margin-xs: 40px;
-@left-right-margin-m: 30px + @border-size-m;
-@top-bottom-margin-m: 40px + @border-size-m;
+@left-right-margin-xs: 30px;
+@top-bottom-margin-m: 100px;
+@left-right-margin-m: 10vw;
 
 @min-width-s: 578px;
 @min-width-m: 768px;
@@ -110,6 +110,10 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
+
+  @media (min-width: @min-width-m) {
+    font-size: 1.5rem;
+  }
 
   .header {
     .nav {
@@ -610,8 +614,6 @@ html {
           @media (min-width: @min-width-m) {
             position: fixed;
             background-color: transparent;
-            padding-left: 100px;
-            padding-right: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -621,7 +623,7 @@ html {
 
           &__padding {
             @media (min-width: @min-width-m) {
-              max-width: 400px;
+              max-width: 60%;
             }
           }
 
@@ -679,10 +681,11 @@ html {
           height: 180px;
           background-image: url("../img/landscape-mountains.jpg");
           background-size: cover;
+          background-position: center;
 
           @media (min-width: @min-width-m) {
             z-index: 100;
-            height: 100vh;
+            height: 80vh;
             width: auto;
           }
         }
@@ -704,6 +707,10 @@ html {
           font-weight: bold;
           margin: 0;
 
+          @media (min-width: @min-width-m) {
+            font-size: 2rem;
+          }
+
           &:before {
             .__console-font;
             display: block;
@@ -713,6 +720,10 @@ html {
             font-size: 1.4rem;
             font-weight: bold;
             margin: 0;
+
+            @media (min-width: @min-width-m) {
+              font-size: 1.8rem;
+            }
           }
         }
 
@@ -736,11 +747,32 @@ html {
 
           @media (min-width: @min-width-m) {
             margin-left: -@left-right-margin-m;
-            @margin-right: -@left-right-margin-m;
+            margin-right: -@left-right-margin-m;
           }
         }
 
         .skills {
+          &__section-title {
+            .__title-font;
+            color: white;
+            font-size: 2rem;
+            padding-bottom: @top-bottom-margin-xs;
+
+            @media (min-width: @min-width-m) {
+              font-size: 2.5rem;
+              padding-bottom: @top-bottom-margin-m;
+            }
+
+            h2 {
+              margin: 0;
+            }
+          }
+
+          &__container {
+            margin-left: 0;
+            margin-right: 0;
+          }
+
           &__frontend {
             padding-left: 0;
             padding-right: 0;
@@ -757,12 +789,20 @@ html {
             padding-left: 0;
             padding-right: 0;
             margin-bottom: 30px;
+
+            @media (min-width: @min-width-m) {
+              margin-bottom: 0;
+            }
           }
 
           &__desktop {
             padding-left: 0;
             padding-right: 0;
             margin-bottom: 30px;
+
+            @media (min-width: @min-width-m) {
+              margin-bottom: 0;
+            }
           }
 
           &__management-and-percs {
@@ -807,6 +847,10 @@ html {
           font-weight: bold;
           margin: 0;
 
+          @media (min-width: @min-width-m) {
+            font-size: 2rem;
+          }
+
           &:before {
             .__console-font;
             display: block;
@@ -816,13 +860,21 @@ html {
             font-size: 1.4rem;
             font-weight: bold;
             margin: 0;
+
+            @media (min-width: @min-width-m) {
+              font-size: 1.8rem;
+            }
           }
         }
 
         &__timeline-feed {
           max-width: 100%;
           position: relative;
-          margin-top: 30px;
+          margin-top: @top-bottom-margin-xs;
+
+          @media (min-width: @min-width-m) {
+            margin-top: @top-bottom-margin-m;
+          }
         }
 
         .timeline {
@@ -1090,10 +1142,17 @@ html {
       }
 
       .contacts {
-        height: calc(100vh - 100px);
+        height: calc(100vh - @app-container-bottom-margin-xs);
+
+        @media (min-width: @min-width-m) {
+          height: calc(100vh - @app-container-bottom-margin-m - @border-size-m * 2);
+        }
 
         &__padding {
           // Custom padding here
+          @media (min-width: @min-width-m) {
+            padding-top: 0 !important;
+          }
         }
 
         &__heading {
@@ -1109,6 +1168,10 @@ html {
           font-weight: bold;
           margin: 0;
 
+          @media (min-width: @min-width-m) {
+            font-size: 2rem;
+          }
+
           &:before {
             .__console-font;
             counter-increment: app-section-counter;
@@ -1117,6 +1180,10 @@ html {
             font-size: 1.4rem;
             font-weight: bold;
             margin: 0;
+
+            @media (min-width: @min-width-m) {
+              font-size: 1.8rem;
+            }
           }
         }
 
@@ -1125,7 +1192,7 @@ html {
         }
 
         &__hello-text {
-          margin-top: 130px;
+          margin-top: @top-bottom-margin-m;
           text-transform: capitalize;
           font-size: 3rem;
         }
@@ -1133,7 +1200,7 @@ html {
         &__text {
           color: #606060;
           line-height: 1.5;
-          margin-top: 30px;
+          //margin-top: 30px;
           font-size: 1.4rem;
           margin-bottom: 50px;
         }
@@ -1144,9 +1211,14 @@ html {
           font-size: 1.3rem;
           padding: 10px 30px;
           border: 1px solid @accent-color;
-          background-color: #f3fdff;
           text-decoration: none;
           outline: none;
+          transition: background-color 300ms ease-in-out 0ms;
+          background-color: white;
+
+          &:hover {
+            background-color: #f3fdff;
+          }
         }
       }
     }
@@ -1192,10 +1264,14 @@ html {
   display: none;
 }
 
+.__title-font {
+  font-family: "Gilroy ExtraBold", sans-serif;
+}
+
 .__console-font {
   font-family: "Roboto Mono", sans-serif;
 }
 
-.__title-font {
-  font-family: "Gilroy ExtraBold", sans-serif;
+.__accent-font {
+  font-family: "Libre Baskerville", serif;
 }

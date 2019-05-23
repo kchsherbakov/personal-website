@@ -31,7 +31,7 @@ window.addEventListener('scroll', function () {
 
     // Control 'intro' div scroll event
     // Tablets and desktops only
-    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > VIEWPORT_WIDTH_MEDIUM) {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEWPORT_WIDTH_MEDIUM) {
         let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         let currentScrollYVal = window.scrollY;
         let scrollYDelta = currentScrollYVal - lastScrollYVal;
@@ -73,7 +73,7 @@ window.addEventListener('scroll', function () {
             greetingsSection.style.setProperty('display', 'none', 'important');
         } else {
             helloSection.classList.remove('__hidden');
-            greetingsSection.style.setProperty('display', 'block', 'important');
+            greetingsSection.style.setProperty('display', 'flex', 'important');
         }
     }
 });
