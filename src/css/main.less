@@ -36,7 +36,7 @@
 @min-width-xl: 1200px;
 
 @app-container-bottom-margin-xs: 100px;
-@app-container-bottom-margin-m: 140px + @border-size-m;
+@app-container-bottom-margin-m: 100px + @border-size-m;
 
 html {
   font-size: 62.5%;
@@ -885,19 +885,42 @@ html {
             top: 15px;
             right: 0;
             bottom: 0;
+
+            @media (min-width: @min-width-m) {
+              left: 50%;
+            }
           }
 
           &__item {
             width: calc(100% - 24px);
             display: inline-block;
             position: relative;
+            margin-top: 30px;
             background-color: white;
+            vertical-align: top;
             border: 1px solid #dcdcdc;
             color: #000;
             .__console-font;
             font-size: 1.3rem;
             padding: 10px;
-            margin-top: 30px;
+
+            &:nth-child(even) {
+              @media (min-width: @min-width-m) {
+                margin-top: 150px;
+                margin-left: 43px;
+                margin-bottom: -100px;
+              }
+            }
+
+            &:last-child {
+              @media (min-width: @min-width-m) {
+                margin-bottom: 0;
+              }
+            }
+
+            @media (min-width: @min-width-m) {
+              width: calc(50% - 24px);
+            }
 
             &:before {
               content: "";
@@ -913,30 +936,61 @@ html {
             }
 
             &:nth-child(even):before {
-              right: -39px;
+              right: -37px;
+
+              @media (min-width: @min-width-m) {
+                left: -37px;
+              }
             }
 
             &:nth-child(odd):before {
-              right: -39px;
+              right: -37px;
+
+              @media (min-width: @min-width-m) {
+                right: -39px;
+              }
             }
 
             &:after {
               content: "";
               position: absolute;
               top: 15px;
-              right: -6px;
               width: 0;
               height: 0;
+              right: -6px;
               border-top: 6px solid transparent;
               border-bottom: 6px solid transparent;
               border-left: 6px solid #dcdcdc;
+            }
+
+            &:nth-child(even):after {
+              @media (min-width: @min-width-m) {
+                left: -6px;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid transparent;
+                border-right: 6px solid #dcdcdc;
+
+                // Reset style from mobile
+                border-left: none !important;
+              }
+            }
+
+            &:nth-child(odd):after {
+              @media (min-width: @min-width-m) {
+                right: -6px;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid transparent;
+                border-left: 6px solid #dcdcdc;
+              }
             }
           }
 
           // Card specific styles
           &__item_type_legend {
             // Custom Legend card styles
-            margin-top: 0;
+            margin-top: 0 !important;
+            //margin-right: 0!important;
+            //margin-left: 0!important;
 
             &:before {
               background-image: url("../img/timeline-info-icon.svg");
@@ -1235,7 +1289,7 @@ html {
     text-align: center;
 
     @media (min-width: @min-width-m) {
-      bottom: @border-size-m;
+      height: @app-container-bottom-margin-m;
     }
 
     &__text {

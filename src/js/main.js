@@ -122,9 +122,13 @@ async function initTimeline() {
         headers: fetchHeaders,
     };
 
+    // Load json data file and sort object by start date property
     let jsonContent = await fetch('./content/timeline/content.json', fetchInit)
         .then(response => response.text());
-    let timelineData = JSON.parse(jsonContent);
+    let timelineData = JSON.parse(jsonContent).sort(function (d1, d2) {
+        return new Date(d2['start_date']) - new Date(d1['start_date']);
+    });
+
     let parentBlock = document.getElementById('timeline-feed');
 
     // Templates

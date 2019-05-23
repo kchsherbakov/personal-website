@@ -30,13 +30,13 @@
         </ul>
         <ul class="nav__pages __console-font">
             <li class="nav__page-item">
-                <a class="nav__page-link" href="#">About</a>
+                <a class="nav__page-link" href="#about-section">About</a>
             </li>
             <li class="nav__page-item">
-                <a class="nav__page-link" href="#">Experience</a>
+                <a class="nav__page-link" href="#experience-section">Experience</a>
             </li>
             <li class="nav__page-item">
-                <a class="nav__page-link" href="#">Contacts</a>
+                <a class="nav__page-link" href="#contacts-section">Contacts</a>
             </li>
             <li class="nav__hello-button-item">
                 <a href="#">Resume</a>
@@ -191,7 +191,7 @@
         <section class="image-section-parallax">
             <div class="image-section-parallax__bgimage"></div>
         </section>
-        <section class="about">
+        <section id="about-section" class="about">
             <div class="about__padding __padding">
                 <div class="about__heading">
                     <h2 class="about__title __title-font">About</h2>
@@ -228,8 +228,6 @@
                                 CSS
                                 <br>
                                 JS
-                                <br>
-                                React.JS
                             </p>
                         </div>
                         <div class="skills__backend col-12 col-sm-6">
@@ -241,8 +239,6 @@
                                 <br>
                                 Go
                                 <br>
-                                Java
-                                <br>
                                 Php
                             </p>
                         </div>
@@ -251,13 +247,11 @@
                                 Mobile
                             </h3>
                             <p class="skills__text">
-                                Android (Java)
+                                React Native
                                 <br>
                                 iOS (Swift)
                                 <br>
-                                React Native
-                                <br>
-                                Xamarin
+                                Android (Java)
                             </p>
                         </div>
                         <div class="skills__desktop col-12 col-sm-6">
@@ -268,81 +262,35 @@
                                 WPF
                                 <br>
                                 UWP
-                                <br>
-                                Swing
                             </p>
                         </div>
-                        <!--                    <div class="skills__management-and-percs col-12 col-sm-6">-->
-                        <!--                        <h3 class="skills__title skills__title_color_white skills__title_size_m __title-font">-->
-                        <!--                            Management & Percs-->
-                        <!--                        </h3>-->
-                        <!--                        <p class="skills__text">-->
-                        <!--                            Agile-->
-                        <!--                            <br>-->
-                        <!--                            Waterfall-->
-                        <!--                            <br>-->
-                        <!--                            DDD-->
-                        <!--                            <br>-->
-                        <!--                            TDD-->
-                        <!--                        </p>-->
-                        <!--                    </div>-->
+                        <!-- Additional skills
+                        <div class="skills__management-and-percs col-12 col-sm-6">
+                            <h3 class="skills__title skills__title_color_white skills__title_size_m __title-font">
+                                Management & Percs
+                            </h3>
+                            <p class="skills__text">
+                                Agile
+                                <br>
+                                Waterfall
+                                <br>
+                                DDD
+                                <br>
+                                TDD
+                            </p>
+                        </div>
+                        -->
                     </div>
                 </div>
             </div>
         </section>
-        <section class="experience">
+        <section id="experience-section" class="experience">
             <div class="experience__padding __padding">
                 <div class="experience__heading">
                     <h2 class="experience__title __title-font">Experience</h2>
                 </div>
                 <div id="timeline-feed" class="experience__timeline-feed timeline">
-                    <div class="timeline__line"></div>
-                    <!-- Legend card -->
-                    <div class="timeline__item timeline__item_type_legend timeline-item">
-                        <div class="timeline-item__header">
-                            Legend
-                        </div>
-                        <div class="timeline-item__content row">
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-position-icon.svg" alt="Position">
-                                <p class="timeline-item__legend-text">
-                                    Position
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-education-icon.svg" alt="Education">
-                                <p class="timeline-item__legend-text">
-                                    Education
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-opensource-icon.svg" alt="Open source">
-                                <p class="timeline-item__legend-text">
-                                    Open source
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-app-or-feature-icon.svg" alt="App or Feature">
-                                <p class="timeline-item__legend-text">
-                                    App or Feature
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-milestone-icon.svg" alt="Open source">
-                                <p class="timeline-item__legend-text">
-                                    Milestone
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Legend card -->
-
-                    <!-- Timeline card templates -->
+                    <!-- region Timeline card templates -->
                     <!-- Tag template -->
                     <template id="card-tag-template">
                         <span class="timeline-item__tag"></span>
@@ -425,13 +373,56 @@
                         </div>
                     </template>
                     <!-- /Education card -->
-                    <!-- /Timeline card templates -->
+                    <!-- endregion /Timeline card templates -->
 
-                    <!-- Dynamic content will be inserted here -->
+                    <div class="timeline__line"></div>
+                    <div class="timeline__item timeline__item_type_legend timeline-item">
+                        <div class="timeline-item__header">
+                            Legend
+                        </div>
+                        <div class="timeline-item__content row">
+                            <div class="timeline-item__legend-icon col-4">
+                                <img class="timeline-item__legend-icon-image"
+                                     src="./img/timeline-position-icon.svg" alt="Position">
+                                <p class="timeline-item__legend-text">
+                                    Position
+                                </p>
+                            </div>
+                            <div class="timeline-item__legend-icon col-4">
+                                <img class="timeline-item__legend-icon-image"
+                                     src="./img/timeline-education-icon.svg" alt="Education">
+                                <p class="timeline-item__legend-text">
+                                    Education
+                                </p>
+                            </div>
+                            <div class="timeline-item__legend-icon col-4">
+                                <img class="timeline-item__legend-icon-image"
+                                     src="./img/timeline-opensource-icon.svg" alt="Open source">
+                                <p class="timeline-item__legend-text">
+                                    Open source
+                                </p>
+                            </div>
+                            <div class="timeline-item__legend-icon col-4">
+                                <img class="timeline-item__legend-icon-image"
+                                     src="./img/timeline-app-or-feature-icon.svg" alt="App or Feature">
+                                <p class="timeline-item__legend-text">
+                                    App or Feature
+                                </p>
+                            </div>
+                            <div class="timeline-item__legend-icon col-4">
+                                <img class="timeline-item__legend-icon-image"
+                                     src="./img/timeline-milestone-icon.svg" alt="Open source">
+                                <p class="timeline-item__legend-text">
+                                    Milestone
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dynamic content inserted here -->
                 </div>
             </div>
         </section>
-        <section class="contacts">
+        <section id="contacts-section" class="contacts">
             <div class="contacts__padding d-flex flex-column align-content-center __padding">
                 <div class="contacts__heading">
                     <h2 class="contacts__title __title-font">Contacts</h2>
