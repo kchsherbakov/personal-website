@@ -7,6 +7,7 @@ const ENUM_CARD_TYPE_POSITION = 'position';
 const ENUM_CARD_TYPE_EDUCATION = 'education';
 
 const VIEWPORT_WIDTH_MEDIUM = 768;
+const VIEW_PORT_WIDTH_LARGE = 992;
 
 // Global events
 document.getElementById('menu-toggle').addEventListener('click', function () {
@@ -16,9 +17,17 @@ document.getElementById('menu-toggle').addEventListener('click', function () {
 
 let lastScrollYVal = 0;
 let introSectionTransformVal = 0;
+let aboutSectionTransformVal = 0;
+let experienceSectionTransformVal = 0;
 window.addEventListener('scroll', function () {
     let page = document.getElementsByClassName('page-home')[0];
     let helloSectionScrollIcon = document.getElementById('hello-section-scroll-icon');
+
+    let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    let currentScrollYVal = window.scrollY;
+    let scrollYDelta = currentScrollYVal - lastScrollYVal;
+    let scrollStep = 40;
+    lastScrollYVal = currentScrollYVal;
 
     // region Hello section
     if (window.scrollY > 50) {
@@ -29,14 +38,10 @@ window.addEventListener('scroll', function () {
         helloSectionScrollIcon.classList.remove('hello__scroll-text_hidden');
     }
 
-    // Control 'intro' div scroll event
+    // region 'intro' div scroll event
+
     // Tablets and desktops only
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEWPORT_WIDTH_MEDIUM) {
-        let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        let currentScrollYVal = window.scrollY;
-        let scrollYDelta = currentScrollYVal - lastScrollYVal;
-        let scrollStep = 40;
-
         if (scrollYDelta > 0) {
             if (currentScrollYVal > viewportHeight) {
                 if (introSectionTransformVal - scrollYDelta <= -viewportHeight
@@ -54,7 +59,6 @@ window.addEventListener('scroll', function () {
                 introSectionTransformVal += -scrollYDelta;
             }
         }
-        lastScrollYVal = currentScrollYVal;
 
         // TODO: Think about mechanic to animate text independently
         // document.getElementById('hello-section').style.cssText =
@@ -76,7 +80,65 @@ window.addEventListener('scroll', function () {
             greetingsSection.style.setProperty('display', 'flex', 'important');
         }
     }
+
+    // endregion 'intro' div scroll event
+
+    // region 'about' div scroll event
+
+    // Tablets and desktops only
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
+        let aboutSectionOffsetTop = getElementOffsetTop('about-section') - 250;
+        let aboutSectionHeight = document.getElementById('about-section').getBoundingClientRect().height;
+
+        if (scrollYDelta > 0) {
+            if (currentScrollYVal > aboutSectionOffsetTop
+                && currentScrollYVal < (aboutSectionOffsetTop + aboutSectionHeight)) {
+                aboutSectionTransformVal -= scrollYDelta;
+            }
+        } else {
+            if (aboutSectionTransformVal < 0)
+                aboutSectionTransformVal += -scrollYDelta;
+            else
+                aboutSectionTransformVal = 0;
+        }
+
+        document.getElementById('skills-container').style.cssText =
+            `transform: matrix(1, 0, 0, 1, 0, ${aboutSectionTransformVal / 2})`;
+    }
+
+    // endregion
+
+    // region 'experience' div scroll event
+
+    // Tablets and desktops only
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
+        let experienceSectionOffsetTop = getElementOffsetTop('experience-section');
+        let experienceSectionHeight = document.getElementById('experience-section')
+            .getBoundingClientRect().height;
+
+        if (scrollYDelta > 0) {
+            if (currentScrollYVal > experienceSectionOffsetTop
+                && currentScrollYVal < (experienceSectionOffsetTop + experienceSectionHeight)) {
+                experienceSectionTransformVal -= scrollYDelta;
+            }
+        } else {
+            if (experienceSectionTransformVal < 0)
+                experienceSectionTransformVal += -scrollYDelta;
+            else
+                experienceSectionTransformVal = 0;
+        }
+
+        document.getElementById('bg-scroll-text').style.cssText =
+            `transform: rotate(-45deg) translate(${-experienceSectionTransformVal / 8}px, 
+            ${experienceSectionTransformVal / 8}px)`;
+    }
+
+    // endregion
 });
+
+function getElementOffsetTop(elementId) {
+    return window.scrollY + document.getElementById(elementId).getBoundingClientRect().top;
+}
 
 function formatDate(date, type, locale) {
     let dt = new Date(date);

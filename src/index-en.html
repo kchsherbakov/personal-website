@@ -196,11 +196,11 @@
                 <div class="about__heading">
                     <h2 class="about__title __title-font">About</h2>
                 </div>
-                <div class="about__bio">
+                <div id="about-section-bio" class="about__bio">
                     <h2 class="about__pre-phrase __title-font">
                         Something
                         <br>
-                        very <i class="__accent-font"><strong>unique</strong></i>
+                        very <i class="__accent-font">unique</i>
                         <br>
                         about me here.
                     </h2>
@@ -214,14 +214,14 @@
                         having the ability to organize and present complex solutions clearly and accurately.
                     </p>
                 </div>
-                <div class="about__skills skills  __padding">
+                <div id="skills-container" class="about__skills skills  __padding">
                     <div class="skills__pre-phrase __title-font">
                         <h2>
                             Things I
                             <br>
                             know how to do,
                             <br>
-                            <i class="__accent-font"><strong>well</strong></i>.
+                            <i class="__accent-font">well</i>.
                         </h2>
                     </div>
                     <div class="skills__container row">
@@ -296,140 +296,154 @@
                 <div class="experience__heading">
                     <h2 class="experience__title __title-font">Experience</h2>
                 </div>
-                <div id="timeline-feed" class="experience__timeline-feed timeline">
-                    <!-- region Timeline card templates -->
-                    <!-- Tag template -->
-                    <template id="card-tag-template">
-                        <span class="timeline-item__tag"></span>
-                    </template>
-                    <!-- /Tag template -->
+                <div class="experience__container d-xl-flex flex-xl-row">
+                    <div class="experience__bg-scroll-container d-xl-flex flex-xl-column justify-content-center">
+                        <h2 class="experience__pre-phrase __title-font">
+                            Something
+                            <br>
+                            very <i class="__accent-font">unique</i>
+                            <br>
+                            about me here.
+                        </h2>
+                        <div class="experience__bg-scroll d-xl-flex justify-content-center">
+                            <p id="bg-scroll-text" class="__title-font">XP</p>
+                        </div>
+                    </div>
+                    <div id="timeline-feed" class="experience__timeline-feed timeline">
+                        <!-- region Timeline card templates -->
+                        <!-- Tag template -->
+                        <template id="card-tag-template">
+                            <span class="timeline-item__tag"></span>
+                        </template>
+                        <!-- /Tag template -->
 
-                    <!-- Position card -->
-                    <template id="position-card-template">
-                        <div class="timeline__item timeline__item_type_position timeline-item">
-                            <div class="timeline-item__header">
-                                <span class="timeline-item__type-name">{{type}}</span>
-                                <span class="timeline-item__date">{{start_date}} → {{end_date}}</span>
-                                <span class="timeline-item__date-diff">({{date_diff}})</span>
-                            </div>
-                            <div class="timeline-item__content row">
-                                <div class="timeline-item__logo col-3">
-                                    <img src="{{org_logo}}" alt="{{org_logo_alt_name}}">
+                        <!-- Position card -->
+                        <template id="position-card-template">
+                            <div class="timeline__item timeline__item_type_position timeline-item">
+                                <div class="timeline-item__header">
+                                    <span class="timeline-item__type-name">{{type}}</span>
+                                    <span class="timeline-item__date">{{start_date}} → {{end_date}}</span>
+                                    <span class="timeline-item__date-diff">({{date_diff}})</span>
                                 </div>
-                                <div class="timeline-item__text col-9">
-                                    <div class="timeline-item__title">
+                                <div class="timeline-item__content row">
+                                    <div class="timeline-item__logo col-3">
+                                        <img src="{{org_logo}}" alt="{{org_logo_alt_name}}">
+                                    </div>
+                                    <div class="timeline-item__text col-9">
+                                        <div class="timeline-item__title">
                                         <span>
                                             {{title}} at
                                             <a class="timeline-item__text_type_link" href="{{org_link}}">
                                                 {{org_name}}
                                             </a>
                                         </span>
-                                    </div>
-                                    <div class="timeline-item__tags-container"></div>
-                                    <input class="timeline-item__expander" type="checkbox">
-                                    <div class="timeline-item__paragraph">
-                                        <p class="timeline-item__description timeline-item__description_size_full">
-                                            {{description}}
-                                        </p>
-                                        <p class=" timeline-item__description timeline-item__description_size_truncated
+                                        </div>
+                                        <div class="timeline-item__tags-container"></div>
+                                        <input class="timeline-item__expander" type="checkbox">
+                                        <div class="timeline-item__paragraph">
+                                            <p class="timeline-item__description timeline-item__description_size_full">
+                                                {{description}}
+                                            </p>
+                                            <p class=" timeline-item__description timeline-item__description_size_truncated
                                             timeline-item__description_hidden">
-                                            {{description}}
-                                        </p>
+                                                {{description}}
+                                            </p>
+                                        </div>
+                                        <label class="timeline-item__expander-label"
+                                               data-less="Less" data-more="Read more"></label>
                                     </div>
-                                    <label class="timeline-item__expander-label"
-                                           data-less="Less" data-more="Read more"></label>
                                 </div>
                             </div>
-                        </div>
-                    </template>
-                    <!-- /Position card -->
-                    <!-- Education card -->
-                    <template id="education-card-template">
-                        <div class="timeline__item timeline__item_type_education timeline-item">
-                            <div class="timeline-item__header">
-                                <span class="timeline-item__type-name">{{type}}</span>
-                                <span class="timeline-item__date">{{start_date}} → {{end_date}}</span>
-                            </div>
-                            <div class="timeline-item__content row">
-                                <div class="timeline-item__logo col-12">
-                                    <img src="{{org_logo}}" alt="{{org_logo_alt_name}}">
+                        </template>
+                        <!-- /Position card -->
+                        <!-- Education card -->
+                        <template id="education-card-template">
+                            <div class="timeline__item timeline__item_type_education timeline-item">
+                                <div class="timeline-item__header">
+                                    <span class="timeline-item__type-name">{{type}}</span>
+                                    <span class="timeline-item__date">{{start_date}} → {{end_date}}</span>
                                 </div>
-                                <div class="timeline-item__text timeline-item__text_type_ellipsis col-12">
-                                    <div class="timeline-item__title">
+                                <div class="timeline-item__content row">
+                                    <div class="timeline-item__logo col-12">
+                                        <img src="{{org_logo}}" alt="{{org_logo_alt_name}}">
+                                    </div>
+                                    <div class="timeline-item__text timeline-item__text_type_ellipsis col-12">
+                                        <div class="timeline-item__title">
                                         <span>{{title}},
                                             <a class="timeline-item__text_type_link" href="{{org_link}}">
                                                 {{org_name}}
                                             </a>
                                         </span>
-                                    </div>
-                                    <div class="timeline-item__tags-container"></div>
-                                    <input class="timeline-item__expander" type="checkbox">
-                                    <div class="timeline-item__paragraph">
-                                        <p class="timeline-item__description timeline-item__description_size_full
+                                        </div>
+                                        <div class="timeline-item__tags-container"></div>
+                                        <input class="timeline-item__expander" type="checkbox">
+                                        <div class="timeline-item__paragraph">
+                                            <p class="timeline-item__description timeline-item__description_size_full
                                             timeline-item__description_hidden">
-                                            {{description}}
-                                        </p>
-                                        <p class=" timeline-item__description timeline-item__description_size_truncated">
-                                            {{description}}
-                                        </p>
+                                                {{description}}
+                                            </p>
+                                            <p class=" timeline-item__description timeline-item__description_size_truncated">
+                                                {{description}}
+                                            </p>
+                                        </div>
+                                        <label class="timeline-item__expander-label"
+                                               data-less="Less" data-more="Read more"></label>
                                     </div>
-                                    <label class="timeline-item__expander-label"
-                                           data-less="Less" data-more="Read more"></label>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- /Education card -->
+                        <!-- endregion /Timeline card templates -->
+
+                        <div class="timeline__line"></div>
+                        <div class="timeline__item timeline__item_type_legend timeline-item">
+                            <div class="timeline-item__header">
+                                Legend
+                            </div>
+                            <div class="timeline-item__content row">
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-position-icon.svg" alt="Position">
+                                    <p class="timeline-item__legend-text">
+                                        Position
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-education-icon.svg" alt="Education">
+                                    <p class="timeline-item__legend-text">
+                                        Education
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-opensource-icon.svg" alt="Open source">
+                                    <p class="timeline-item__legend-text">
+                                        Open source
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-app-or-feature-icon.svg" alt="App or Feature">
+                                    <p class="timeline-item__legend-text">
+                                        App or Feature
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-milestone-icon.svg" alt="Open source">
+                                    <p class="timeline-item__legend-text">
+                                        Milestone
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </template>
-                    <!-- /Education card -->
-                    <!-- endregion /Timeline card templates -->
-
-                    <div class="timeline__line"></div>
-                    <div class="timeline__item timeline__item_type_legend timeline-item">
-                        <div class="timeline-item__header">
-                            Legend
-                        </div>
-                        <div class="timeline-item__content row">
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-position-icon.svg" alt="Position">
-                                <p class="timeline-item__legend-text">
-                                    Position
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-education-icon.svg" alt="Education">
-                                <p class="timeline-item__legend-text">
-                                    Education
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-opensource-icon.svg" alt="Open source">
-                                <p class="timeline-item__legend-text">
-                                    Open source
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-app-or-feature-icon.svg" alt="App or Feature">
-                                <p class="timeline-item__legend-text">
-                                    App or Feature
-                                </p>
-                            </div>
-                            <div class="timeline-item__legend-icon col-4">
-                                <img class="timeline-item__legend-icon-image"
-                                     src="./img/timeline-milestone-icon.svg" alt="Open source">
-                                <p class="timeline-item__legend-text">
-                                    Milestone
-                                </p>
-                            </div>
-                        </div>
+                        <!-- Dynamic content inserted here -->
                     </div>
-                    <!-- Dynamic content inserted here -->
                 </div>
             </div>
         </section>
-        <section id="contacts-section" class="contacts">
+        <section id="contacts-section" class="contacts d-flex flex-column justify-content-center">
             <div class="contacts__padding __padding">
                 <div class="contacts__heading">
                     <h2 class="contacts__title __title-font">Contacts</h2>

@@ -25,16 +25,15 @@
 @border-size-m: 40px;
 @border-size-l: 60px;
 
-@top-bottom-margin-xs: 40px;
-@left-right-margin-xs: 30px;
-@top-bottom-margin-m: 60px;
-@left-right-margin-m: 10vw;
-@top-bottom-margin-l: 10vw;
-@left-right-margin-l: 15vh;
-@top-bottom-margin-xl: 20vh;
-@right-margin-xl: 165px;
-@left-margin-xl: 20%;
-
+@top-bottom-padding-xs: 40px;
+@left-right-padding-xs: 30px;
+@top-bottom-padding-m: 8vh;
+@left-right-padding-m: 10vw;
+@top-bottom-padding-l: 10vh;
+@left-right-padding-l: 15vw;
+@top-bottom-padding-xl: 20vh;
+@right-padding-xl: 165px;
+@left-padding-xl: 20%;
 
 @min-width-s: 578px;
 @min-width-m: 768px;
@@ -130,7 +129,7 @@ html {
         position: absolute;
         z-index: 20;
         top: 28px;
-        left: @left-right-margin-xs;
+        left: @left-right-padding-xs;
         text-decoration: none;
         outline: none;
         align-content: center;
@@ -388,7 +387,7 @@ html {
     &__container {
       position: relative;
       // Full width minus size of the menu button, minus left-right to visually center menu button
-      width: calc(100% - 45px - @left-right-margin-xs * 2);
+      width: calc(100% - 45px - @left-right-padding-xs * 2);
       height: 100%;
       background-color: #fff;
       z-index: 501;
@@ -396,7 +395,7 @@ html {
       transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
 
       @media (min-width: @min-width-m) {
-        width: calc(100% - 45px - @left-right-margin-m * 2);
+        width: calc(100% - 45px - @left-right-padding-m * 2);
       }
     }
 
@@ -476,7 +475,7 @@ html {
     &__contacts {
       position: absolute;
       text-align: left;
-      bottom: @top-bottom-margin-xs;
+      bottom: @top-bottom-padding-xs;
     }
 
     &__contacts-text {
@@ -767,12 +766,12 @@ html {
         &__title {
           text-transform: uppercase;
           color: @accent-color;
-          font-size: 1.6rem;
+          font-size: 4rem;
           font-weight: bold;
           margin: 0;
 
           @media (min-width: @min-width-m) {
-            font-size: 2rem;
+            font-size: 5rem;
           }
 
           &:before {
@@ -781,21 +780,27 @@ html {
             counter-increment: app-section-counter;
             content: "0" counter(app-section-counter) ".";
             color: @accent-color;
-            font-size: 1.4rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 0;
 
             @media (min-width: @min-width-m) {
-              font-size: 1.8rem;
+              font-size: 2.5rem;
             }
           }
         }
 
         &__bio {
-          padding-bottom: @top-bottom-margin-xs;
+          padding-bottom: @top-bottom-padding-xs;
 
           @media (min-width: @min-width-m) {
-            padding-bottom: @top-bottom-margin-m;
+            padding-bottom: @top-bottom-padding-m;
+          }
+
+          @media (min-width: @min-width-l) {
+            float: left;
+            width: 45%;
+            padding-right: 80px;
           }
         }
 
@@ -804,7 +809,11 @@ html {
           font-size: 1.8rem;
 
           @media (min-width: @min-width-m) {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
+          }
+
+          i {
+            font-weight: 300;
           }
         }
 
@@ -814,23 +823,29 @@ html {
         }
 
         &__skills {
-          margin-left: -@left-right-margin-xs;
-          margin-right: -@left-right-margin-xs;
+          margin-left: -@left-right-padding-xs;
+          margin-right: -@left-right-padding-xs;
           background-color: #1c1b20;
 
           @media (min-width: @min-width-m) {
-            margin-left: -@left-right-margin-m;
-            margin-right: -@left-right-margin-m;
+            margin-left: -@left-right-padding-m;
+            margin-right: -@left-right-padding-m;
+          }
+
+          @media (min-width: @min-width-l) {
+            margin-top: 250px;
+            margin-left: 45%;
+            margin-right: -@left-right-padding-l;
           }
         }
 
         .skills {
           &__pre-phrase {
             color: white;
-            padding-bottom: @top-bottom-margin-xs;
+            padding-bottom: @top-bottom-padding-xs;
 
             @media (min-width: @min-width-m) {
-              padding-bottom: @top-bottom-margin-m;
+              padding-bottom: @top-bottom-padding-m;
             }
 
             h2 {
@@ -838,8 +853,12 @@ html {
               font-size: 1.8rem;
 
               @media (min-width: @min-width-m) {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
               }
+            }
+
+            i {
+              font-weight: 300;
             }
           }
 
@@ -908,7 +927,7 @@ html {
 
       .experience {
         &__padding {
-          // Custom padding here
+          padding-top: 0 !important;
         }
 
         &__heading {
@@ -918,12 +937,12 @@ html {
         &__title {
           text-transform: uppercase;
           color: @accent-color;
-          font-size: 1.6rem;
+          font-size: 4rem;
           font-weight: bold;
           margin: 0;
 
           @media (min-width: @min-width-m) {
-            font-size: 2rem;
+            font-size: 5rem;
           }
 
           &:before {
@@ -932,23 +951,67 @@ html {
             counter-increment: app-section-counter;
             content: "0" counter(app-section-counter) ".";
             color: @accent-color;
-            font-size: 1.4rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 0;
 
             @media (min-width: @min-width-m) {
-              font-size: 1.8rem;
+              font-size: 2.5rem;
             }
+          }
+        }
+
+        &__container {
+          height: 100%;
+        }
+
+        &__bg-scroll-container {
+          display: none;
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 45%;
+          padding-right: 80px;
+        }
+
+        &__pre-phrase {
+          padding: 40px 0;
+          font-size: 1.8rem;
+
+          @media (min-width: @min-width-m) {
+            font-size: 2.8rem;
+          }
+
+          i {
+            font-weight: 300;
+          }
+        }
+
+        &__bg-scroll {
+          height: 300px;
+          background-color: #9acced;
+          overflow: hidden;
+          // TODO: Check padding here
+          margin-left: calc(-@left-right-padding-l + @border-size-l);
+
+          p {
+            margin: 0;
+            color: #fff;
+            font-size: 30rem;
+            //transform: rotate(-45deg);
           }
         }
 
         &__timeline-feed {
           max-width: 100%;
           position: relative;
-          margin-top: @top-bottom-margin-xs;
+          margin-top: @top-bottom-padding-xs;
 
           @media (min-width: @min-width-m) {
-            margin-top: @top-bottom-margin-m;
+            margin-top: @top-bottom-padding-m;
+          }
+
+          @media (min-width: @min-width-xl) {
+            //margin-left: 45%;
           }
         }
 
@@ -994,6 +1057,7 @@ html {
             }
 
             @media (min-width: @min-width-m) {
+              padding: 20px;
               width: calc(50% - 24px);
             }
 
@@ -1271,13 +1335,18 @@ html {
       }
 
       .contacts {
-        height: auto;
+        height: calc(100vh - @app-container-bottom-margin-xs);
+
+        @media (min-width: @min-width-m) {
+          height: calc(100vh - @app-container-bottom-margin-m - @border-size-m);
+        }
+
+        @media (min-width: @min-width-l) {
+          height: calc(100vh - @app-container-bottom-margin-m - @border-size-l);
+        }
 
         &__padding {
           // Custom padding here
-          @media (min-width: @min-width-m) {
-            padding-top: 0 !important;
-          }
         }
 
         &__heading {
@@ -1289,12 +1358,12 @@ html {
           display: inline-block;
           text-transform: uppercase;
           color: @accent-color;
-          font-size: 1.6rem;
+          font-size: 4rem;
           font-weight: bold;
           margin: 0;
 
           @media (min-width: @min-width-m) {
-            font-size: 2rem;
+            font-size: 5rem;
           }
 
           &:before {
@@ -1302,19 +1371,19 @@ html {
             counter-increment: app-section-counter;
             content: "0" counter(app-section-counter) ".";
             color: @accent-color;
-            font-size: 1.4rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 0;
 
             @media (min-width: @min-width-m) {
-              font-size: 1.8rem;
+              font-size: 2.5rem;
             }
           }
         }
 
         &__content {
           text-align: center;
-          margin-bottom: @top-bottom-margin-xs;
+          margin-bottom: @top-bottom-padding-xs;
 
           @media (min-width: @min-width-m) {
             margin-left: auto;
@@ -1324,7 +1393,7 @@ html {
         }
 
         &__hello-text {
-          margin-top: @top-bottom-margin-m;
+          margin-top: @top-bottom-padding-m;
           text-transform: capitalize;
           font-size: 3rem;
         }
@@ -1384,11 +1453,19 @@ html {
 .__padding {
   position: relative;
   z-index: 10;
-  padding: @top-bottom-margin-xs @left-right-margin-xs;
+  padding: @top-bottom-padding-xs @left-right-padding-xs;
 
   @media (min-width: @min-width-m) {
-    padding: @top-bottom-margin-m @left-right-margin-m;
+    padding: @top-bottom-padding-m @left-right-padding-m;
   }
+
+  @media (min-width: @min-width-l) {
+    padding: @top-bottom-padding-l @left-right-padding-l;
+  }
+
+  //@media (min-width: @min-width-xl) {
+  //  padding: @top-bottom-padding-xl @right-padding-xl @top-bottom-padding-xl @left-padding-xl;
+  //}
 }
 
 .__hidden {
