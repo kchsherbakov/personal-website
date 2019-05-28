@@ -135,21 +135,35 @@ window.addEventListener('scroll', function () {
 
     // Tablets and desktops only
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
-        let experienceSectionOffsetTop = getElementOffsetTop('experience-section');
-        let experienceSectionHeight = document.getElementById('experience-section')
+        let experienceContainerOffsetTop = getElementOffsetTop('experience__container');
+        let experienceContainerHeight = document.getElementsByClassName('experience__container')[0]
             .getBoundingClientRect().height;
 
+        let prephraseHeight = document.getElementById('experience-pre-phrase').getBoundingClientRect().height;
+        let bgScrollDivHeight = document.getElementById('experience-bg-scroll').getBoundingClientRect().height;
+        let timelineFeedTopMargin = viewportHeight * 0.08;
+
         if (scrollYDelta > 0) {
-            if (currentScrollYVal > experienceSectionOffsetTop
-                && currentScrollYVal < (experienceSectionOffsetTop + experienceSectionHeight)) {
+            let topAnchor = experienceContainerOffsetTop + experienceContainerHeight - prephraseHeight
+                - bgScrollDivHeight - 46.480;
+            if (currentScrollYVal > experienceContainerOffsetTop && currentScrollYVal < topAnchor) {
                 experienceSectionTransformVal -= scrollYDelta;
             }
         } else {
-            if (experienceSectionTransformVal < 0)
-                experienceSectionTransformVal += -scrollYDelta;
-            else
-                experienceSectionTransformVal = 0;
+            let bottomAnchor = experienceContainerOffsetTop + experienceContainerHeight - prephraseHeight
+                - bgScrollDivHeight - 100;
+            if (currentScrollYVal < bottomAnchor) {
+                if (experienceSectionTransformVal < 0)
+                    experienceSectionTransformVal += -scrollYDelta;
+                else
+                    experienceSectionTransformVal = 0;
+            }
         }
+
+        document.getElementById('experience-pre-phrase').style.cssText =
+            `transform: translate(0, ${-experienceSectionTransformVal}px`;
+        document.getElementById('experience-bg-scroll').style.cssText =
+            `transform: translate(0, ${-experienceSectionTransformVal}px`;
 
         document.getElementById('bg-scroll-text').style.cssText =
             `transform: rotate(-45deg) translate(${-experienceSectionTransformVal / 8}px, 

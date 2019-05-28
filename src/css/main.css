@@ -1193,12 +1193,12 @@ html body {
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .contacts {
-    height: calc(100vh - 140px - 40px);
+      height: calc(100vh - 140px);
   }
 }
 @media (min-width: 992px) {
   .page-home .app .app__container .contacts {
-    height: calc(100vh - 160px - 60px);
+      height: calc(100vh - 160px);
   }
 }
 .page-home .app .app__container .contacts__heading {
