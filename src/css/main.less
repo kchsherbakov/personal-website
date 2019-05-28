@@ -42,6 +42,7 @@
 
 @app-container-bottom-margin-xs: 100px;
 @app-container-bottom-margin-m: 100px + @border-size-m;
+@app-container-bottom-margin-l: 100px + @border-size-l;
 
 html {
   font-size: 62.5%;
@@ -101,6 +102,7 @@ html {
   }
 
   .greetings {
+    transition: opacity 500ms ease-in 500ms !important;
     opacity: 1 !important;
   }
 }
@@ -116,9 +118,13 @@ html {
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
 
-  //@media (min-width: @min-width-m) {
-  //  font-size: 1.4rem;
-  //}
+  @media (min-width: @min-width-m) {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: @min-width-l) {
+    font-size: 1.5rem;
+  }
 
   .header {
     .nav {
@@ -492,6 +498,31 @@ html {
 
   // region Borders
 
+  .scroll-to-top {
+    position: fixed;
+    cursor: pointer;
+    z-index: 110;
+    transform: rotate(90deg);
+    bottom: -100px;
+    right: @border-size-m + 20px;
+    transition: bottom 300ms ease-in-out 0ms;
+
+    @media (min-width: @min-width-l) {
+      right: @border-size-l + 10px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      outline: none;
+
+      span {
+        font-size: 1rem;
+        font-weight: 900;
+      }
+    }
+  }
+
   .borders {
     & > * {
       position: fixed;
@@ -583,6 +614,10 @@ html {
         margin-bottom: @app-container-bottom-margin-m;
       }
 
+      @media (min-width: @min-width-l) {
+        margin-bottom: @app-container-bottom-margin-l;
+      }
+
       .intro {
         z-index: 0;
         pointer-events: none;
@@ -662,16 +697,12 @@ html {
           &__scroll-text_hidden {
             opacity: 0;
           }
-
-          &__scroll-icon {
-            color: white;
-          }
         }
 
         .greetings {
           opacity: 0;
           font-size: 1.4rem;
-          transition: opacity 500ms ease-in-out 500ms;
+          transition: opacity 500ms ease-out 0ms;
           background-color: @accent-color;
 
           @media (min-width: @min-width-m) {
@@ -686,13 +717,17 @@ html {
 
           &__padding {
             @media (min-width: @min-width-m) {
+              padding-right: 0 !important;
               max-width: 60%;
+            }
+
+            @media (min-width: @min-width-xl) {
+              max-width: 90%;
             }
           }
 
           &__text {
             margin: 0;
-            line-height: 1.2;
             color: white;
 
             @media (min-width: @min-width-m) {
@@ -720,7 +755,12 @@ html {
             font-size: 2rem;
 
             @media (min-width: @min-width-m) {
+              line-height: 1.0 !important;
               font-size: 3em;
+            }
+
+            @media (min-width: @min-width-xl) {
+              font-size: 5em;
             }
           }
         }
@@ -820,6 +860,7 @@ html {
         &__text {
           color: #606060;
           font-size: 1.6rem;
+          line-height: 1.4;
         }
 
         &__skills {
@@ -836,6 +877,14 @@ html {
             margin-top: 250px;
             margin-left: 45%;
             margin-right: -@left-right-padding-l;
+          }
+        }
+
+        &__skills-padding {
+          padding: @top-bottom-padding-xs @left-right-padding-xs;
+
+          @media (min-width: @min-width-m) {
+            padding: @top-bottom-padding-m @left-right-padding-m;
           }
         }
 
@@ -927,7 +976,9 @@ html {
 
       .experience {
         &__padding {
-          padding-top: 0 !important;
+          @media (min-width: @min-width-l) {
+            padding-top: 0 !important;
+          }
         }
 
         &__heading {
@@ -1275,6 +1326,7 @@ html {
             &__description {
               margin-top: 10px;
               margin-bottom: 0;
+              line-height: 1.4;
             }
 
             &__description_size_truncated {
@@ -1285,9 +1337,9 @@ html {
                 content: "";
                 text-align: right;
                 position: absolute;
-                bottom: 0;
+                bottom: 25px;
                 right: 0;
-                width: 78%;
+                width: 75%;
                 height: 1.5em;
                 background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
               }
@@ -1342,7 +1394,7 @@ html {
         }
 
         @media (min-width: @min-width-l) {
-          height: calc(100vh - @app-container-bottom-margin-m - @border-size-l);
+          height: calc(100vh - @app-container-bottom-margin-l - @border-size-l);
         }
 
         &__padding {
@@ -1390,19 +1442,31 @@ html {
             margin-right: auto;
             max-width: 70%;
           }
+
+          @media (min-width: @min-width-l) {
+            max-width: 50%;
+          }
         }
 
         &__hello-text {
-          margin-top: @top-bottom-padding-m;
+          margin-top: @top-bottom-padding-xs;
           text-transform: capitalize;
           font-size: 3rem;
+
+          @media (min-width: @min-width-m) {
+            margin-top: @top-bottom-padding-m;
+            font-size: 3.5rem;
+          }
+
+          @media (min-width: @min-width-l) {
+            margin-top: @top-bottom-padding-l;
+            font-size: 4rem;
+          }
         }
 
         &__text {
           color: #606060;
           line-height: 1.5;
-          //margin-top: 30px;
-          font-size: 1.4rem;
           margin-bottom: 50px;
         }
 
@@ -1438,9 +1502,18 @@ html {
       height: @app-container-bottom-margin-m;
     }
 
+    @media (min-width: @min-width-l) {
+      height: @app-container-bottom-margin-l;
+    }
+
     &__text {
       margin: 0 0 10px 0;
       font-size: 1rem;
+
+      @media (min-width: @min-width-l) {
+        //max-width: 50%;
+        font-size: 1.3rem;
+      }
     }
 
     &__link {

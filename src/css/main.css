@@ -55,6 +55,7 @@ html body {
   transform: translateX(100%) !important;
 }
 .hello_visible .greetings {
+  transition: opacity 500ms ease-in 500ms !important;
   opacity: 1 !important;
 }
 .page-home {
@@ -65,6 +66,16 @@ html body {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
+}
+@media (min-width: 768px) {
+  .page-home {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 992px) {
+  .page-home {
+    font-size: 1.5rem;
+  }
 }
 .page-home .header .nav {
   height: auto;
@@ -398,6 +409,29 @@ html body {
 .page-home .menu__contacts-link {
   color: #1e7fc6;
 }
+.page-home .scroll-to-top {
+  position: fixed;
+  cursor: pointer;
+  z-index: 110;
+  transform: rotate(90deg);
+  bottom: -100px;
+  right: 60px;
+  transition: bottom 300ms ease-in-out 0ms;
+}
+@media (min-width: 992px) {
+  .page-home .scroll-to-top {
+    right: 70px;
+  }
+}
+.page-home .scroll-to-top a {
+  color: #000;
+  text-decoration: none;
+  outline: none;
+}
+.page-home .scroll-to-top a span {
+  font-size: 1rem;
+  font-weight: 900;
+}
 .page-home .borders > * {
   position: fixed;
   z-index: 100;
@@ -489,6 +523,11 @@ html body {
     margin-bottom: 140px;
   }
 }
+@media (min-width: 992px) {
+  .page-home .app .app__container {
+    margin-bottom: 160px;
+  }
+}
 .page-home .app .app__container .intro {
   z-index: 0;
   pointer-events: none;
@@ -561,13 +600,10 @@ html body {
 .page-home .app .app__container .intro .hello__scroll-text_hidden {
   opacity: 0;
 }
-.page-home .app .app__container .intro .hello__scroll-icon {
-  color: white;
-}
 .page-home .app .app__container .intro .greetings {
   opacity: 0;
   font-size: 1.4rem;
-  transition: opacity 500ms ease-in-out 500ms;
+  transition: opacity 500ms ease-out 0ms;
   background-color: #1e7fc6;
 }
 @media (min-width: 768px) {
@@ -583,12 +619,17 @@ html body {
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .intro .greetings__padding {
+    padding-right: 0 !important;
     max-width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .page-home .app .app__container .intro .greetings__padding {
+    max-width: 90%;
   }
 }
 .page-home .app .app__container .intro .greetings__text {
   margin: 0;
-  line-height: 1.2;
   color: white;
 }
 @media (min-width: 768px) {
@@ -613,7 +654,13 @@ html body {
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .intro .greetings__text_size_l {
+    line-height: 1 !important;
     font-size: 3em;
+  }
+}
+@media (min-width: 1200px) {
+  .page-home .app .app__container .intro .greetings__text_size_l {
+    font-size: 5em;
   }
 }
 @media (min-width: 768px) {
@@ -705,6 +752,7 @@ html body {
 .page-home .app .app__container .about__text {
   color: #606060;
   font-size: 1.6rem;
+  line-height: 1.4;
 }
 .page-home .app .app__container .about__skills {
   margin-left: -30px;
@@ -722,6 +770,14 @@ html body {
     margin-top: 250px;
     margin-left: 45%;
     margin-right: -15vw;
+  }
+}
+.page-home .app .app__container .about__skills-padding {
+  padding: 40px 30px;
+}
+@media (min-width: 768px) {
+  .page-home .app .app__container .about__skills-padding {
+    padding: 8vh 10vw;
   }
 }
 .page-home .app .app__container .about .skills__pre-phrase {
@@ -797,8 +853,10 @@ html body {
   color: #dcdcdc;
   line-height: 2;
 }
-.page-home .app .app__container .experience__padding {
-  padding-top: 0 !important;
+@media (min-width: 992px) {
+  .page-home .app .app__container .experience__padding {
+    padding-top: 0 !important;
+  }
 }
 .page-home .app .app__container .experience__heading {
   margin-bottom: 10px;
@@ -1078,6 +1136,7 @@ html body {
 .page-home .app .app__container .experience .timeline .timeline-item__description {
   margin-top: 10px;
   margin-bottom: 0;
+  line-height: 1.4;
 }
 .page-home .app .app__container .experience .timeline .timeline-item__description_size_truncated {
   max-height: 108px;
@@ -1087,9 +1146,9 @@ html body {
   content: "";
   text-align: right;
   position: absolute;
-  bottom: 0;
+  bottom: 25px;
   right: 0;
-  width: 78%;
+  width: 75%;
   height: 1.5em;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%);
 }
@@ -1129,7 +1188,7 @@ html body {
 }
 @media (min-width: 992px) {
   .page-home .app .app__container .contacts {
-    height: calc(100vh - 140px - 60px);
+    height: calc(100vh - 160px - 60px);
   }
 }
 .page-home .app .app__container .contacts__heading {
@@ -1174,15 +1233,31 @@ html body {
     max-width: 70%;
   }
 }
+@media (min-width: 992px) {
+  .page-home .app .app__container .contacts__content {
+    max-width: 50%;
+  }
+}
 .page-home .app .app__container .contacts__hello-text {
-  margin-top: 8vh;
+  margin-top: 40px;
   text-transform: capitalize;
   font-size: 3rem;
+}
+@media (min-width: 768px) {
+  .page-home .app .app__container .contacts__hello-text {
+    margin-top: 8vh;
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .page-home .app .app__container .contacts__hello-text {
+    margin-top: 10vh;
+    font-size: 4rem;
+  }
 }
 .page-home .app .app__container .contacts__text {
   color: #606060;
   line-height: 1.5;
-  font-size: 1.4rem;
   margin-bottom: 50px;
 }
 .page-home .app .app__container .contacts__say-hello-button {
@@ -1213,9 +1288,19 @@ html body {
     height: 140px;
   }
 }
+@media (min-width: 992px) {
+  .page-home .footer {
+    height: 160px;
+  }
+}
 .page-home .footer__text {
   margin: 0 0 10px 0;
   font-size: 1rem;
+}
+@media (min-width: 992px) {
+  .page-home .footer__text {
+    font-size: 1.3rem;
+  }
 }
 .page-home .footer__link {
   color: #1e7fc6;

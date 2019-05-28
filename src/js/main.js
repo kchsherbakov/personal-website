@@ -15,6 +15,26 @@ document.getElementById('menu-toggle').addEventListener('click', function () {
     page.classList.toggle('menu_open');
 });
 
+document.getElementsByClassName('menu__nav')[0].addEventListener('click', function () {
+    let page = document.getElementsByClassName('page-home')[0];
+    page.classList.remove('menu_open');
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        let topBorderHeight = document.getElementsByClassName('borders__top')[0];
+        let scrollTopVal = window.scrollY + document.querySelector(this.getAttribute('href'))
+            .getBoundingClientRect().top - topBorderHeight.getBoundingClientRect().height;
+        window.scrollTo({
+            top: scrollTopVal,
+            left: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
 let lastScrollYVal = 0;
 let introSectionTransformVal = 0;
 let aboutSectionTransformVal = 0;
@@ -38,7 +58,9 @@ window.addEventListener('scroll', function () {
         helloSectionScrollIcon.classList.remove('hello__scroll-text_hidden');
     }
 
-    // region 'intro' div scroll event
+    // endregion
+
+    // region Intro section scroll event
 
     // Tablets and desktops only
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEWPORT_WIDTH_MEDIUM) {
@@ -60,11 +82,10 @@ window.addEventListener('scroll', function () {
             }
         }
 
-        // TODO: Think about mechanic to animate text independently
         // document.getElementById('hello-section').style.cssText =
-        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 4})`;
+        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 12})`;
         // document.getElementById('greetings-section').style.cssText =
-        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 4})`;
+        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 12})`;
         document.getElementById('scroller').style.cssText =
             `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal})`;
 
@@ -81,9 +102,9 @@ window.addEventListener('scroll', function () {
         }
     }
 
-    // endregion 'intro' div scroll event
+    // endregion Intro section scroll event
 
-    // region 'about' div scroll event
+    // region About scroll event
 
     // Tablets and desktops only
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
@@ -106,9 +127,9 @@ window.addEventListener('scroll', function () {
             `transform: matrix(1, 0, 0, 1, 0, ${aboutSectionTransformVal / 2})`;
     }
 
-    // endregion
+    // endregion About scroll event
 
-    // region 'experience' div scroll event
+    // region Experience section scroll event
 
     // Tablets and desktops only
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
@@ -133,7 +154,7 @@ window.addEventListener('scroll', function () {
             ${experienceSectionTransformVal / 8}px)`;
     }
 
-    // endregion
+    // endregion Experience section scroll event
 });
 
 function getElementOffsetTop(elementId) {
