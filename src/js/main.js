@@ -5,6 +5,7 @@ const ENUM_DATE_TYPE_MONTH_AND_YEAR = 2;
 
 const ENUM_CARD_TYPE_POSITION = 'position';
 const ENUM_CARD_TYPE_EDUCATION = 'education';
+const ENUM_CARD_TYPE_MILESTONE = 'milestone';
 
 const VIEWPORT_WIDTH_MEDIUM = 768;
 const VIEW_PORT_WIDTH_LARGE = 992;
@@ -50,6 +51,7 @@ window.addEventListener('scroll', function () {
     lastScrollYVal = currentScrollYVal;
 
     // region Hello section
+
     if (window.scrollY > 50) {
         page.classList.add('hello_visible');
         helloSectionScrollIcon.classList.add('hello__scroll-text_hidden');
@@ -155,6 +157,17 @@ window.addEventListener('scroll', function () {
     }
 
     // endregion Experience section scroll event
+
+    // region Scroll-to-Top button
+
+    if (window.scrollY > viewportHeight)
+        document.getElementById('scroll-to-top-icon').style.bottom =
+            `${document.getElementsByClassName('borders__top')[0].getBoundingClientRect().height - 10}px`;
+    else
+        document.getElementById('scroll-to-top-icon').style.bottom = '-100px';
+
+    // endregion Scroll-to-Top button
+
 });
 
 function getElementOffsetTop(elementId) {
@@ -218,6 +231,7 @@ async function initTimeline() {
     let cardTagTemplate = document.getElementById('card-tag-template');
     let positionCardTemplate = document.getElementById('position-card-template');
     let educationCardTemplate = document.getElementById('education-card-template');
+    let milestoneCardTemplate = document.getElementById('milestone-card-template');
 
     for (let i = 0; i < timelineData.length; i++) {
         let cardTemplateContent;
@@ -225,10 +239,13 @@ async function initTimeline() {
 
         if (d['type'] === ENUM_CARD_TYPE_POSITION) {
             cardTemplateContent = document.importNode(positionCardTemplate.content, true)
-                .querySelector(('div.timeline__item'));
+                .querySelector('div.timeline__item');
         } else if (d['type'] === ENUM_CARD_TYPE_EDUCATION) {
             cardTemplateContent = document.importNode(educationCardTemplate.content, true)
-                .querySelector(('div.timeline__item'));
+                .querySelector('div.timeline__item');
+        } else if (d['type'] === ENUM_CARD_TYPE_MILESTONE) {
+            cardTemplateContent = document.importNode(milestoneCardTemplate.content, true)
+                .querySelector('div.timeline__item');
         }
 
         // Preformatting
@@ -262,11 +279,15 @@ async function initTimeline() {
                 formatDate(d['end_date'], d['date_show_type'], 'en-en'))
             .replace(/{{date_diff}}/g, d['date_diff'])
             .replace(/{{title}}/g, d['title'])
-            .replace(/{{org_logo}}/g, IMAGE_PATH_PREFIX + d['org_logo'])
+            // Organization logo will be set later
             .replace(/{{org_logo_alt_name}}/g, d['org_logo_alt_name'])
             .replace(/{{org_name}}/g, d['org_name'])
             .replace(/{{org_link}}/g, d['org_link'])
             .replace(/{{description}}/g, d['description']);
+
+        // Replace image placeholder with organization logo
+        cardTemplateContent.querySelector('div.timeline__item div.timeline-item__logo img')
+            .setAttribute('src', IMAGE_PATH_PREFIX + d['org_logo']);
 
         // Assign ID
         let idValue = `timeline-item-${i}`;

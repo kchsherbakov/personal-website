@@ -44,6 +44,11 @@
 @app-container-bottom-margin-m: 100px + @border-size-m;
 @app-container-bottom-margin-l: 100px + @border-size-l;
 
+@font-face {
+  font-family: Gilroy;
+  src: url("../fonts/gilroy/Gilroy-ExtraBold.otf");
+}
+
 html {
   font-size: 62.5%;
   font-family: Roboto, sans-serif;
@@ -450,6 +455,10 @@ html {
           color: @accent-color;
         }
       }
+
+      &__link_type_mail {
+        color: @accent-color;
+      }
     }
 
     &__socials {
@@ -496,7 +505,7 @@ html {
 
   //endregion Menu
 
-  // region Borders
+  // region Scroll-to-Top button
 
   .scroll-to-top {
     position: fixed;
@@ -518,10 +527,14 @@ html {
 
       span {
         font-size: 1rem;
-        font-weight: 900;
+        font-weight: bold;
       }
     }
   }
+
+  // endregion Scroll-to-Top button
+
+  // region Borders
 
   .borders {
     & > * {
@@ -1093,7 +1106,7 @@ html {
             font-size: 1.3rem;
             padding: 10px;
 
-            &:nth-child(even) {
+            &:nth-child(odd) {
               @media (min-width: @min-width-m) {
                 margin-top: 150px;
                 margin-left: 43px;
@@ -1125,7 +1138,7 @@ html {
               background-position: center;
             }
 
-            &:nth-child(even):before {
+            &:nth-child(odd):before {
               right: -37px;
 
               @media (min-width: @min-width-m) {
@@ -1133,7 +1146,7 @@ html {
               }
             }
 
-            &:nth-child(odd):before {
+            &:nth-child(even):before {
               right: -37px;
 
               @media (min-width: @min-width-m) {
@@ -1153,7 +1166,7 @@ html {
               border-left: 6px solid #dcdcdc;
             }
 
-            &:nth-child(even):after {
+            &:nth-child(odd):after {
               @media (min-width: @min-width-m) {
                 left: -6px;
                 border-top: 6px solid transparent;
@@ -1165,7 +1178,7 @@ html {
               }
             }
 
-            &:nth-child(odd):after {
+            &:nth-child(even):after {
               @media (min-width: @min-width-m) {
                 right: -6px;
                 border-top: 6px solid transparent;
@@ -1177,10 +1190,7 @@ html {
 
           // Card specific styles
           &__item_type_legend {
-            // Custom Legend card styles
             margin-top: 0 !important;
-            //margin-right: 0!important;
-            //margin-left: 0!important;
 
             &:before {
               background-image: url("../img/timeline-info-icon.svg");
@@ -1188,14 +1198,12 @@ html {
           }
 
           &__item_type_position {
-            // Custom Position card styles
             &:before {
               background-image: url("../img/timeline-position-icon.svg");
             }
           }
 
           &__item_type_education {
-            // Custom Education card styles
             .timeline-item__title {
               margin-top: 10px;
             }
@@ -1214,14 +1222,16 @@ html {
           }
 
           &__item_type_open-source {
-            // Custom Open source card styles
             &:before {
               background-image: url("../img/timeline-opensource-icon.svg");
             }
           }
 
           &__item_type_milestone {
-            // Custom Milestone card styles
+            .timeline-item__logo {
+              max-width: 100% !important;
+            }
+
             &:before {
               background-image: url("../img/timeline-milestone-icon.svg");
             }
@@ -1484,6 +1494,10 @@ html {
           &:hover {
             background-color: #f3fdff;
           }
+
+          @media (min-width: @min-width-m) {
+            font-size: 1.5rem;
+          }
         }
       }
     }
@@ -1535,10 +1549,6 @@ html {
   @media (min-width: @min-width-l) {
     padding: @top-bottom-padding-l @left-right-padding-l;
   }
-
-  //@media (min-width: @min-width-xl) {
-  //  padding: @top-bottom-padding-xl @right-padding-xl @top-bottom-padding-xl @left-padding-xl;
-  //}
 }
 
 .__hidden {
@@ -1546,7 +1556,7 @@ html {
 }
 
 .__title-font {
-  font-family: "Gilroy ExtraBold", sans-serif;
+  font-family: Gilroy, sans-serif;
 }
 
 .__console-font {

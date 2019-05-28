@@ -17,6 +17,10 @@
   @media (min-width: 1200px) { ... }
  */
 @import "bootstrap-grid.min.css";
+@font-face {
+  font-family: Gilroy;
+  src: url("../fonts/gilroy/Gilroy-ExtraBold.otf");
+}
 html {
   font-size: 62.5%;
   font-family: Roboto, sans-serif;
@@ -376,6 +380,9 @@ html body {
   content: "0" counter(nav-section-counter) ".";
   color: #1e7fc6;
 }
+.page-home .menu-nav__link_type_mail {
+  color: #1e7fc6;
+}
 .page-home .menu__socials {
   padding: 0;
   list-style: none;
@@ -430,7 +437,7 @@ html body {
 }
 .page-home .scroll-to-top a span {
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: bold;
 }
 .page-home .borders > * {
   position: fixed;
@@ -960,7 +967,7 @@ html body {
   padding: 10px;
 }
 @media (min-width: 768px) {
-  .page-home .app .app__container .experience .timeline__item:nth-child(even) {
+  .page-home .app .app__container .experience .timeline__item:nth-child(odd) {
     margin-top: 150px;
     margin-left: 43px;
     margin-bottom: -100px;
@@ -989,19 +996,19 @@ html body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.page-home .app .app__container .experience .timeline__item:nth-child(even):before {
-  right: -37px;
-}
-@media (min-width: 768px) {
-  .page-home .app .app__container .experience .timeline__item:nth-child(even):before {
-    left: -37px;
-  }
-}
 .page-home .app .app__container .experience .timeline__item:nth-child(odd):before {
   right: -37px;
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .experience .timeline__item:nth-child(odd):before {
+    left: -37px;
+  }
+}
+.page-home .app .app__container .experience .timeline__item:nth-child(even):before {
+  right: -37px;
+}
+@media (min-width: 768px) {
+  .page-home .app .app__container .experience .timeline__item:nth-child(even):before {
     right: -39px;
   }
 }
@@ -1017,7 +1024,7 @@ html body {
   border-left: 6px solid #dcdcdc;
 }
 @media (min-width: 768px) {
-  .page-home .app .app__container .experience .timeline__item:nth-child(even):after {
+  .page-home .app .app__container .experience .timeline__item:nth-child(odd):after {
     left: -6px;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
@@ -1026,7 +1033,7 @@ html body {
   }
 }
 @media (min-width: 768px) {
-  .page-home .app .app__container .experience .timeline__item:nth-child(odd):after {
+  .page-home .app .app__container .experience .timeline__item:nth-child(even):after {
     right: -6px;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
@@ -1057,11 +1064,14 @@ html body {
 .page-home .app .app__container .experience .timeline__item_type_open-source:before {
   background-image: url("../img/timeline-opensource-icon.svg");
 }
+.page-home .app .app__container .experience .timeline__item_type_milestone .timeline-item__logo {
+  max-width: 100% !important;
+}
 .page-home .app .app__container .experience .timeline__item_type_milestone:before {
   background-image: url("../img/timeline-milestone-icon.svg");
 }
 .page-home .app .app__container .experience .timeline .timeline-item__header {
-  font-family: "Gilroy ExtraBold", sans-serif !important;
+  font-family: Gilroy, sans-serif !important;
   padding-bottom: 10px;
   border-bottom: 1px solid #dcdcdc;
   text-transform: capitalize;
@@ -1274,6 +1284,11 @@ html body {
 .page-home .app .app__container .contacts__say-hello-button:hover {
   background-color: #f3fdff;
 }
+@media (min-width: 768px) {
+  .page-home .app .app__container .contacts__say-hello-button {
+    font-size: 1.5rem;
+  }
+}
 .page-home .footer {
   position: fixed;
   bottom: 0;
@@ -1324,7 +1339,7 @@ html body {
   display: none;
 }
 .__title-font {
-  font-family: "Gilroy ExtraBold", sans-serif;
+  font-family: Gilroy, sans-serif;
 }
 .__console-font {
   font-family: "Roboto Mono", sans-serif;
