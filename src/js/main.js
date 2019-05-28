@@ -300,8 +300,9 @@ async function initTimeline() {
             .replace(/{{description}}/g, d['description']);
 
         // Replace image placeholder with organization logo
-        cardTemplateContent.querySelector('div.timeline__item div.timeline-item__logo img')
-            .setAttribute('src', IMAGE_PATH_PREFIX + d['org_logo']);
+        if (d['org_logo'] !== '')
+            cardTemplateContent.querySelector('div.timeline__item div.timeline-item__logo img')
+                .setAttribute('src', IMAGE_PATH_PREFIX + d['org_logo']);
 
         // Assign ID
         let idValue = `timeline-item-${i}`;
