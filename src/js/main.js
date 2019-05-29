@@ -11,6 +11,9 @@ const VIEWPORT_WIDTH_MEDIUM = 768;
 const VIEW_PORT_WIDTH_LARGE = 992;
 
 // Global events
+// Fire initTimeline function (cross-browser fix)
+window.addEventListener('load', initTimeline, false);
+
 document.getElementById('menu-toggle').addEventListener('click', function () {
     let page = document.getElementsByClassName('page-home')[0];
     page.classList.toggle('menu_open');
@@ -21,20 +24,20 @@ document.getElementsByClassName('menu__nav')[0].addEventListener('click', functi
     page.classList.remove('menu_open');
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        let topBorderHeight = document.getElementsByClassName('borders__top')[0];
-        let scrollTopVal = window.scrollY + document.querySelector(this.getAttribute('href'))
-            .getBoundingClientRect().top - topBorderHeight.getBoundingClientRect().height;
-        window.scrollTo({
-            top: scrollTopVal,
-            left: 0,
-            behavior: 'smooth'
-        });
-    });
-});
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//
+//         let topBorderHeight = document.getElementsByClassName('borders__top')[0];
+//         let scrollTopVal = window.scrollY + document.querySelector(this.getAttribute('href'))
+//             .getBoundingClientRect().top - topBorderHeight.getBoundingClientRect().height;
+//         window.scrollTo({
+//             top: scrollTopVal,
+//             left: 0,
+//             behavior: 'smooth'
+//         });
+//     });
+// });
 
 let lastScrollYVal = 0;
 let introSectionTransformVal = 0;
@@ -141,7 +144,6 @@ window.addEventListener('scroll', function () {
 
         let prephraseHeight = document.getElementById('experience-pre-phrase').getBoundingClientRect().height;
         let bgScrollDivHeight = document.getElementById('experience-bg-scroll').getBoundingClientRect().height;
-        let timelineFeedTopMargin = viewportHeight * 0.08;
 
         if (scrollYDelta > 0) {
             let topAnchor = experienceContainerOffsetTop + experienceContainerHeight - prephraseHeight
