@@ -57,6 +57,10 @@ html {
   body {
     margin: 0;
   }
+
+  template {
+    //display: none;
+  }
 }
 
 // region Animated elements
@@ -502,6 +506,78 @@ html {
   }
 
   //endregion Menu
+
+  // region Popup
+
+  .popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translate(0, -100vh);
+    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, visibility 500ms linear 0ms;
+    background-color: fade(#000, 60%);
+
+    &__padding {
+      padding: 50px;
+    }
+
+    &__container {
+      background-color: white;
+      border: 1px solid @accent-color;
+      text-align: center;
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 5rem;
+    }
+
+    &__text {
+      color: #000;
+      line-height: 1.4;
+    }
+
+    &__browsers-container {
+      margin-top: 60px;
+    }
+
+    &__browser-item {
+      margin-right: 25px;
+
+      a {
+        margin-top: 20px;
+        text-decoration: none;
+        color: @accent-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__logo {
+      max-width: 100px;
+    }
+
+    &__button {
+      cursor: pointer;
+      margin-top: 30px;
+      background-color: white;
+      border: 1px solid @accent-color;
+      color: @accent-color;
+      font-weight: bold;
+      padding: 10px 25px;
+    }
+  }
+
+  // endregion Popup
 
   // region Scroll-to-Top button
 

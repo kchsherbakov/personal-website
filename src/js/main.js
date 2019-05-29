@@ -10,7 +10,18 @@ const ENUM_CARD_TYPE_MILESTONE = 'milestone';
 const VIEWPORT_WIDTH_MEDIUM = 768;
 const VIEW_PORT_WIDTH_LARGE = 992;
 
-// Global events
+
+// Run user agent check to interrupt experience on unsupported browsers
+let checkClientsUserAgent;
+(checkClientsUserAgent = function () {
+    if (getClientBrowserInfo().name === 'Internet Explorer') {
+        let popup = document.getElementsByClassName('popup')[0];
+        popup.classList.toggle('__hidden');
+        popup.style.cssText = 'transform: translate(0,0);';
+    }
+})();
+
+
 // Fire loadTimelineContent function (cross-browser fix)
 window.addEventListener('load', loadTimelineContent, false);
 
@@ -277,6 +288,7 @@ function initTimeline(response) {
         let cardTemplateContent;
         let d = timelineData[i];
 
+        // Need to check for content of the template element, since IE does not support templates
         if (d['type'] === ENUM_CARD_TYPE_POSITION) {
             cardTemplateContent = document.importNode(positionCardTemplate.content, true)
                 .querySelector('div.timeline__item');
@@ -293,24 +305,24 @@ function initTimeline(response) {
             d['end_date'] = Date.now();
         }
 
-        if (d["date_show_type"] === ENUM_DATE_TYPE_MONTH_AND_YEAR) {
-            let years = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_YEAR);
-            let months = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_MONTH);
+        if (d['date_show_type'] === ENUM_DATE_TYPE_MONTH_AND_YEAR) {
+            let years = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_YEAR);
+            let months = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_MONTH);
 
             if (years >= 1) {
                 // Language formats
-                d["date_diff"] = years > 1 ? years + " years" : years + " year";
-                d["date_diff"] += months > 1 ? ", " + months + " months" : ", " + months + " month";
+                d['date_diff'] = years > 1 ? years + ' years' : years + ' year';
+                d['date_diff'] += months > 1 ? ', ' + months + ' months' : ', ' + months + ' month';
             } else {
-                d["date_diff"] = months > 1 ? months + " months" : months + " month";
+                d['date_diff'] = months > 1 ? months + ' months' : months + ' month';
             }
-        } else if (d["date_show_type"] === "y") {
+        } else if (d['date_show_type'] === 'y') {
             let years = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_YEAR);
-            d["date_diff"] = years > 1 ? years + " years" : years + " year";
+            d['date_diff'] = years > 1 ? years + ' years' : years + ' year';
         } else {
-            let months = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_MONTH);
-            d["date_diff"] = d["date_diff"] =
-                months > 1 ? months + " months" : months + " month";
+            let months = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_MONTH);
+            d['date_diff'] = d['date_diff'] =
+                months > 1 ? months + ' months' : months + ' month';
         }
 
         // Replace template data
@@ -353,4 +365,41 @@ function initTimeline(response) {
         // Append card
         parentBlock.appendChild(cardTemplateContent);
     }
+}
+
+function getClientBrowserInfo() {
+    let userAgent = navigator.userAgent,
+        match = userAgent.match(/(opera|chrome|crios|safari|ucbrowser|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [],
+        result = {},
+        tem;
+
+    if (/trident/i.test(match[1])) {
+        tem = /\brv[ :]+(\d+)/g.exec(userAgent) || [];
+        result.name = "Internet Explorer";
+    } else if (match[1] === "Chrome") {
+        tem = userAgent.match(/\b(OPR|Edge)\/(\d+)/);
+
+        if (tem && tem[1]) {
+            result.name = tem[0].indexOf("Edge") === 0 ? "Edge" : "Opera";
+        }
+    }
+    if (!result.name) {
+        tem = userAgent.match(/version\/(\d+)/i); // iOS support
+        result.name = match[0].replace(/\/.*/, "");
+
+        if (result.name.indexOf("MSIE") === 0) {
+            result.name = "Internet Explorer";
+        }
+        if (userAgent.match("CriOS")) {
+            result.name = "Chrome";
+        }
+
+    }
+    if (tem && tem.length) {
+        match[match.length - 1] = tem[tem.length - 1];
+    }
+
+    result.version = Number(match[match.length - 1]);
+
+    return result;
 }
