@@ -254,7 +254,10 @@ function calcDateDiff(startDate, endDate, returnInterval) {
 
 function loadTimelineContent() {
     let httpRequest = new XMLHttpRequest();
-    httpRequest.open('GET', './content/timeline/content.json');
+    let url = window.location.pathname.indexOf('ru') > -1 ?
+        './content/timeline/content-ru.json'
+        : './content/timeline/content-en.json';
+    httpRequest.open('GET', url);
     httpRequest.setRequestHeader('cache-control', 'public, max-age=31536000');
 
     // Load json data file and sort object by start date property
@@ -272,6 +275,7 @@ function loadTimelineContent() {
 }
 
 function initTimeline(response) {
+    let locale = window.location.pathname.indexOf('ru') > -1 ? 'ru-ru' : 'en-en';
     let timelineData = JSON.parse(response).sort(function (d1, d2) {
         return new Date(d2['start_date']) - new Date(d1['start_date']);
     });
@@ -311,26 +315,27 @@ function initTimeline(response) {
 
             if (years >= 1) {
                 // Language formats
-                d['date_diff'] = years > 1 ? years + ' years' : years + ' year';
-                d['date_diff'] += months > 1 ? ', ' + months + ' months' : ', ' + months + ' month';
+                d['date_diff'] = years + ' ' + localeStringEndings(locale, ENUM_DATE_TYPE_YEAR, years);
+                d['date_diff'] += months + ' ' + localeStringEndings(locale, ENUM_DATE_TYPE_MONTH, months);
             } else {
-                d['date_diff'] = months > 1 ? months + ' months' : months + ' month';
+                d['date_diff'] = months + ' ' + localeStringEndings(locale, ENUM_DATE_TYPE_MONTH, months);
             }
         } else if (d['date_show_type'] === 'y') {
             let years = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_YEAR);
-            d['date_diff'] = years > 1 ? years + ' years' : years + ' year';
+            d['date_diff'] = years + ' ' + localeStringEndings(locale, ENUM_DATE_TYPE_YEAR, years);
         } else {
             let months = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_MONTH);
             d['date_diff'] = d['date_diff'] =
-                months > 1 ? months + ' months' : months + ' month';
+                months + ' ' + localeStringEndings(locale, ENUM_DATE_TYPE_MONTH, months);
         }
 
         // Replace template data
-        cardTemplateContent.innerHTML = cardTemplateContent.innerHTML.replace(/{{type}}/g, d['type'])
+        cardTemplateContent.innerHTML = cardTemplateContent.innerHTML
+            .replace(/{{type}}/g, d['type_display_name'])
             .replace(/{{start_date}}/g,
-                formatDate(d['start_date'], d['date_show_type'], 'en-en'))
+                formatDate(d['start_date'], d['date_show_type'], locale))
             .replace(/{{end_date}}/g,
-                formatDate(d['end_date'], d['date_show_type'], 'en-en'))
+                formatDate(d['end_date'], d['date_show_type'], locale))
             .replace(/{{date_diff}}/g, d['date_diff'])
             .replace(/{{title}}/g, d['title'])
             // Organization logo will be set later
@@ -364,6 +369,31 @@ function initTimeline(response) {
 
         // Append card
         parentBlock.appendChild(cardTemplateContent);
+    }
+}
+
+function localeStringEndings(locale, interval, count) {
+    if (locale.indexOf('ru') > -1) {
+        let cases = [2, 0, 1, 1, 1, 2];
+        if (interval === ENUM_DATE_TYPE_YEAR) {
+            let yearTitles = ['год', 'года', 'лет'];
+            return yearTitles[(count % 100 > 4 && count % 100 < 20) ? 2 : cases[(count % 10 < 5) ? count % 10 : 5]];
+        } else if (interval === ENUM_DATE_TYPE_MONTH) {
+            let monthTitles = ['месяц', 'месяца', 'месяцев'];
+            return monthTitles[(count % 100 > 4 && count % 100 < 20) ? 2 : cases[(count % 10 < 5) ? count % 10 : 5]];
+        }
+    } else if (locale.indexOf('en') > -1) {
+        if (interval === ENUM_DATE_TYPE_YEAR) {
+            if (count > 1)
+                return 'years';
+            else
+                return 'year';
+        } else if (interval === ENUM_DATE_TYPE_MONTH) {
+            if (count > 1)
+                return 'months';
+            else
+                return 'month';
+        }
     }
 }
 

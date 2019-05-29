@@ -1,6 +1,7 @@
 [
   {
     "type": "position",
+    "type_display_name": "position",
     "start_date": "2018-01-01",
     "end_date": "2018-08-01",
     "date_show_type": 2,
@@ -20,6 +21,7 @@
   },
   {
     "type": "position",
+    "type_display_name": "position",
     "start_date": "2018-08-20",
     "end_date": "",
     "date_show_type": 2,
@@ -42,6 +44,7 @@
   },
   {
     "type": "education",
+    "type_display_name": "education",
     "start_date": "2014-07-01",
     "end_date": "2018-05-25",
     "date_show_type": 0,
@@ -62,6 +65,7 @@
   },
   {
     "type": "milestone",
+    "type_display_name": "milestone",
     "start_date": "2016-07-01",
     "end_date": "",
     "date_show_type": 2,
@@ -78,6 +82,7 @@
   },
   {
     "type": "milestone",
+    "type_display_name": "milestone",
     "start_date": "2016-02-01",
     "end_date": "",
     "date_show_type": 2,
@@ -96,6 +101,7 @@
   },
   {
     "type": "milestone",
+    "type_display_name": "milestone",
     "start_date": "2017-10-01",
     "end_date": "",
     "date_show_type": 2,

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i|Roboto+Mono:400,700|Roboto:400,700&display=swap&subset=cyrillic"
+          rel="stylesheet">
+    <title>Константин Щербаков | Разработчик ПО</title>
+</head>
+<body class="page-home">
+<header class="header">
+    <div class="header__nav nav">
+        <a class="nav__logo" href="https://kchsherbakov.com">
+            <img src="./img/logo.svg" alt="Konstantin Chsherbakov">
+        </a>
+        <a id="menu-toggle" class="nav__menu-toggle">
+            <div class="nav__menu-toggle-icon">
+                <span class="nav__menu-toggle-icon-line"></span>
+                <span class="nav__menu-toggle-icon-line"></span>
+                <span class="nav__menu-toggle-icon-line"></span>
+            </div>
+        </a>
+        <ul class="nav__lang-switch __console-font">
+            <li class="nav__lang-switch-item">
+                <a href="./index.html">АНГ.</a>
+            </li>
+            <li class="nav__lang-switch-item nav__lang-switch-item_active">
+                <a href="./index-ru.html">РУС.</a>
+            </li>
+        </ul>
+        <ul class="nav__pages __console-font">
+            <li class="nav__page-item">
+                <a class="nav__page-link" href="#about-section">Обо мне</a>
+            </li>
+            <li class="nav__page-item">
+                <a class="nav__page-link" href="#experience-section">Профессиональный опыт</a>
+            </li>
+            <li class="nav__page-item">
+                <a class="nav__page-link" href="#contacts-section">Контакты</a>
+            </li>
+            <li class="nav__hello-button-item">
+                <a href="#">Резюме</a>
+            </li>
+        </ul>
+        <ul class="nav__socials">
+            <li class="nav__socials-item">
+                <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank">
+                    <img src="./img/linkedin-logo.svg" alt="LinkedIn">
+                </a>
+            </li>
+            <li class="nav__socials-item">
+                <a href="https://github.com/kchsherbakov" target="_blank">
+                    <img src="./img/github-logo.svg" alt="GitHub">
+                </a>
+            </li>
+            <li class="nav__socials-item">
+                <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank">
+                    <img src="./img/stackoverflow-logo.svg" alt="StackOverflow">
+                </a>
+            </li>
+            <li class="nav__socials-item nav__socials-item_rotated">
+                <a href="mailto:k.chsherbakov@outlook.com">k.chsherbakov@outlook.com</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="menu">
+    <div class="menu__background"></div>
+    <div class="menu__container __padding">
+        <ul class="menu__lang-switch __console-font">
+            <li class="menu__lang-switch-item">
+                <a href="./index.html">АНГ.</a>
+            </li>
+            <li class="menu__lang-switch-item nav__lang-switch-item_active">
+                <a href="./index-ru.html">РУС.</a>
+            </li>
+        </ul>
+        <ul class="menu__nav menu-nav __console-font">
+            <li class="menu-nav__item">
+                <a class="menu-nav__link" href="#about-section">Обо мне</a>
+            </li>
+            <li class="menu-nav__item">
+                <a class="menu-nav__link" href="#experience-section">Профессиональный опыт</a>
+            </li>
+            <li class="menu-nav__item">
+                <a class="menu-nav__link" href="#contacts-section">Контакты</a>
+            </li>
+            <li class="menu-nav__item">
+                <a class="menu-nav__link menu-nav__link_type_mail" href="mailto:k.chsherbakov@outlook.com">Резюме</a>
+            </li>
+        </ul>
+        <ul class="menu__socials">
+            <li class="menu__socials-item">
+                <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank">
+                    <img src="./img/linkedin-logo.svg" alt="LinkedIn">
+                </a>
+            </li>
+            <li class="menu__socials-item">
+                <a href="https://github.com/kchsherbakov" target="_blank">
+                    <img src="./img/github-logo.svg" alt="GitHub">
+                </a>
+            </li>
+            <li class="menu__socials-item">
+                <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank">
+                    <img src="./img/stackoverflow-logo.svg" alt="StackOverflow">
+                </a>
+            </li>
+        </ul>
+        <div class="menu__contacts">
+            <h4 class="menu__contacts-text __console-font">Задизайнено и Разработано Константином Щербаковым</h4>
+            <a class="menu__contacts-text menu__contacts-link __console-font" href="mailto:k.chsherbakov@outlook.com">k.chsherbakov@outlook.com</a>
+        </div>
+    </div>
+</div>
+<div class="popup d-flex justify-content-center align-items-center">
+    <div class="popup__container popup__padding col-12 col-xl-6">
+        <h2 class="popup__title __title-font">Что Мертво Умереть Не Может</h2>
+        <p class="popup__text">
+            Вы используете браузер, который не поддерживается.
+            <br>
+            Попробуйте один из предложенных вариантов ниже (или любой другой на Ваш выбор) для комфортного
+            использования.
+        </p>
+        <div class="popup__browsers-container d-flex justify-content-center">
+            <div class="popup__browser-item d-flex flex-column">
+                <img class="popup__logo" src="./img/chrome-logo.png" alt="Google Chrome">
+                <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>
+            </div>
+            <div class="popup__browser-item d-flex flex-column">
+                <img class="popup__logo" src="./img/firefox-logo.png" alt="Mozilla Firefox">
+                <a href="https://www.mozilla.org/firefox/new/" target="_blank">Mozilla Firefox</a>
+            </div>
+            <div class="popup__browser-item d-flex flex-column">
+                <img class="popup__logo" src="./img/opera-logo.png" alt="Opera">
+                <a href="https://www.opera.com/download" target="_blank">Opera</a>
+            </div>
+            <div class="popup__browser-item d-flex flex-column">
+                <img class="popup__logo" src="./img/yandex-logo.png" alt="Yandex">
+                <a href="https://www.opera.com/download" target="_blank">Yandex Browser</a>
+            </div>
+            <div class="popup__browser-item d-flex flex-column">
+                <img class="popup__logo" src="./img/safari-logo.png" alt="Safari">
+                <a href="https://www.apple.com/lae/safari/" target="_blank">Safari</a>
+            </div>
+            <div class="popup__browser-item d-flex flex-column">
+                <img class="popup__logo" src="./img/edge-logo.png" alt="Microsoft Edge">
+                <a href="https://www.microsoft.com/windows/microsoft-edge" target="_blank">Microsoft Edge</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="scroll-to-top-icon" class="scroll-to-top d-none d-lg-block">
+    <a onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="__console-font">
+            <img src="./img/left-arrow-black-icon.svg" alt="Вернуться в начало">
+            вверх
+        </span>
+    </a>
+</div>
+<div class="borders">
+    <div class="borders__top"></div>
+    <div class="borders__right"></div>
+    <div class="borders__left"></div>
+    <div class="borders__bottom"></div>
+</div>
+<div class="app">
+    <div class="app__container">
+        <div class="intro">
+            <section id="hello-section" class="intro__hello hello">
+                <div class="hello__padding __padding">
+                    <h1 class="hello__text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="600" height="343"
+                             viewBox="0 0 428.83 343.87">
+                            <g id="hello_h">
+                                <line class="line" x1="21.5" y1="0.01" x2="21.5" y2="152.01"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="21.5" y1="74.01" x2="103.17" y2="74.01"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="103.17" y1="0.01" x2="103.17" y2="152.01"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                            </g>
+                            <g id="hello_e">
+                                <line class="line" x1="168.17" y1="0.01" x2="168.17" y2="152.01"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="168.17" y1="19.5" x2="245.83" y2="19.5"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="168.17" y1="76.01" x2="240.83" y2="76.01"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="168.17" y1="131.5" x2="245.83" y2="131.5"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                            </g>
+                            <g id="hello_l1">
+                                <line class="line" x1="21.5" y1="186.68" x2="21.5" y2="338.68"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="21.5" y1="318.17" x2="94.17" y2="318.17"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                            </g>
+                            <g id="hello_l2">
+                                <line class="line" x1="128.5" y1="186.68" x2="128.5" y2="338.68"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                                <line class="line" x1="128.5" y1="318.17" x2="201.17" y2="318.17"
+                                      style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></line>
+                            </g>
+                            <g id="hello_o">
+                                <circle class="line" cx="283.51" cy="262.69" r="60.68"
+                                        style="stroke-dashoffset: 2e-05; stroke-dasharray: none;"></circle>
+                            </g>
+                            <g id="hello_dot">
+                                <circle class="dot" cx="403.17" cy="316.01" r="25.67"
+                                        transform="matrix(1,0,0,1,0,0)"
+                                        style="backface-visibility: hidden; z-index: 0;"></circle>
+                            </g>
+                        </svg>
+                    </h1>
+                    <div class="hello__page-color"></div>
+                    <span id="hello-section-scroll-icon" class="hello__scroll-text __console-font">
+                        <img src="./img/left-arrow-white-icon.svg" alt="Листать вниз">
+                        Листать
+                    </span>
+                </div>
+            </section>
+            <section id="greetings-section" class="intro__greetings greetings ">
+                <div class="greetings__padding __padding">
+                    <p class="greetings__text __console-font">
+                        Привет! Меня зовут
+                    </p>
+                    <p class="greetings__text_size_l greetings__text_color_black greetings__text_weight_bold greetings__text __title-font">
+                        Константин Щербаков.
+                    </p>
+                    <p class="greetings__text_size_l greetings__text_weight_bold greetings__text __title-font">
+                        Я разрабатываю программное обеспечение.
+                    </p>
+                    <p class="greetings__text __console-font">
+                        Я программист, специализирующийся на разработке (а иногда и дизайне) исключительного,
+                        высококачественного программного обеспечения.
+                    </p>
+                </div>
+            </section>
+            <div id="scroller" class="intro__scroller"></div>
+        </div>
+        <section class="image-section-parallax">
+            <div class="image-section-parallax__bgimage"></div>
+        </section>
+        <section id="about-section" class="about">
+            <div class="about__padding __padding">
+                <div class="about__heading">
+                    <h2 class="about__title __title-font">Обо мне</h2>
+                </div>
+                <div id="about-section-bio" class="about__bio">
+                    <h2 class="about__pre-phrase __title-font">
+                        <i class="__accent-font">Энтузиаст</i> технологий
+                        <br>
+                        и <i class="__accent-font">любитель</i> кофе.
+                    </h2>
+                    <p class="about__text">
+                        Привет! Меня зовут Константин. Я являюсь разработчиком программного обеспечения с более чем
+                        двухлетнем опытом работы в Frontend, Backend, Mobile, Desktop областях.
+                        Активно развиваю навыки в сфере Системной Архитектуры с целью проектирования сложных,
+                        высоконагруженных, масштабируемых, отказоуйсточивых системах.
+                    </p>
+                    <p class="about__text">
+                        Профессиональный, креативный, коммуникабельный. Быстро нахожу общий язык с командой,
+                        ориентирован на соблюдение сроков, а так же способен быстро и качестве предоставить комплексное
+                        решение.
+                    </p>
+                </div>
+                <div id="skills-container" class="about__skills about__skills-padding skills">
+                    <div class="skills__pre-phrase __title-font">
+                        <h2>
+                            Вещи, которые
+                            <br>
+                            я умею делать
+                            <br>
+                            <i class="__accent-font">хорошо</i>.
+                        </h2>
+                    </div>
+                    <div class="skills__container row">
+                        <div class="skills__frontend col-12 col-sm-6">
+                            <h3 class="skills__title skills__title_color_white skills__title_size_m __title-font">
+                                Front end
+                            </h3>
+                            <p class="skills__text">
+                                HTML
+                                <br>
+                                CSS
+                                <br>
+                                JS
+                            </p>
+                        </div>
+                        <div class="skills__backend col-12 col-sm-6">
+                            <h3 class="skills__title skills__title_color_white skills__title_size_m __title-font">
+                                Back end
+                            </h3>
+                            <p class="skills__text">
+                                C#
+                                <br>
+                                Go
+                                <br>
+                                Php
+                            </p>
+                        </div>
+                        <div class="skills__mobile col-12 col-sm-6">
+                            <h3 class="skills__title skills__title_color_white skills__title_size_m __title-font">
+                                Mobile
+                            </h3>
+                            <p class="skills__text">
+                                React Native
+                                <br>
+                                iOS (Swift)
+                                <br>
+                                Android (Java)
+                            </p>
+                        </div>
+                        <div class="skills__desktop col-12 col-sm-6">
+                            <h3 class="skills__title skills__title_color_white skills__title_size_m __title-font">
+                                Desktop
+                            </h3>
+                            <p class="skills__text">
+                                WPF
+                                <br>
+                                UWP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="experience-section" class="experience">
+            <div class="experience__padding __padding">
+                <div class="experience__heading">
+                    <h2 class="experience__title __title-font">Профессиональный опыт</h2>
+                </div>
+                <div id="experience__container" class="experience__container d-xl-flex flex-xl-row">
+                    <div class="experience__bg-scroll-container d-xl-flex flex-xl-column">
+                        <h2 id="experience-pre-phrase" class="experience__pre-phrase __title-font">
+                            Разработчик, который фокусируется
+                            <br>
+                            на написании <i class="__accent-font">чистого</i> и <i
+                                class="__accent-font">эффективного</i>
+                            <br>
+                            кода.
+                        </h2>
+                        <div id="experience-bg-scroll" class="experience__bg-scroll d-xl-flex justify-content-center">
+                            <p id="bg-scroll-text" class="__title-font">XP</p>
+                        </div>
+                    </div>
+                    <div id="timeline-feed" class="experience__timeline-feed timeline">
+                        <!-- region Timeline card templates -->
+                        <!-- region Tag template -->
+                        <template id="card-tag-template">
+                            <span class="timeline-item__tag"></span>
+                        </template>
+                        <!-- endregion Tag template -->
+                        <!-- region Position card -->
+                        <template id="position-card-template">
+                            <div class="timeline__item timeline__item_type_position timeline-item">
+                                <div class="timeline-item__header">
+                                    <span class="timeline-item__type-name">{{type}}</span>
+                                    <span class="timeline-item__date">{{start_date}} → {{end_date}}</span>
+                                    <span class="timeline-item__date-diff">({{date_diff}})</span>
+                                </div>
+                                <div class="timeline-item__content row">
+                                    <div class="timeline-item__logo col-3">
+                                        <img src="../src/img/image-placeholder.svg" alt="{{org_logo_alt_name}}">
+                                    </div>
+                                    <div class="timeline-item__text col-9">
+                                        <div class="timeline-item__title">
+                                        <span>
+                                            {{title}} at
+                                            <a class="timeline-item__text_type_link" href="{{org_link}}">
+                                                {{org_name}}
+                                            </a>
+                                        </span>
+                                        </div>
+                                        <div class="timeline-item__tags-container"></div>
+                                        <input class="timeline-item__expander" type="checkbox">
+                                        <div class="timeline-item__paragraph">
+                                            <p class="timeline-item__description timeline-item__description_size_full">
+                                                {{description}}
+                                            </p>
+                                            <p class=" timeline-item__description timeline-item__description_size_truncated
+                                            timeline-item__description_hidden">
+                                                {{description}}
+                                            </p>
+                                        </div>
+                                        <label class="timeline-item__expander-label"
+                                               data-less="Свернуть" data-more="Читать дальше"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- endregion Position card -->
+                        <!-- region Education card -->
+                        <template id="education-card-template">
+                            <div class="timeline__item timeline__item_type_education timeline-item">
+                                <div class="timeline-item__header">
+                                    <span class="timeline-item__type-name">{{type}}</span>
+                                    <span class="timeline-item__date">{{start_date}} → {{end_date}}</span>
+                                </div>
+                                <div class="timeline-item__content row">
+                                    <div class="timeline-item__logo col-12">
+                                        <img src="../src/img/image-placeholder.svg" alt="{{org_logo_alt_name}}">
+                                    </div>
+                                    <div class="timeline-item__text timeline-item__text_type_ellipsis col-12">
+                                        <div class="timeline-item__title">
+                                        <span>{{title}},
+                                            <a class="timeline-item__text_type_link" href="{{org_link}}">
+                                                {{org_name}}
+                                            </a>
+                                        </span>
+                                        </div>
+                                        <div class="timeline-item__tags-container"></div>
+                                        <input class="timeline-item__expander" type="checkbox">
+                                        <div class="timeline-item__paragraph">
+                                            <p class="timeline-item__description timeline-item__description_size_full
+                                            timeline-item__description_hidden">
+                                                {{description}}
+                                            </p>
+                                            <p class=" timeline-item__description timeline-item__description_size_truncated">
+                                                {{description}}
+                                            </p>
+                                        </div>
+                                        <label class="timeline-item__expander-label"
+                                               data-less="Свернуть" data-more="Читать дальше"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- endregion Education card -->
+                        <!-- region Milestone card-->
+                        <template id="milestone-card-template">
+                            <div class="timeline__item timeline__item_type_milestone timeline-item">
+                                <div class="timeline-item__header">
+                                    <span class="timeline-item__type-name">{{type}}</span>
+                                    <span class="timeline-item__date">{{start_date}}</span>
+                                </div>
+                                <div class="timeline-item__content row">
+                                    <div class="timeline-item__logo col-12">
+                                        <img src="../src/img/image-placeholder.svg" alt="{{org_logo_alt_name}}">
+                                    </div>
+                                    <div class="timeline-item__text timeline-item__text_type_ellipsis col-12">
+                                        <div class="timeline-item__title">
+                                        <span>{{title}},
+                                            <a class="timeline-item__text_type_link" href="{{org_link}}">
+                                                {{org_name}}
+                                            </a>
+                                        </span>
+                                        </div>
+                                        <div class="timeline-item__tags-container"></div>
+                                        <input class="timeline-item__expander" type="checkbox">
+                                        <div class="timeline-item__paragraph">
+                                            <p class="timeline-item__description timeline-item__description_size_full
+                                            timeline-item__description_hidden">
+                                                {{description}}
+                                            </p>
+                                            <p class=" timeline-item__description timeline-item__description_size_truncated">
+                                                {{description}}
+                                            </p>
+                                        </div>
+                                        <label class="timeline-item__expander-label"
+                                               data-less="Свернуть" data-more="Читать дальше"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- endregion Milestone card -->
+                        <!-- endregion Timeline card templates -->
+                        <div class="timeline__line"></div>
+                        <div class="timeline__item timeline__item_type_legend timeline-item">
+                            <div class="timeline-item__header">
+                                Справка
+                            </div>
+                            <div class="timeline-item__content row">
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-position-icon.svg" alt="Position">
+                                    <p class="timeline-item__legend-text">
+                                        Должность
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-education-icon.svg" alt="Education">
+                                    <p class="timeline-item__legend-text">
+                                        Образование
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-opensource-icon.svg" alt="Open source">
+                                    <p class="timeline-item__legend-text">
+                                        Публичный проект
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-app-or-feature-icon.svg" alt="App or Feature">
+                                    <p class="timeline-item__legend-text">
+                                        Приложение или фича
+                                    </p>
+                                </div>
+                                <div class="timeline-item__legend-icon col-4">
+                                    <img class="timeline-item__legend-icon-image"
+                                         src="./img/timeline-milestone-icon.svg" alt="Open source">
+                                    <p class="timeline-item__legend-text">
+                                        Достижение
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dynamic content inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacts-section" class="contacts d-flex flex-column justify-content-center">
+            <div class="contacts__padding __padding">
+                <div class="contacts__heading">
+                    <h2 class="contacts__title __title-font">Контакты</h2>
+                </div>
+                <div class="contacts__content">
+                    <h1 class="contacts__hello-text __title-font">Хотите Связаться?</h1>
+                    <p class="contacts__text">
+                        Несмотря на то, что в данный момент я не ищу возможностей для фриланса, мой почтовый ящик всегда
+                        открыт. Будь то для потенциального опроекта или же просто сказать привет, я сделаю все
+                        возможное, чтобы ответить на Ваше письмо!
+                    </p>
+                    <a class="contacts__say-hello-button" href="mailto:k.chsherbakov@outlook.com">
+                        Сказать Привет
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<footer class="footer container-fluid d-flex flex-column justify-content-center">
+    <h4 class="footer__text __console-font">Задизайнено и Разработано Константином Щербаковым</h4>
+    <a class="footer__text footer__link __console-font" href="mailto:k.chsherbakov@outlook.com">k.chsherbakov@outlook.com</a>
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
