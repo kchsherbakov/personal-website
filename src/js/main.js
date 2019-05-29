@@ -11,8 +11,8 @@ const VIEWPORT_WIDTH_MEDIUM = 768;
 const VIEW_PORT_WIDTH_LARGE = 992;
 
 // Global events
-// Fire initTimeline function (cross-browser fix)
-window.addEventListener('load', initTimeline, false);
+// Fire loadTimelineContent function (cross-browser fix)
+window.addEventListener('load', loadTimelineContent, false);
 
 document.getElementById('menu-toggle').addEventListener('click', function () {
     let page = document.getElementsByClassName('page-home')[0];
@@ -24,20 +24,21 @@ document.getElementsByClassName('menu__nav')[0].addEventListener('click', functi
     page.classList.remove('menu_open');
 });
 
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-//
-//         let topBorderHeight = document.getElementsByClassName('borders__top')[0];
-//         let scrollTopVal = window.scrollY + document.querySelector(this.getAttribute('href'))
-//             .getBoundingClientRect().top - topBorderHeight.getBoundingClientRect().height;
-//         window.scrollTo({
-//             top: scrollTopVal,
-//             left: 0,
-//             behavior: 'smooth'
-//         });
-//     });
-// });
+let anchors = document.querySelectorAll('a[href^="#"]');
+for (let i = 0; i < anchors.length; i++) {
+    anchors[i].addEventListener('click', function (e) {
+        e.preventDefault();
+
+        let topBorderHeight = document.getElementsByClassName('borders__top')[0];
+        let scrollTopVal = window.scrollY + document.querySelector(this.getAttribute('href'))
+            .getBoundingClientRect().top - topBorderHeight.getBoundingClientRect().height;
+        window.scrollTo({
+            top: scrollTopVal,
+            left: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 let lastScrollYVal = 0;
 let introSectionTransformVal = 0;
@@ -87,12 +88,13 @@ window.addEventListener('scroll', function () {
             }
         }
 
-        // document.getElementById('hello-section').style.cssText =
-        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 12})`;
-        // document.getElementById('greetings-section').style.cssText =
-        //     `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal / 12})`;
         document.getElementById('scroller').style.cssText =
-            `transform: matrix(1, 0, 0, 1, 0, ${introSectionTransformVal})`;
+            '-webkit-transform: matrix(1, 0, 0, 1, 0,' + introSectionTransformVal + ');' +
+            '-moz-transform: matrix(1, 0, 0, 1, 0,' + introSectionTransformVal + ');' +
+            '-ms-transform: matrix(1, 0, 0, 1, 0,' + introSectionTransformVal + ');' +
+            '-o-transform: matrix(1, 0, 0, 1, 0,' + introSectionTransformVal + ');' +
+            'transform: matrix(1, 0, 0, 1, 0,' + introSectionTransformVal + ');';
+
 
         // Hide intro sections, otherwise 'hello' and 'greetings'
         // sections will overlay other content
@@ -129,7 +131,12 @@ window.addEventListener('scroll', function () {
         }
 
         document.getElementById('skills-container').style.cssText =
-            `transform: matrix(1, 0, 0, 1, 0, ${aboutSectionTransformVal / 2})`;
+            '-webkit-transform: matrix(1, 0, 0, 1, 0,' + aboutSectionTransformVal / 2 + ');' +
+            '-moz-transform: matrix(1, 0, 0, 1, 0,' + aboutSectionTransformVal / 2 + ');' +
+            '-ms-transform: matrix(1, 0, 0, 1, 0,' + aboutSectionTransformVal / 2 + ');' +
+            '-o-transform: matrix(1, 0, 0, 1, 0,' + aboutSectionTransformVal / 2 + ');' +
+            'transform: matrix(1, 0, 0, 1, 0,' + aboutSectionTransformVal / 2 + ');';
+
     }
 
     // endregion About scroll event
@@ -163,13 +170,24 @@ window.addEventListener('scroll', function () {
         }
 
         document.getElementById('experience-pre-phrase').style.cssText =
-            `transform: translate(0, ${-experienceSectionTransformVal}px`;
+            '-webkit-transform: translate(0,' + -experienceSectionTransformVal + 'px);' +
+            '-moz-transform:translate(0,' + -experienceSectionTransformVal + 'px);' +
+            '-ms-transform: translate(0,' + -experienceSectionTransformVal + 'px);' +
+            '-o-transform: translate(0,' + -experienceSectionTransformVal + 'px);' +
+            'transform: translate(0,' + -experienceSectionTransformVal + 'px);';
         document.getElementById('experience-bg-scroll').style.cssText =
-            `transform: translate(0, ${-experienceSectionTransformVal}px`;
+            '-webkit-transform: translate(0,' + -experienceSectionTransformVal + 'px);' +
+            '-moz-transform:translate(0,' + -experienceSectionTransformVal + 'px);' +
+            '-ms-transform: translate(0,' + -experienceSectionTransformVal + 'px);' +
+            '-o-transform: translate(0,' + -experienceSectionTransformVal + 'px);' +
+            'transform: translate(0,' + -experienceSectionTransformVal + 'px);';
 
         document.getElementById('bg-scroll-text').style.cssText =
-            `transform: rotate(-45deg) translate(${-experienceSectionTransformVal / 8}px, 
-            ${experienceSectionTransformVal / 8}px)`;
+            '-webkit-transform: rotate(-45deg) translate(' + -experienceSectionTransformVal / 8 + 'px,' + experienceSectionTransformVal / 8 + 'px);' +
+            '-moz-transform: rotate(-45deg) translate(' + -experienceSectionTransformVal / 8 + 'px,' + experienceSectionTransformVal / 8 + 'px);' +
+            '-ms-transform: rotate(-45deg) translate(' + -experienceSectionTransformVal / 8 + 'px,' + experienceSectionTransformVal / 8 + 'px);' +
+            '-o-transform: rotate(-45deg) translate(' + -experienceSectionTransformVal / 8 + 'px,' + experienceSectionTransformVal / 8 + 'px);' +
+            'transform: rotate(-45deg) translate(' + -experienceSectionTransformVal / 8 + 'px,' + experienceSectionTransformVal / 8 + 'px);';
     }
 
     // endregion Experience section scroll event
@@ -178,7 +196,7 @@ window.addEventListener('scroll', function () {
 
     if (window.scrollY > viewportHeight)
         document.getElementById('scroll-to-top-icon').style.bottom =
-            `${document.getElementsByClassName('borders__top')[0].getBoundingClientRect().height - 10}px`;
+            document.getElementsByClassName('borders__top')[0].getBoundingClientRect().height - 10 + 'px';
     else
         document.getElementById('scroll-to-top-icon').style.bottom = '-100px';
 
@@ -223,21 +241,27 @@ function calcDateDiff(startDate, endDate, returnInterval) {
     }
 }
 
-async function initTimeline() {
-    // Debug only settings
-    let fetchHeaders = new Headers();
-    fetchHeaders.append('pragma', 'no-cache');
-    fetchHeaders.append('cache-control', 'no-cache');
-
-    let fetchInit = {
-        method: 'GET',
-        headers: fetchHeaders,
-    };
+function loadTimelineContent() {
+    let httpRequest = new XMLHttpRequest();
+    httpRequest.open('GET', './content/timeline/content.json');
+    httpRequest.setRequestHeader('cache-control', 'public, max-age=31536000');
 
     // Load json data file and sort object by start date property
-    let jsonContent = await fetch('./content/timeline/content.json', fetchInit)
-        .then(response => response.text());
-    let timelineData = JSON.parse(jsonContent).sort(function (d1, d2) {
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status >= 200) {
+                initTimeline(httpRequest.responseText);
+            } else {
+                alert('An error occurred while loading data. Please, reload the page');
+            }
+        }
+    };
+
+    httpRequest.send();
+}
+
+function initTimeline(response) {
+    let timelineData = JSON.parse(response).sort(function (d1, d2) {
         return new Date(d2['start_date']) - new Date(d1['start_date']);
     });
 
@@ -269,22 +293,24 @@ async function initTimeline() {
             d['end_date'] = Date.now();
         }
 
-        if (d['date_show_type'] === ENUM_DATE_TYPE_MONTH_AND_YEAR) {
-            let years = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_YEAR);
-            let months = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_MONTH);
+        if (d["date_show_type"] === ENUM_DATE_TYPE_MONTH_AND_YEAR) {
+            let years = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_YEAR);
+            let months = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_MONTH);
+
             if (years >= 1) {
                 // Language formats
-                d['date_diff'] = years > 1 ? `${years} years` : `${years} year`;
-                d['date_diff'] += months > 1 ? `, ${months} months` : `, ${months} month`;
+                d["date_diff"] = years > 1 ? years + " years" : years + " year";
+                d["date_diff"] += months > 1 ? ", " + months + " months" : ", " + months + " month";
             } else {
-                d['date_diff'] = months > 1 ? `${months} months` : `${months} month`;
+                d["date_diff"] = months > 1 ? months + " months" : months + " month";
             }
-        } else if (d['date_show_type'] === 'y') {
-            let years = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_YEAR);
-            d['date_diff'] = years > 1 ? `${years} years` : `${years} year`;
+        } else if (d["date_show_type"] === "y") {
+            let years = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_YEAR);
+            d["date_diff"] = years > 1 ? years + " years" : years + " year";
         } else {
-            let months = calcDateDiff(d['start_date'], d['end_date'], ENUM_DATE_TYPE_MONTH);
-            d['date_diff'] = d['date_diff'] = months > 1 ? `${months} months` : `${months} month`;
+            let months = calcDateDiff(d["start_date"], d["end_date"], ENUM_DATE_TYPE_MONTH);
+            d["date_diff"] = d["date_diff"] =
+                months > 1 ? months + " months" : months + " month";
         }
 
         // Replace template data
@@ -307,7 +333,7 @@ async function initTimeline() {
                 .setAttribute('src', IMAGE_PATH_PREFIX + d['org_logo']);
 
         // Assign ID
-        let idValue = `timeline-item-${i}`;
+        let idValue = 'timeline-item-' + i;
         cardTemplateContent.querySelector('input.timeline-item__expander')
             .setAttribute('id', idValue);
         cardTemplateContent.querySelector('label.timeline-item__expander-label')

@@ -1248,6 +1248,7 @@ html body {
 }
 .page-home .app .app__container .experience .timeline .timeline-item__header {
   font-family: Gilroy, sans-serif !important;
+  font-weight: 900 !important;
   padding-bottom: 10px;
   border-bottom: 1px solid #dcdcdc;
   text-transform: capitalize;
@@ -1540,6 +1541,7 @@ html body {
 }
 .__title-font {
   font-family: Gilroy, sans-serif;
+  font-weight: 900;
 }
 .__console-font {
   font-family: "Roboto Mono", sans-serif;
