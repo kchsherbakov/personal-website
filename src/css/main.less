@@ -287,13 +287,15 @@ html {
         @media (min-width: @min-width-m) {
           display: block;
           position: fixed;
-          top: 50%;
+          bottom: @border-size-m + 10px;
+          //top: 50%;
           right: 13px;
           transform: translateY(-50% - @border-size-m);
         }
 
         @media (min-width: @min-width-l) {
           right: 18px;
+          transform: translateY(-50% - @border-size-l);
         }
       }
 
@@ -317,8 +319,22 @@ html {
           }
         }
 
-        &:last-child {
-          margin-bottom: 0;
+
+      }
+
+      &__socials-item_rotated {
+        margin-top: 20px;
+        writing-mode: vertical-rl;
+
+        a {
+          color: #000;
+          text-decoration: none;
+          outline: none;
+          transition: color 300ms ease-in-out 0ms;
+
+          &:hover {
+            color: @accent-color;
+          }
         }
       }
 
@@ -933,7 +949,7 @@ html {
 
         &__pre-phrase {
           padding: 40px 0;
-          font-size: 1.8rem;
+          font-size: 2.1rem;
 
           @media (min-width: @min-width-m) {
             font-size: 2.8rem;
@@ -986,7 +1002,7 @@ html {
 
             h2 {
               margin: 0;
-              font-size: 1.8rem;
+              font-size: 2.1rem;
 
               @media (min-width: @min-width-m) {
                 font-size: 2.8rem;
@@ -1113,7 +1129,7 @@ html {
 
         &__pre-phrase {
           padding: 40px 0;
-          font-size: 1.8rem;
+          font-size: 2.1rem;
 
           @media (min-width: @min-width-m) {
             font-size: 2.8rem;

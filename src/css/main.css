@@ -262,7 +262,7 @@ html body {
   .page-home .header .nav__socials {
     display: block;
     position: fixed;
-    top: 50%;
+    bottom: 50px;
     right: 13px;
     -webkit-transform: translateY(-90%);
        -moz-transform: translateY(-90%);
@@ -274,6 +274,11 @@ html body {
 @media (min-width: 992px) {
   .page-home .header .nav__socials {
     right: 18px;
+    -webkit-transform: translateY(-110%);
+    -moz-transform: translateY(-110%);
+    -ms-transform: translateY(-110%);
+    -o-transform: translateY(-110%);
+    transform: translateY(-110%);
   }
 }
 .page-home .header .nav__socials-item {
@@ -295,8 +300,26 @@ html body {
     max-height: 20px;
   }
 }
-.page-home .header .nav__socials-item:last-child {
-  margin-bottom: 0;
+
+.page-home .header .nav__socials-item_rotated {
+  margin-top: 20px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
+.page-home .header .nav__socials-item_rotated a {
+  color: #000;
+  text-decoration: none;
+  outline: none;
+  -webkit-transition: color 300ms ease-in-out 0ms;
+  -o-transition: color 300ms ease-in-out 0ms;
+  -moz-transition: color 300ms ease-in-out 0ms;
+  transition: color 300ms ease-in-out 0ms;
+}
+
+.page-home .header .nav__socials-item_rotated a:hover {
+  color: #1e7fc6;
 }
 .page-home .header .nav__menu-toggle {
   position: fixed;
@@ -971,7 +994,7 @@ html body {
 }
 .page-home .app .app__container .about__pre-phrase {
   padding: 40px 0;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .about__pre-phrase {
@@ -1023,7 +1046,7 @@ html body {
 }
 .page-home .app .app__container .about .skills__pre-phrase h2 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .about .skills__pre-phrase h2 {
@@ -1140,7 +1163,7 @@ html body {
 }
 .page-home .app .app__container .experience__pre-phrase {
   padding: 40px 0;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
 }
 @media (min-width: 768px) {
   .page-home .app .app__container .experience__pre-phrase {
