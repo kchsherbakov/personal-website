@@ -532,6 +532,7 @@ html body {
   color: #1e7fc6;
 }
 .page-home .popup {
+    display: none !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -993,8 +994,14 @@ html body {
   .page-home .app .app__container .about__bio {
     float: left;
     width: 45%;
-    padding-right: 80px;
+      padding-right: 40px;
   }
+}
+
+@media (min-width: 1500px) {
+    .page-home .app .app__container .about__bio {
+        padding-right: 80px;
+    }
 }
 .page-home .app .app__container .about__pre-phrase {
   padding: 40px 0;
@@ -1163,7 +1170,13 @@ html body {
   -webkit-flex-basis: 45%;
       -ms-flex-preferred-size: 45%;
           flex-basis: 45%;
-  padding-right: 80px;
+    padding-right: 40px;
+}
+
+@media (min-width: 1500px) {
+    .page-home .app .app__container .experience__bg-scroll-container {
+        padding-right: 80px;
+    }
 }
 .page-home .app .app__container .experience__pre-phrase {
   padding: 40px 0;
@@ -1178,12 +1191,18 @@ html body {
   font-weight: 300;
 }
 .page-home .app .app__container .experience__bg-scroll {
-  height: 300px;
+    height: 250px;
   background-color: #9acced;
   overflow: hidden;
   margin-left: -webkit-calc(-15vw + 60px);
   margin-left: -moz-calc(-15vw + 60px);
   margin-left: calc(-15vw + 60px);
+}
+
+@media (min-width: 1500px) {
+    .page-home .app .app__container .experience__bg-scroll {
+        height: 300px;
+    }
 }
 .page-home .app .app__container .experience__bg-scroll p {
   margin: 0;
@@ -1334,6 +1353,10 @@ html body {
 }
 .page-home .app .app__container .experience .timeline__item_type_milestone .timeline-item__logo {
   max-width: 100% !important;
+}
+
+.page-home .app .app__container .experience .timeline__item_type_milestone .timeline-item__text {
+    padding-left: 0;
 }
 .page-home .app .app__container .experience .timeline__item_type_milestone:before {
   background-image: url("../img/timeline-milestone-icon.svg");
@@ -1491,6 +1514,13 @@ html body {
     height: calc(100vh - 160px);
   }
 }
+
+@media (min-width: 1200px) {
+    .page-home .app .app__container .contacts__padding {
+        padding-left: 15vw !important;
+        padding-right: 15vw !important;
+    }
+}
 .page-home .app .app__container .contacts__heading {
   text-align: center;
   margin-bottom: 10px;
@@ -1627,6 +1657,12 @@ html body {
   .__padding {
     padding: 10vh 15vw;
   }
+}
+
+@media (min-width: 1200px) {
+    .__padding {
+        padding: 10vh 165px 10vh 15vw;
+    }
 }
 .__hidden {
   display: none;

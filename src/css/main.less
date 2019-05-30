@@ -31,14 +31,15 @@
 @left-right-padding-m: 10vw;
 @top-bottom-padding-l: 10vh;
 @left-right-padding-l: 15vw;
-@top-bottom-padding-xl: 20vh;
+@top-bottom-padding-xl: 10vh;
 @right-padding-xl: 165px;
-@left-padding-xl: 20%;
+@left-padding-xl: 15vw;
 
 @min-width-s: 578px;
 @min-width-m: 768px;
 @min-width-l: 992px;
 @min-width-xl: 1200px;
+@min-width-xxl: 1500px;
 
 @app-container-bottom-margin-xs: 100px;
 @app-container-bottom-margin-m: 100px + @border-size-m;
@@ -453,7 +454,7 @@ html {
 
     &__lang-switch-item_active {
       a {
-        color: #000!important;
+        color: #000 !important;
       }
     }
 
@@ -537,6 +538,7 @@ html {
   // region Popup
 
   .popup {
+    display: none !important;
     position: fixed;
     top: 0;
     right: 0;
@@ -954,6 +956,10 @@ html {
           @media (min-width: @min-width-l) {
             float: left;
             width: 45%;
+            padding-right: 40px;
+          }
+
+          @media (min-width: @min-width-xxl) {
             padding-right: 80px;
           }
         }
@@ -1135,7 +1141,11 @@ html {
           flex-grow: 0;
           flex-shrink: 0;
           flex-basis: 45%;
-          padding-right: 80px;
+          padding-right: 40px;
+
+          @media (min-width: @min-width-xxl) {
+            padding-right: 80px;
+          }
         }
 
         &__pre-phrase {
@@ -1152,17 +1162,19 @@ html {
         }
 
         &__bg-scroll {
-          height: 300px;
+          height: 250px;
           background-color: #9acced;
           overflow: hidden;
-          // TODO: Check padding here
           margin-left: calc(-@left-right-padding-l + @border-size-l);
+
+          @media (min-width: @min-width-xxl) {
+            height: 300px;
+          }
 
           p {
             margin: 0;
             color: #fff;
             font-size: 30rem;
-            //transform: rotate(-45deg);
           }
         }
 
@@ -1331,6 +1343,10 @@ html {
           &__item_type_milestone {
             .timeline-item__logo {
               max-width: 100% !important;
+            }
+
+            .timeline-item__text {
+              padding-left: 0;
             }
 
             &:before {
@@ -1509,7 +1525,10 @@ html {
         }
 
         &__padding {
-          // Custom padding here
+          @media (min-width: @min-width-xl) {
+            padding-left: @left-padding-xl !important;
+            padding-right: @left-padding-xl !important;
+          }
         }
 
         &__heading {
@@ -1649,6 +1668,10 @@ html {
 
   @media (min-width: @min-width-l) {
     padding: @top-bottom-padding-l @left-right-padding-l;
+  }
+
+  @media (min-width: @min-width-xl) {
+    padding: @top-bottom-padding-xl @right-padding-xl @top-bottom-padding-xl @left-padding-xl;
   }
 }
 

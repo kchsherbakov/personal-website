@@ -8,7 +8,9 @@ const ENUM_CARD_TYPE_EDUCATION = 'education';
 const ENUM_CARD_TYPE_MILESTONE = 'milestone';
 
 const VIEWPORT_WIDTH_MEDIUM = 768;
-const VIEW_PORT_WIDTH_LARGE = 992;
+const VIEWPORT_WIDTH_LARGE = 992;
+const VIEWPORT_WIDTH_EXTRA_LARGE = 1200;
+const VIEWPORT_WIDTH_EXTRA_EXTRA_LARGE = 1500;
 
 
 // Run user agent check to interrupt experience on unsupported browsers
@@ -16,14 +18,26 @@ let checkClientsUserAgent;
 (checkClientsUserAgent = function () {
     if (getClientBrowserInfo().name === 'Internet Explorer') {
         let popup = document.getElementsByClassName('popup')[0];
-        popup.classList.toggle('__hidden');
-        popup.style.cssText = 'transform: translate(0,0);';
+        popup.style.cssText = 'display: flex!important; transform: translate(0,0);';
     }
 })();
 
 
 // Fire loadTimelineContent function (cross-browser fix)
 window.addEventListener('load', loadTimelineContent, false);
+
+window.addEventListener('resize', function () {
+    let viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    let legendIcons = document.getElementsByClassName('timeline-item__legend-icon');
+
+    if (viewportWidth >= VIEWPORT_WIDTH_EXTRA_LARGE && viewportWidth < VIEWPORT_WIDTH_EXTRA_EXTRA_LARGE) {
+        for (let i = 0; i < legendIcons.length; i++)
+            legendIcons[i].classList.add('col-xl-6');
+    } else {
+        for (let i = 0; i < legendIcons.length; i++)
+            legendIcons[i].classList.remove('col-xl-6');
+    }
+});
 
 document.getElementById('menu-toggle').addEventListener('click', function () {
     let page = document.getElementsByClassName('page-home')[0];
@@ -125,7 +139,7 @@ window.addEventListener('scroll', function () {
     // region About scroll event
 
     // Tablets and desktops only
-    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEWPORT_WIDTH_LARGE) {
         let aboutSectionOffsetTop = getElementOffsetTop('about-section') - 250;
         let aboutSectionHeight = document.getElementById('about-section').getBoundingClientRect().height;
 
@@ -155,7 +169,7 @@ window.addEventListener('scroll', function () {
     // region Experience section scroll event
 
     // Tablets and desktops only
-    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEW_PORT_WIDTH_LARGE) {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= VIEWPORT_WIDTH_LARGE) {
         let experienceContainerOffsetTop = getElementOffsetTop('experience__container');
         let experienceContainerHeight = document.getElementsByClassName('experience__container')[0]
             .getBoundingClientRect().height;
@@ -254,7 +268,7 @@ function calcDateDiff(startDate, endDate, returnInterval) {
 
 function loadTimelineContent() {
     let httpRequest = new XMLHttpRequest();
-    let url = window.location.pathname.indexOf('ru') > -1 ?
+    let url = window.location.pathname.indexOf('/ru') > -1 ?
         './content/timeline/content-ru.json'
         : './content/timeline/content-en.json';
     httpRequest.open('GET', url);
@@ -275,7 +289,7 @@ function loadTimelineContent() {
 }
 
 function initTimeline(response) {
-    let locale = window.location.pathname.indexOf('ru') > -1 ? 'ru-ru' : 'en-en';
+    let locale = window.location.pathname.indexOf('/ru') > -1 ? 'ru-ru' : 'en-en';
     let timelineData = JSON.parse(response).sort(function (d1, d2) {
         return new Date(d2['start_date']) - new Date(d1['start_date']);
     });
@@ -337,7 +351,7 @@ function initTimeline(response) {
             .replace(/{{end_date}}/g,
                 formatDate(d['end_date'], d['date_show_type'], locale))
             .replace(/{{date_diff}}/g, d['date_diff'])
-            .replace(/{{title}}/g, d['title'])
+            .replace(/{{title}}/g, locale === 'en-en' ? d['title'] + ' at' : d['title'] + ' в')
             // Organization logo will be set later
             .replace(/{{org_logo_alt_name}}/g, d['org_logo_alt_name'])
             .replace(/{{org_name}}/g, d['org_name'])
@@ -370,6 +384,26 @@ function initTimeline(response) {
         // Append card
         parentBlock.appendChild(cardTemplateContent);
     }
+
+    // Check height of the inserted cards to show full/truncated description
+    let timelineItems = document.getElementsByClassName('timeline__item');
+    for (let i = 0; i < timelineItems.length; i++) {
+        let card = timelineItems[i];
+        if (card.classList.contains('timeline__item_type_legend'))
+            continue;
+
+        // If full description is greater than the max allowed height,
+        // then hide it and show truncated description
+        if (card.querySelector('p.timeline-item__description_size_full').getBoundingClientRect().height >
+            getComputedStyle(card.querySelector('p.timeline-item__description_size_truncated')).maxHeight.match(/\d+/)) {
+            card.querySelector('p.timeline-item__description_size_full').classList
+                .add('timeline-item__description_hidden');
+            card.querySelector('div.timeline-item__text').classList.add('timeline-item__text_type_ellipsis');
+        } else {
+            card.querySelector('p.timeline-item__description_size_truncated').classList
+                .add('timeline-item__description_hidden');
+        }
+    }
 }
 
 function localeStringEndings(locale, interval, count) {
@@ -382,7 +416,7 @@ function localeStringEndings(locale, interval, count) {
             let monthTitles = ['месяц', 'месяца', 'месяцев'];
             return monthTitles[(count % 100 > 4 && count % 100 < 20) ? 2 : cases[(count % 10 < 5) ? count % 10 : 5]];
         }
-    } else if (locale.indexOf('en') > -1) {
+    } else {
         if (interval === ENUM_DATE_TYPE_YEAR) {
             if (count > 1)
                 return 'years';
