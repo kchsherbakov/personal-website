@@ -557,11 +557,16 @@ html {
       background-color: white;
       border: 1px solid @accent-color;
       text-align: center;
+      overflow: hidden;
     }
 
     &__title {
       margin: 0;
-      font-size: 5rem;
+      font-size: 3rem;
+
+      @media (min-width: @min-width-l) {
+        font-size: 5rem;
+      }
     }
 
     &__text {
@@ -570,11 +575,22 @@ html {
     }
 
     &__browsers-container {
-      margin-top: 60px;
+      margin-top: 30px;
+      margin-left: -50px;
+      margin-right: -50px;
+      overflow: auto;
+
+      @media (min-width: @min-width-l) {
+        margin-top: 60px;
+      }
     }
 
     &__browser-item {
-      margin-right: 25px;
+      margin-right: 10px;
+
+      @media (min-width: @min-width-l) {
+        margin-right: 25px;
+      }
 
       a {
         margin-top: 20px;
@@ -592,7 +608,11 @@ html {
     }
 
     &__logo {
-      max-width: 100px;
+      max-width: 60px;
+
+      @media (min-width: @min-width-l) {
+        max-width: 100px;
+      }
     }
 
     &__button {

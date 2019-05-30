@@ -532,7 +532,7 @@ html body {
   color: #1e7fc6;
 }
 .page-home .popup {
-    display: none !important;
+  display: none !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -559,20 +559,39 @@ html body {
   background-color: white;
   border: 1px solid #1e7fc6;
   text-align: center;
+  overflow: hidden;
 }
 .page-home .popup__title {
   margin: 0;
-  font-size: 5rem;
+  font-size: 3rem;
+}
+@media (min-width: 992px) {
+  .page-home .popup__title {
+    font-size: 5rem;
+  }
 }
 .page-home .popup__text {
   color: #000;
   line-height: 1.4;
 }
 .page-home .popup__browsers-container {
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-left: -50px;
+  margin-right: -50px;
+  overflow: auto;
+}
+@media (min-width: 992px) {
+  .page-home .popup__browsers-container {
+    margin-top: 60px;
+  }
 }
 .page-home .popup__browser-item {
-  margin-right: 25px;
+  margin-right: 10px;
+}
+@media (min-width: 992px) {
+  .page-home .popup__browser-item {
+    margin-right: 25px;
+  }
 }
 .page-home .popup__browser-item a {
   margin-top: 20px;
@@ -586,7 +605,12 @@ html body {
   margin-right: 0;
 }
 .page-home .popup__logo {
-  max-width: 100px;
+  max-width: 60px;
+}
+@media (min-width: 992px) {
+  .page-home .popup__logo {
+    max-width: 100px;
+  }
 }
 .page-home .popup__button {
   cursor: pointer;
@@ -994,14 +1018,13 @@ html body {
   .page-home .app .app__container .about__bio {
     float: left;
     width: 45%;
-      padding-right: 40px;
+    padding-right: 40px;
   }
 }
-
 @media (min-width: 1500px) {
-    .page-home .app .app__container .about__bio {
-        padding-right: 80px;
-    }
+  .page-home .app .app__container .about__bio {
+    padding-right: 80px;
+  }
 }
 .page-home .app .app__container .about__pre-phrase {
   padding: 40px 0;
@@ -1170,13 +1193,12 @@ html body {
   -webkit-flex-basis: 45%;
       -ms-flex-preferred-size: 45%;
           flex-basis: 45%;
-    padding-right: 40px;
+  padding-right: 40px;
 }
-
 @media (min-width: 1500px) {
-    .page-home .app .app__container .experience__bg-scroll-container {
-        padding-right: 80px;
-    }
+  .page-home .app .app__container .experience__bg-scroll-container {
+    padding-right: 80px;
+  }
 }
 .page-home .app .app__container .experience__pre-phrase {
   padding: 40px 0;
@@ -1191,18 +1213,17 @@ html body {
   font-weight: 300;
 }
 .page-home .app .app__container .experience__bg-scroll {
-    height: 250px;
+  height: 250px;
   background-color: #9acced;
   overflow: hidden;
   margin-left: -webkit-calc(-15vw + 60px);
   margin-left: -moz-calc(-15vw + 60px);
   margin-left: calc(-15vw + 60px);
 }
-
 @media (min-width: 1500px) {
-    .page-home .app .app__container .experience__bg-scroll {
-        height: 300px;
-    }
+  .page-home .app .app__container .experience__bg-scroll {
+    height: 300px;
+  }
 }
 .page-home .app .app__container .experience__bg-scroll p {
   margin: 0;
@@ -1354,9 +1375,8 @@ html body {
 .page-home .app .app__container .experience .timeline__item_type_milestone .timeline-item__logo {
   max-width: 100% !important;
 }
-
 .page-home .app .app__container .experience .timeline__item_type_milestone .timeline-item__text {
-    padding-left: 0;
+  padding-left: 0;
 }
 .page-home .app .app__container .experience .timeline__item_type_milestone:before {
   background-image: url("../img/timeline-milestone-icon.svg");
@@ -1514,12 +1534,11 @@ html body {
     height: calc(100vh - 160px);
   }
 }
-
 @media (min-width: 1200px) {
-    .page-home .app .app__container .contacts__padding {
-        padding-left: 15vw !important;
-        padding-right: 15vw !important;
-    }
+  .page-home .app .app__container .contacts__padding {
+    padding-left: 15vw !important;
+    padding-right: 15vw !important;
+  }
 }
 .page-home .app .app__container .contacts__heading {
   text-align: center;
@@ -1658,11 +1677,10 @@ html body {
     padding: 10vh 15vw;
   }
 }
-
 @media (min-width: 1200px) {
-    .__padding {
-        padding: 10vh 165px 10vh 15vw;
-    }
+  .__padding {
+    padding: 10vh 165px 10vh 15vw;
+  }
 }
 .__hidden {
   display: none;
