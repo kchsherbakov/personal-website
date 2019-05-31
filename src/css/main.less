@@ -125,6 +125,7 @@ html {
   color: #000;
   text-rendering: optimizeLegibility;
   background-color: #fff;
+  pointer-events: all;
 
   @media (min-width: @min-width-m) {
     font-size: 1.4rem;
@@ -348,7 +349,6 @@ html {
         background: #fff;
         border-radius: 25px;
         text-decoration: none;
-        pointer-events: all;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
         cursor: pointer;
         z-index: 1000;
@@ -756,7 +756,6 @@ html {
 
       .intro {
         z-index: 0;
-        pointer-events: none;
         background-color: @accent-color;
         overflow: hidden;
 
@@ -1640,6 +1639,80 @@ html {
           }
         }
       }
+    }
+  }
+
+  .page-not-found {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: @background-color;
+
+    &__scene {
+      // Custom styles
+    }
+
+    &__404 {
+      position: absolute;
+
+      svg {
+        width: 300px;
+        overflow: hidden;
+        display: block;
+        transform-origin: 0 0 0;
+        fill: #000;
+      }
+    }
+
+    &__404_color_accent {
+      z-index: 0;
+      top: 10px;
+      left: 10px;
+
+      svg {
+        fill: @accent-color;
+      }
+    }
+
+    &__title {
+      color: #000;
+      font-size: 3.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &__text {
+      color: #606060;
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 20px;
+    }
+
+    &__buttons {
+      margin-top: 30px;
+    }
+
+    &__link {
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none;
+      text-transform: uppercase;
+      outline: none;
+      color: @accent-color;
+      font-weight: bold;
+      border: 1px solid @accent-color;
+      background-color: #fff;
+      min-width: 140px;
+      text-align: center;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+
+    &__link_accent {
+      background-color: @accent-color;
+      color: #fff;
     }
   }
 

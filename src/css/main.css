@@ -95,6 +95,7 @@ html body {
   color: #000;
   text-rendering: optimizeLegibility;
   background-color: #fff;
+  pointer-events: all;
 }
 @media (min-width: 768px) {
   .page-home {
@@ -329,7 +330,6 @@ html body {
      -moz-border-radius: 25px;
           border-radius: 25px;
   text-decoration: none;
-  pointer-events: all;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
      -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
@@ -768,7 +768,6 @@ html body {
 }
 .page-home .app .app__container .intro {
   z-index: 0;
-  pointer-events: none;
   background-color: #1e7fc6;
   overflow: hidden;
 }
@@ -1630,6 +1629,69 @@ html body {
   .page-home .app .app__container .contacts__say-hello-button {
     font-size: 1.5rem;
   }
+}
+.page-home .page-not-found {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #f8f8f8;
+}
+.page-home .page-not-found__404 {
+  position: absolute;
+}
+.page-home .page-not-found__404 svg {
+  width: 300px;
+  overflow: hidden;
+  display: block;
+  -webkit-transform-origin: 0 0 0;
+     -moz-transform-origin: 0 0 0;
+      -ms-transform-origin: 0 0 0;
+       -o-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  fill: #000;
+}
+.page-home .page-not-found__404_color_accent {
+  z-index: 0;
+  top: 10px;
+  left: 10px;
+}
+.page-home .page-not-found__404_color_accent svg {
+  fill: #1e7fc6;
+}
+.page-home .page-not-found__title {
+  color: #000;
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.page-home .page-not-found__text {
+  color: #606060;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+.page-home .page-not-found__buttons {
+  margin-top: 30px;
+}
+.page-home .page-not-found__link {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  color: #1e7fc6;
+  font-weight: bold;
+  border: 1px solid #1e7fc6;
+  background-color: #fff;
+  min-width: 140px;
+  text-align: center;
+}
+.page-home .page-not-found__link:first-child {
+  margin-right: 15px;
+}
+.page-home .page-not-found__link_accent {
+  background-color: #1e7fc6;
+  color: #fff;
 }
 .page-home .footer {
   position: fixed;
