@@ -1698,6 +1698,7 @@ html body {
   border: 1px solid #1e7fc6;
   background-color: #fff;
   text-align: center;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .page-home .page-not-found__link {
