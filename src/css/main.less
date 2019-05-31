@@ -1643,24 +1643,32 @@ html {
   }
 
   .page-not-found {
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 0;
     background-color: @background-color;
+    overflow: hidden;
 
     &__scene {
       // Custom styles
     }
 
     &__404 {
-      position: absolute;
+      z-index: 10;
 
       svg {
-        width: 300px;
+        width: 250px;
         overflow: hidden;
         display: block;
         transform-origin: 0 0 0;
         fill: #000;
+
+        @media(min-width: @min-width-l) {
+          width: 300px;
+        }
       }
     }
 
@@ -1676,9 +1684,13 @@ html {
 
     &__title {
       color: #000;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       text-align: center;
       text-transform: uppercase;
+
+      @media(min-width: @min-width-l) {
+        font-size: 3.5rem;
+      }
     }
 
     &__text {
@@ -1702,8 +1714,11 @@ html {
       font-weight: bold;
       border: 1px solid @accent-color;
       background-color: #fff;
-      min-width: 140px;
       text-align: center;
+
+      @media(min-width: @min-width-m) {
+        min-width: 140px;
+      }
 
       &:first-child {
         margin-right: 15px;
