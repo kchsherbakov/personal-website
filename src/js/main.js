@@ -1,4 +1,4 @@
-const IMAGE_PATH_PREFIX = './img/';
+const IMAGE_PATH_PREFIX = '/img/';
 const ENUM_DATE_TYPE_YEAR = 0;
 const ENUM_DATE_TYPE_MONTH = 1;
 const ENUM_DATE_TYPE_MONTH_AND_YEAR = 2;
@@ -269,8 +269,8 @@ function calcDateDiff(startDate, endDate, returnInterval) {
 function loadTimelineContent() {
     let httpRequest = new XMLHttpRequest();
     let url = window.location.pathname.indexOf('/ru') > -1 ?
-        './content/timeline/content-ru.json'
-        : './content/timeline/content-en.json';
+        '/content/timeline/content-ru.json'
+        : '/content/timeline/content-en.json';
     httpRequest.open('GET', url);
     httpRequest.setRequestHeader('cache-control', 'public, max-age=31536000');
 
