@@ -1,0 +1,122 @@
+[
+  {
+    "type": "position",
+    "type_display_name": "position",
+    "start_date": "2018-01-01",
+    "end_date": "2018-08-01",
+    "date_show_type": 2,
+    "title": "Middle back end software developer",
+    "org_logo": "ticketon-logo.png",
+    "org_logo_alt_name": "Ticketon",
+    "org_name": "Ticketon",
+    "org_link": "https://ticketon.kz",
+    "tags": [
+      "php",
+      "go",
+      "javascript",
+      "postgresq",
+      "elastic-stack"
+    ],
+    "description": "Back end development and designing database architecture from scratch, taking into account business need and possibility of adding new functionality."
+  },
+  {
+    "type": "position",
+    "type_display_name": "position",
+    "start_date": "2018-08-20",
+    "end_date": "",
+    "date_show_type": 2,
+    "title": "Full stack developer",
+    "org_logo": "alfa-bank-logo.png",
+    "org_logo_alt_name": "JSC Alfa-Bank",
+    "org_name": "Alfa-Bank",
+    "org_link": "https://alfabank.kz",
+    "tags": [
+      "C#",
+      "asp.net",
+      "html",
+      "css",
+      "javascript",
+      "entity-framework",
+      "couchbase",
+      "iis"
+    ],
+    "description": "Development of new functionality and full life-cycle support of the monolithic application widely used by the Corporate Bank."
+  },
+  {
+    "type": "education",
+    "type_display_name": "education",
+    "start_date": "2014-07-01",
+    "end_date": "2018-05-25",
+    "date_show_type": 0,
+    "title": "Bachelor degree in Computer Systems and Software Engineering",
+    "org_logo": "iitu-logo.jpg",
+    "org_logo_alt_name": "The International Information Technology University",
+    "org_name": "The International Information Technology University",
+    "org_link": "http://www.iitu.kz",
+    "tags": [
+      "C#",
+      "c++",
+      "c",
+      "java",
+      "python",
+      "machine-learning"
+    ],
+    "description": "In addition to the main course of study, I took an active part in conferences, hackathons and other events dedicated to professional development. While studying at the university, my team won the first place in the hackathon (named \"Halyk FinTech\") conducted by the largest bank in Kazakhstan - Halyk Bank. After some time, the team also won the first place in the internal university hackathon, dedicated to the development of internal technologies of the university and the improvement of the quality of education. At this hackathon, our team presented an automated schedule management system, which later became available to all faculty members and students.<br><br>Major projects: <br>1. Schedule - automated schedule management system, which consists of three main components - the back end part, admin panel, web application, clients for mobile platforms (iOS, Android). The main features of the Schedule system were a convenient interface for managing the classroom fund, the possibility of semi-automatic scheduling with further adjustments by the department, as well as the ability to view the load of each teacher. <br>2. NNC - Neural Network Constructor, which provides people, with superficial knowledge in the field of neural networks, the ability to use the designer with a user-friendly interface to fully customize the learning algorithm. After the neural network was configured, the user could download the data set to start the learning process. At the end of the learning process, the system automatically provided the opportunity to publish an auto-generated API, which was accessed through tokens that the owner of the neural network could manage in his panel."
+  },
+  {
+    "type": "milestone",
+    "type_display_name": "milestone",
+    "start_date": "2016-07-01",
+    "end_date": "",
+    "date_show_type": 2,
+    "title": "Won 1st place in hackathon",
+    "org_logo": "centras-insurance-logo.png",
+    "org_logo_alt_name": "Centras Insurance",
+    "org_name": "Centras Insurance",
+    "org_link": "https://cic.kz/en/",
+    "tags": [
+      "php",
+      "javascript"
+    ],
+    "description": "Development of the porject used for analysis of the market value of the vehicle."
+  },
+  {
+    "type": "milestone",
+    "type_display_name": "milestone",
+    "start_date": "2016-02-01",
+    "end_date": "",
+    "date_show_type": 2,
+    "title": "Our team won 1st place in Halyk-FinTech hackathon",
+    "org_logo": "halyk-bank-logo.png",
+    "org_logo_alt_name": "Halyk Savings Bank of Kazakhstan JSC",
+    "org_name": "Halyk Savings Bank of Kazakhstan JSC",
+    "org_link": "https://halykbank.kz/",
+    "tags": [
+      "android",
+      "uwp",
+      "ios",
+      "nfc"
+    ],
+    "description": "“Wi-Pay” NFC contactless payment application for Android, iOS and Windows Phone."
+  },
+  {
+    "type": "milestone",
+    "type_display_name": "milestone",
+    "start_date": "2017-10-01",
+    "end_date": "",
+    "date_show_type": 2,
+    "title": "Our team won 3st place in BCC Innovation Challenge",
+    "org_logo": "bcc-logo.png",
+    "org_logo_alt_name": "JSC Bank CenterCredit",
+    "org_name": "JSC Bank CenterCredit",
+    "org_link": "https://www.bcc.kz/",
+    "tags": [
+      "gamification",
+      "python",
+      "machine-learning",
+      "tensorflow",
+      "blender"
+    ],
+    "description": "Development of chat bot with elements of gamification. Relevant responses were generated by machine learning algorithms powered by TensorFlow."
+  }
+]
