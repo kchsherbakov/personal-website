@@ -268,8 +268,8 @@ function calcDateDiff(startDate, endDate, returnInterval) {
 
 function loadTimelineContent() {
     let httpRequest = new XMLHttpRequest();
-    let url = window.location.pathname.indexOf('/ru') > -1 ?
-        '/content/timeline/content-ru.json'
+    let url = window.location.pathname.indexOf('/en') > -1 ?
+        '/content/timeline/content-en.json'
         : '/content/timeline/content-en.json';
     httpRequest.open('GET', url);
     httpRequest.setRequestHeader('cache-control', 'public, max-age=31536000');
@@ -289,7 +289,7 @@ function loadTimelineContent() {
 }
 
 function initTimeline(response) {
-    let locale = window.location.pathname.indexOf('/ru') > -1 ? 'ru-ru' : 'en-en';
+    let locale = window.location.pathname.indexOf('/en') > -1 ? 'en-en' : 'en-en';
     let timelineData = JSON.parse(response).sort(function (d1, d2) {
         return new Date(d2['start_date']) - new Date(d1['start_date']);
     });
@@ -407,7 +407,7 @@ function initTimeline(response) {
 }
 
 function localeStringEndings(locale, interval, count) {
-    if (locale.indexOf('ru') > -1) {
+    if (locale.indexOf('en') > -1) {
         let cases = [2, 0, 1, 1, 1, 2];
         if (interval === ENUM_DATE_TYPE_YEAR) {
             let yearTitles = ['год', 'года', 'лет'];

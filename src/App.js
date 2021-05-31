@@ -1,13 +1,15 @@
 import React, {Component} from "react";
+import {withTranslation} from "react-i18next";
 
-class App extends React.Component {
+class App extends Component {
     render() {
+        const {t} = this.props;
         return (
             <div>
-                TEST
+                {t('title')}
             </div>
         )
     }
 }
 
-export default App;
+export default withTranslation()(App);
