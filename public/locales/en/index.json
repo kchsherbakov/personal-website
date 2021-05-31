@@ -1,4 +1,7 @@
 {
-  "header_lng_en": "EN.",
-  "header_lng_ru": "RU."
+  "lng_en_label": "EN.",
+  "lng_ru_label": "RU.",
+  "footer": {
+    "designed_by": "Designed & Build by Konstantin Chsherbakov"
+  }
 }
