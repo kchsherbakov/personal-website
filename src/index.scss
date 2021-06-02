@@ -41,9 +41,9 @@ $min-width-l: 992px;
 $min-width-xl: 1200px;
 $min-width-xxl: 1500px;
 
-$app-container-bottom-margin-xs: 100px;
-$app-container-bottom-margin-m: 100px + $border-size-m;
-$app-container-bottom-margin-l: 100px + $border-size-l;
+$content-container-bottom-margin-xs: 100px;
+$content-container-bottom-margin-m: 100px + $border-size-m;
+$content-container-bottom-margin-l: 100px + $border-size-l;
 
 @font-face {
   font-family: Gilroy;
@@ -653,7 +653,6 @@ html {
     cursor: pointer;
     z-index: 110;
     transform: rotate(90deg);
-    bottom: -100px;
     right: $border-size-m + 20px;
     transition: bottom 300ms ease-in-out 0ms;
 
@@ -745,31 +744,31 @@ html {
 
   // endregion Borders
 
-  .app {
-    counter-reset: app-section-counter -1;
+  .content {
+    counter-reset: content-section-counter -1;
     position: relative;
     z-index: 1;
     overflow: hidden;
     transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
 
-    .app__container {
+    .content__container {
       width: 100%;
       padding-right: 0;
       padding-left: 0;
       margin-right: auto;
       margin-left: auto;
-      margin-bottom: $app-container-bottom-margin-xs;
+      margin-bottom: $content-container-bottom-margin-xs;
       position: relative;
       background: $background-color;
       overflow: hidden;
       transition: transform 500ms cubic-bezier(1, 0, 0, 1) 0ms;
 
       @media (min-width: $min-width-m) {
-        margin-bottom: $app-container-bottom-margin-m;
+        margin-bottom: $content-container-bottom-margin-m;
       }
 
       @media (min-width: $min-width-l) {
-        margin-bottom: $app-container-bottom-margin-l;
+        margin-bottom: $content-container-bottom-margin-l;
       }
 
       .intro {
@@ -970,8 +969,8 @@ html {
           &:before {
             @include console-font;
             display: block;
-            counter-increment: app-section-counter;
-            content: "0" counter(app-section-counter) ".";
+            counter-increment: content-section-counter;
+            content: "0" counter(content-section-counter) ".";
             color: $accent-color;
             font-size: 2rem;
             font-weight: bold;
@@ -1156,8 +1155,8 @@ html {
           &:before {
             @include console-font;
             display: block;
-            counter-increment: app-section-counter;
-            content: "0" counter(app-section-counter) ".";
+            counter-increment: content-section-counter;
+            content: "0" counter(content-section-counter) ".";
             color: $accent-color;
             font-size: 2rem;
             font-weight: bold;
@@ -1551,14 +1550,14 @@ html {
       }
 
       .contacts {
-        height: calc(100vh - #{$app-container-bottom-margin-xs});
+        height: calc(100vh - #{$content-container-bottom-margin-xs});
 
         @media (min-width: $min-width-m) {
-          height: calc(100vh - #{$app-container-bottom-margin-m});
+          height: calc(100vh - #{$content-container-bottom-margin-m});
         }
 
         @media (min-width: $min-width-l) {
-          height: calc(100vh - #{$app-container-bottom-margin-l});
+          height: calc(100vh - #{$content-container-bottom-margin-l});
         }
 
         &__padding {
@@ -1587,8 +1586,8 @@ html {
 
           &:before {
             @include console-font;
-            counter-increment: app-section-counter;
-            content: "0" counter(app-section-counter) ".";
+            counter-increment: content-section-counter;
+            content: "0" counter(content-section-counter) ".";
             color: $accent-color;
             font-size: 2rem;
             font-weight: bold;
@@ -1755,15 +1754,15 @@ html {
     left: 0;
     right: 0;
     width: 100%;
-    height: $app-container-bottom-margin-xs;
+    height: $content-container-bottom-margin-xs;
     text-align: center;
 
     @media (min-width: $min-width-m) {
-      height: $app-container-bottom-margin-m;
+      height: $content-container-bottom-margin-m;
     }
 
     @media (min-width: $min-width-l) {
-      height: $app-container-bottom-margin-l;
+      height: $content-container-bottom-margin-l;
     }
 
     &__text {
