@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {HelloSection} from "./HelloSection";
 import {Parallax} from "react-scroll-parallax";
 import {AboutSection} from "./AboutSection";
+import {Contacts} from "./ContactsSection";
 
 class Content extends Component {
     render() {
@@ -11,6 +12,7 @@ class Content extends Component {
                     <HelloSection {...this.props}/>
                     <ParallaxImage/>
                     <AboutSection/>
+                    <Contacts/>
                 </div>
             </div>
         )
