@@ -6,6 +6,7 @@ class HelloSection extends Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.state = {
             helloVisible: true,
+            scrollVisible: true,
             viewportHeight: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
 
         };
@@ -23,25 +24,40 @@ class HelloSection extends Component {
         if (window.scrollY > 50) {
             this.props.showHello();
             this.setState({
-                helloVisible: true
+                scrollVisible: false
             });
         } else {
             this.props.hideHello();
             this.setState({
-                helloVisible: false,
+                scrollVisible: true,
             })
+        }
+
+        // Hide intro sections, otherwise 'hello' and 'greetings'
+        // sections will overlay other content
+        let greetingsSection = document.getElementById('greetings-section');
+        if (window.scrollY > 2 * this.state.viewportHeight) {
+            this.setState({
+                helloVisible: false,
+            });
+            greetingsSection.style.setProperty('display', 'none', 'important');
+        } else {
+            this.setState({
+                helloVisible: true
+            });
+            greetingsSection.style.setProperty('display', 'flex', 'important');
         }
     }
 
     render() {
         return (
             <div className="intro">
-                <section className="intro__hello hello">
+                <section className={`intro__hello hello ${this.state.helloVisible ? '' : '__hidden'} `}>
                     <div className="hello__padding __padding">
                         {this.props.lang === 'ru' ? <HelloTextRu/> : <HelloTextEn/>}
                         <div className="hello__page-color"/>
                         <span
-                            className={`hello__scroll-text __console-font ${this.state.helloVisible ? 'hello__scroll-text_hidden' : ''}`}>
+                            className={`hello__scroll-text __console-font ${this.state.scrollVisible ? '' : 'hello__scroll-text_hidden'}`}>
                         <img src="/img/left-arrow-white-icon.svg" alt="Scroll down"/>
                         Scroll
                     </span>
