@@ -45,7 +45,10 @@ class App extends Component {
                 <Menu toggleMenu={this.toggleMenu}/>
                 <Borders/>
                 <ScrollToTop/>
-                <Content lang={this.props.i18n.language} showHello={this.showHello} hideHello={this.hideHello}/>
+                <Content {...this.props}
+                         lang={this.props.i18n.language}
+                         showHello={this.showHello}
+                         hideHello={this.hideHello}/>
                 <Footer/>
             </div>
         )

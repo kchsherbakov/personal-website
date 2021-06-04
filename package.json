@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
     "i18next": "^20.3.1",
     "i18next-browser-languagedetector": "^6.1.1",
+    "i18next-intervalplural-postprocessor": "^3.0.0",
     "i18next-xhr-backend": "^3.2.2",
     "node-sass": "^6.0.0",
     "npm-run-all": "^4.1.5",

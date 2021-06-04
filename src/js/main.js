@@ -251,7 +251,7 @@ function calcDateDiff(startDate, endDate, returnInterval) {
         // Calc year difference
         return diffDate.getFullYear() - 1970;
     } else if (returnInterval === ENUM_DATE_TYPE_MONTH) {
-        // Includes last month to the count
+
         return diffDate.getMonth() + 1;
     }
 }

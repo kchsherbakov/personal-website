@@ -1,6 +1,17 @@
 {
   "lng_en_label": "EN.",
   "lng_ru_label": "RU.",
+  "experience": {
+    "dates": {
+      "yearsAndMonths": "$t(experience.dates.years, {\"context\": '{{years}}', \"count\": {{years}} }) $t(experience.dates.months, {\"context\": '{{months}}', \"count\": {{months}}})",
+      "years": "{{count}} year",
+      "years_0": "",
+      "years_plural": "{{count}} years",
+      "months": "{{count}} month",
+      "months_0": "",
+      "months_plural": "{{count}} months"
+    }
+  },
   "footer": {
     "designed_by": "Designed & Build by Konstantin Chsherbakov"
   }
