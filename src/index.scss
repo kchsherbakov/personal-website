@@ -1211,6 +1211,7 @@ html {
             margin: 0;
             color: #fff;
             font-size: 30rem;
+            transform: rotate(-45deg);
           }
         }
 
@@ -1258,7 +1259,7 @@ html {
             &:nth-child(odd) {
               @media (min-width: $min-width-m) {
                 margin-top: 150px;
-                margin-left: 43px;
+                margin-left: 47px;
                 margin-bottom: -100px;
               }
             }
@@ -1342,13 +1343,13 @@ html {
             margin-top: 0 !important;
 
             &:before {
-              background-image: url("/public/img/timeline-info-icon.svg");
+              background-image: url("/img/timeline-info-icon.svg");
             }
           }
 
           &__item_type_position {
             &:before {
-              background-image: url("/public/img/timeline-position-icon.svg");
+              background-image: url("/img/timeline-position-icon.svg");
             }
           }
 
@@ -1366,13 +1367,13 @@ html {
             }
 
             &:before {
-              background-image: url("/public/img/timeline-education-icon.svg");
+              background-image: url("/img/timeline-education-icon.svg");
             }
           }
 
           &__item_type_open-source {
             &:before {
-              background-image: url("/public/img/timeline-opensource-icon.svg");
+              background-image: url("/img/timeline-opensource-icon.svg");
             }
           }
 
@@ -1386,7 +1387,7 @@ html {
             }
 
             &:before {
-              background-image: url("/public/img/timeline-milestone-icon.svg");
+              background-image: url("/img/timeline-milestone-icon.svg");
             }
           }
 
@@ -1449,12 +1450,6 @@ html {
               padding-right: 0;
             }
 
-            &__text_type_ellipsis {
-              .timeline-item__expander-label {
-                display: block;
-              }
-            }
-
             &__text_type_link {
               color: $accent-color;
               text-decoration: none;
@@ -1470,8 +1465,9 @@ html {
               display: inline-block;
               text-transform: lowercase;
               background-color: #e1ecf4;
+              cursor: default;
               color: #39739d;
-              padding: .4rem 5rem;
+              padding: .4rem .5rem;
               margin: 2px 2px 2px 0;
               line-height: 1;
               white-space: nowrap;
@@ -1508,10 +1504,6 @@ html {
               }
             }
 
-            &__description_hidden {
-              display: none;
-            }
-
             &__expander {
               display: none;
 
@@ -1537,7 +1529,7 @@ html {
             }
 
             &__expander-label {
-              display: none;
+              display: block;
               color: $accent-color;
               margin-top: 10px;
 

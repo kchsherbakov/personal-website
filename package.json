@@ -16,7 +16,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-scroll-parallax": "^2.4.0",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/",

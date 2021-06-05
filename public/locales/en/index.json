@@ -2,6 +2,12 @@
   "lng_en_label": "EN.",
   "lng_ru_label": "RU.",
   "experience": {
+    "legend": "legend",
+    "position": "Position",
+    "education": "Education",
+    "open_source": "Open source",
+    "app_or_feature": "App or Feature",
+    "milestone": "Milestone",
     "dates": {
       "yearsAndMonths": "$t(experience.dates.years, {\"context\": '{{years}}', \"count\": {{years}} }) $t(experience.dates.months, {\"context\": '{{months}}', \"count\": {{months}}})",
       "years": "{{count}} year",

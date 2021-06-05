@@ -6,7 +6,7 @@ const ScrollDiv = styled.div`
 `;
 
 function ScrollToTop() {
-    const [bottom, setBottom] = useState();
+    const [bottom, setBottom] = useState('-100px');
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     const toggleVisibility = () => {
