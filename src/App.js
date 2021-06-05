@@ -41,8 +41,8 @@ class App extends Component {
         return (
             <div
                 className={`page-home ${this.state.menuOpen ? 'menu_open' : ''} ${this.state.helloVisible ? 'hello_visible' : ''}`}>
-                <Header toggleMenu={this.toggleMenu}/>
-                <Menu toggleMenu={this.toggleMenu}/>
+                <Header  {...this.props} toggleMenu={this.toggleMenu}/>
+                <Menu {...this.props} toggleMenu={this.toggleMenu}/>
                 <Borders/>
                 <ScrollToTop/>
                 <Content {...this.props}

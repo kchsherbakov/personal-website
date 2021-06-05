@@ -50,6 +50,8 @@ class HelloSection extends Component {
     }
 
     render() {
+        const {t} = this.props;
+
         return (
             <div className="intro">
                 <section className={`intro__hello hello ${this.state.helloVisible ? '' : '__hidden'} `}>
@@ -59,20 +61,20 @@ class HelloSection extends Component {
                         <span
                             className={`hello__scroll-text __console-font ${this.state.scrollVisible ? '' : 'hello__scroll-text_hidden'}`}>
                         <img src="/img/left-arrow-white-icon.svg" alt="Scroll down"/>
-                        Scroll
+                            {t('scroll')}
                     </span>
                     </div>
                 </section>
                 <section id="greetings-section" className="intro__greetings greetings ">
                     <div className="greetings__padding __padding">
                         <p className="greetings__text __console-font">
-                            Hi, my name is
+                            {t('index.hello')}
                         </p>
                         <p className="greetings__text_size_l greetings__text_color_black greetings__text_weight_bold greetings__text __title-font">
-                            Konstantin Chsherbakov.
+                            {t('index.name')}
                         </p>
                         <p className="greetings__text_size_l greetings__text_weight_bold greetings__text __title-font">
-                            I build software.
+                            {t('index.what_i_do')}
                         </p>
                         <p className="greetings__text __console-font">
                             I’m a software engineer, specializing in building (and occasionally

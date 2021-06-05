@@ -1,7 +1,20 @@
 {
-  "lng_en_label": "EN.",
-  "lng_ru_label": "RU.",
+  "page_title": "Konstantin Chsherbakov | Software Engineer",
+  "page_description": "Konstantin Chsherbakov | Software Engineer with over two years of experience in Frontend, Backend, Desktop and Mobile development",
+  "lng_en_label": "en.",
+  "lng_ru_label": "ru.",
+  "resume": "resume",
+  "scroll": "Scroll",
+  "index": {
+    "hello": "Hi, my name is",
+    "name": "Konstantin Chsherbakov.",
+    "what_i_do": "I build software."
+  },
+  "about": {
+    "title": "about"
+  },
   "experience": {
+    "title": "experience",
     "legend": "legend",
     "position": "Position",
     "education": "Education",
@@ -17,6 +30,9 @@
       "months_0": "",
       "months_plural": "{{count}} months"
     }
+  },
+  "contacts": {
+    "title": "contacts"
   },
   "footer": {
     "designed_by": "Designed & Build by Konstantin Chsherbakov"

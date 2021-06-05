@@ -135,7 +135,7 @@ html body {
 
 .page-home .header .nav__lang-switch-item {
   display: block;
-  text-transform: uppercase; }
+  text-transform: lowercase; }
 
 .page-home .header .nav__lang-switch-item a {
   padding: 0;
@@ -175,7 +175,8 @@ html body {
   text-decoration: none;
   outline: none;
   color: #000;
-  font-weight: bold; }
+  font-weight: bold;
+  text-transform: lowercase; }
 
 .page-home .header .nav__page-link:before {
   counter-increment: nav-section-counter;
@@ -186,6 +187,7 @@ html body {
   margin-left: 20px;
   display: inline-block;
   background-color: white;
+  text-transform: lowercase;
   transition: background-color 300ms ease-in-out 0ms; }
 
 @media (min-width: 992px) {
@@ -340,7 +342,7 @@ html body {
 
 .page-home .menu__lang-switch-item {
   display: inline-block;
-  text-transform: uppercase; }
+  text-transform: lowercase; }
 
 .page-home .menu__lang-switch-item a {
   color: #dcdcdc;
@@ -372,7 +374,8 @@ html body {
   text-decoration: none;
   outline: none;
   color: #000;
-  font-weight: bold; }
+  font-weight: bold;
+  text-transform: lowercase; }
 
 .page-home .menu-nav__link:before {
   counter-increment: nav-section-counter;

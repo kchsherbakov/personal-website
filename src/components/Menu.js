@@ -7,31 +7,33 @@ class Menu extends Component {
 
 
     render() {
+        const {t} = this.props;
+
         return (
             <div className="menu">
-                <div className="menu__background"></div>
+                <div className="menu__background"/>
                 <div className="menu__container __padding">
                     <ul className="menu__lang-switch __console-font">
                         <li className="menu__lang-switch-item menu__lang-switch-item_active">
-                            <a href="/en">EN.</a>
+                            <a href="/en">{t('lng_en_label')}</a>
                         </li>
                         <li className="menu__lang-switch-item">
-                            <a href="/ru">RU.</a>
+                            <a href="/ru">{t('lng_ru_label')}</a>
                         </li>
                     </ul>
                     <ul className="menu__nav menu-nav __console-font" onClick={this.props.toggleMenu}>
                         <li className="menu-nav__item">
-                            <a className="menu-nav__link" href="#about-section">About</a>
+                            <a className="menu-nav__link" href="#about-section">{t('about.title')}</a>
                         </li>
                         <li className="menu-nav__item">
-                            <a className="menu-nav__link" href="#experience-section">Experience</a>
+                            <a className="menu-nav__link" href="#experience-section">{t('experience.title')}</a>
                         </li>
                         <li className="menu-nav__item">
-                            <a className="menu-nav__link" href="#contacts-section">Contacts</a>
+                            <a className="menu-nav__link" href="#contacts-section">{t('contacts.title')}</a>
                         </li>
                         <li className="menu-nav__item">
                             <a className="menu-nav__link menu-nav__link_type_mail"
-                               href="/resume" target="_blank">Resume</a>
+                               href="/resume" target="_blank">{t('resume')}</a>
                         </li>
                     </ul>
                     <ul className="menu__socials">

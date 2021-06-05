@@ -214,7 +214,7 @@ html {
 
       &__lang-switch-item {
         display: block;
-        text-transform: uppercase;
+        text-transform: lowercase;
 
         a {
           padding: 0;
@@ -262,6 +262,7 @@ html {
         outline: none;
         color: #000;
         font-weight: bold;
+        text-transform: lowercase;
 
         &:before {
           counter-increment: nav-section-counter;
@@ -274,6 +275,7 @@ html {
         margin-left: 20px;
         display: inline-block;
         background-color: white;
+        text-transform: lowercase;
         transition: background-color 300ms ease-in-out 0ms;
 
         @media (min-width: $min-width-l) {
@@ -455,7 +457,7 @@ html {
 
     &__lang-switch-item {
       display: inline-block;
-      text-transform: uppercase;
+      text-transform: lowercase;
 
       a {
         color: #dcdcdc;
@@ -496,6 +498,7 @@ html {
         outline: none;
         color: #000;
         font-weight: bold;
+        text-transform: lowercase;
 
         &:before {
           counter-increment: nav-section-counter;

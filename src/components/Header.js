@@ -6,6 +6,8 @@ class Header extends Component {
     }
 
     render() {
+        const {t} = this.props;
+
         return (
             <header className="header">
                 <div className="header__nav nav">
@@ -14,31 +16,31 @@ class Header extends Component {
                     </a>
                     <a id="menu-toggle" className="nav__menu-toggle" onClick={this.props.toggleMenu}>
                         <div className="nav__menu-toggle-icon">
-                            <span className="nav__menu-toggle-icon-line"></span>
-                            <span className="nav__menu-toggle-icon-line"></span>
-                            <span className="nav__menu-toggle-icon-line"></span>
+                            <span className="nav__menu-toggle-icon-line"/>
+                            <span className="nav__menu-toggle-icon-line"/>
+                            <span className="nav__menu-toggle-icon-line"/>
                         </div>
                     </a>
                     <ul className="nav__lang-switch __console-font">
                         <li className="nav__lang-switch-item nav__lang-switch-item_active">
-                            <a href="/en">EN.</a>
+                            <a href="/en">{t('lng_en_label')}</a>
                         </li>
                         <li className="nav__lang-switch-item">
-                            <a href="/ru">RU.</a>
+                            <a href="/ru">{t('lng_ru_label')}</a>
                         </li>
                     </ul>
                     <ul className="nav__pages __console-font">
                         <li className="nav__page-item">
-                            <a className="nav__page-link" href="#about-section">About</a>
+                            <a className="nav__page-link" href="#about-section">{t('about.title')}</a>
                         </li>
                         <li className="nav__page-item">
-                            <a className="nav__page-link" href="#experience-section">Experience</a>
+                            <a className="nav__page-link" href="#experience-section">{t('experience.title')}</a>
                         </li>
                         <li className="nav__page-item">
-                            <a className="nav__page-link" href="#contacts-section">Contacts</a>
+                            <a className="nav__page-link" href="#contacts-section">{t('contacts.title')}</a>
                         </li>
                         <li className="nav__hello-button-item">
-                            <a href="/resume" target="_blank">Resume</a>
+                            <a href="/resume" target="_blank">{t('resume')}</a>
                         </li>
                     </ul>
                     <ul className="nav__socials">
