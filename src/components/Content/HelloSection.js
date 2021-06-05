@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {withTranslation} from "react-i18next";
 
 class HelloSection extends Component {
     constructor(props) {
@@ -168,4 +169,4 @@ const HelloTextRu = () => {
     )
 }
 
-export {HelloSection}
+export default withTranslation()(HelloSection)

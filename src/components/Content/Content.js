@@ -1,16 +1,17 @@
 import React, {Component} from "react";
-import {HelloSection} from "./HelloSection";
+import HelloSection from "./HelloSection";
 import {Parallax} from "react-scroll-parallax";
 import {AboutSection} from "./AboutSection";
 import {Contacts} from "./ContactsSection";
-import {ExperienceSection} from "./ExperienceSection";
+import ExperienceSection from "./ExperienceSection";
 
 class Content extends Component {
     render() {
         return (
             <div className="content">
                 <div className="content__container">
-                    <HelloSection {...this.props}/>
+                    <HelloSection showHello={this.showHello}
+                                  hideHello={this.hideHello}/>
                     <ParallaxImage/>
                     <AboutSection/>
                     <ExperienceSection {...this.props}/>

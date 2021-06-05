@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 import styled from 'styled-components';
 
 const ScrollDiv = styled.div`
   bottom: ${props => props.bottom};
 `;
 
-function ScrollToTop() {
+export function ScrollToTop() {
     const [bottom, setBottom] = useState('-100px');
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const {t} = useTranslation();
 
     const toggleVisibility = () => {
         if (window.pageYOffset > viewportHeight) {
@@ -29,16 +31,15 @@ function ScrollToTop() {
         window.addEventListener("scroll", toggleVisibility);
     }, []);
 
+
     return (
         <ScrollDiv bottom={bottom} className="scroll-to-top d-none d-lg-block">
             <a onClick={scrollToTop}>
                     <span className="__console-font">
                         <img src="/img/left-arrow-black-icon.svg" alt="Scroll to top"/>
-                        top
+                        {t('to_top')}
                     </span>
             </a>
         </ScrollDiv>
     )
 }
-
-export {ScrollToTop}

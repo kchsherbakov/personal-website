@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {withTranslation} from "react-i18next";
 
 class Header extends Component {
     constructor(props) {
@@ -69,4 +70,4 @@ class Header extends Component {
     }
 }
 
-export {Header}
+export default withTranslation()(Header)

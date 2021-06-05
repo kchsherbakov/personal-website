@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
-import {Header} from './components/Header'
-import {Menu} from './components/Menu'
+import Header from './components/Header'
+import Menu from './components/Menu'
 import {ScrollToTop} from './components/ScrollToTop'
 import {Borders} from "./components/Borders";
 import {Content} from "./components/Content/Content";
@@ -41,13 +41,11 @@ class App extends Component {
         return (
             <div
                 className={`page-home ${this.state.menuOpen ? 'menu_open' : ''} ${this.state.helloVisible ? 'hello_visible' : ''}`}>
-                <Header  {...this.props} toggleMenu={this.toggleMenu}/>
-                <Menu {...this.props} toggleMenu={this.toggleMenu}/>
+                <Header toggleMenu={this.toggleMenu}/>
+                <Menu toggleMenu={this.toggleMenu}/>
                 <Borders/>
                 <ScrollToTop/>
-                <Content {...this.props}
-                         lang={this.props.i18n.language}
-                         showHello={this.showHello}
+                <Content showHello={this.showHello}
                          hideHello={this.hideHello}/>
                 <Footer/>
             </div>

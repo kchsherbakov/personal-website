@@ -1,12 +1,11 @@
 import React, {Component, Fragment} from "react";
 import styled from "styled-components";
+import {withTranslation} from "react-i18next";
 import {v4 as uuidv4} from 'uuid';
-import axios from 'axios';
 import {
     dateToMonthAndYearOnly,
     getDatesDifferencesVerbose
 } from "../../helpers/dateUtils";
-import * as ReactDOM from "react-dom";
 import {Parallax} from "react-scroll-parallax";
 
 const experienceTypes = {
@@ -19,7 +18,6 @@ class ExperienceSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timelineData: [],
             timelineComponents: [],
         }
     }
@@ -30,8 +28,7 @@ class ExperienceSection extends Component {
 
     async loadExperience() {
         try {
-            const response = await axios.get(`http://localhost:1338/experiences?_locale=${this.props.lang}`);
-            const data = response.data.sort(function (d1, d2) {
+            const data = this.props.sort(function (d1, d2) {
                 return new Date(d2['starDate']) - new Date(d1['startDate']);
             });
 
@@ -81,7 +78,8 @@ class ExperienceSection extends Component {
                                 <br/>
                                 code.
                             </h2>
-                            <Parallax className="experience__bg-scroll d-xl-flex justify-content-center" x={['-100px','100px']} y={['100px', '-100px']}>
+                            <Parallax className="experience__bg-scroll d-xl-flex justify-content-center"
+                                      x={['-100px', '100px']} y={['100px', '-100px']}>
                                 <p className="__title-font">XP</p>
                             </Parallax>
                         </Parallax>
@@ -316,4 +314,4 @@ const Milestone = ({data, props}) => {
     )
 }
 
-export {ExperienceSection}
+export default withTranslation()(ExperienceSection)

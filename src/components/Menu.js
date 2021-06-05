@@ -1,10 +1,10 @@
 import React, {Component} from "react";
+import {withTranslation} from "react-i18next";
 
 class Menu extends Component {
     constructor(props) {
         super(props);
     }
-
 
     render() {
         const {t} = this.props;
@@ -65,4 +65,4 @@ class Menu extends Component {
     }
 }
 
-export {Menu}
+export default withTranslation()(Menu)
