@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
+import {StrapiContext} from "../Providers/StrapiProvider";
 
 class HelloSection extends Component {
+    static contextType = StrapiContext;
+
     constructor(props) {
         super(props);
         this.handleScroll = this.handleScroll.bind(this);
@@ -52,6 +55,7 @@ class HelloSection extends Component {
 
     render() {
         const {t} = this.props;
+        const {appdata} = this.context;
 
         return (
             <div className="intro">
@@ -78,8 +82,7 @@ class HelloSection extends Component {
                             {t('index.what_i_do')}
                         </p>
                         <p className="greetings__text __console-font">
-                            I’m a software engineer, specializing in building (and occasionally
-                            designing) exceptional, high-quality software.
+                            {appdata.aboutMeShort}
                         </p>
                     </div>
                 </section>

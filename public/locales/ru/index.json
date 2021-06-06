@@ -1,6 +1,42 @@
 {
-  "lng_en_label": "АНГ.",
-  "lng_ru_label": "РУС.",
+  "page_title": "Константин Щербаков | Разработчик ПО",
+  "page_description": "Константин Щербаков | Разработчик программного обеспечения с более чем двухлетним опытом работы в Frontend, Backend, Mobile, Desktop областях",
+  "lng_en_label": "анг.",
+  "lng_ru_label": "рус.",
+  "resume": "резюме",
+  "scroll": "Листать",
+  "to_top": "вверх",
+  "index": {
+    "hello": "Привет! Меня зовут",
+    "name": " Константин Щербаков.",
+    "what_i_do": "Я разрабатываю программное обеспечение."
+  },
+  "about": {
+    "title": "обо мне",
+    "who_am_i_1": " <i class=\"__accent-font\">Энтузиаст</i> технологий <br> и <i class=\"__accent-font\">любитель</i> кофе.",
+    "things_i_know": "Вещи, которые <br> я умею делать <br> <i class=\"__accent-font\">хорошо</i>."
+  },
+  "experience": {
+    "title": "опыт работы",
+    "legend": "legend",
+    "position": "Position",
+    "education": "Education",
+    "open_source": "Open source",
+    "app_or_feature": "App or Feature",
+    "milestone": "Milestone",
+    "dates": {
+      "yearsAndMonths": "$t(experience.dates.years, {\"context\": '{{years}}', \"count\": {{years}} }) $t(experience.dates.months, {\"context\": '{{months}}', \"count\": {{months}}})",
+      "years": "{{count}} year",
+      "years_0": "",
+      "years_plural": "{{count}} years",
+      "months": "{{count}} month",
+      "months_0": "",
+      "months_plural": "{{count}} months"
+    }
+  },
+  "contacts": {
+    "title": "контакты"
+  },
   "footer": {
     "designed_by": "Задизайнено и Разработано Константином Щербаковым"
   }

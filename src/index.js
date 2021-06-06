@@ -10,14 +10,14 @@ import StrapiProvider from "./components/Providers/StrapiProvider";
 
 ReactDOM.render(
     <BrowserRouter>
-        <Suspense fallback="Temp loading...">
-            <ParallaxProvider>
+        <ParallaxProvider>
+            <Suspense fallback="Temp loading...">
                 <I18nextProvider i18n={i18n}>
                     <StrapiProvider>
                         <App/>
                     </StrapiProvider>
                 </I18nextProvider>
-            </ParallaxProvider>
-        </Suspense>
+            </Suspense>
+        </ParallaxProvider>
     </BrowserRouter>,
     document.getElementById('app'));

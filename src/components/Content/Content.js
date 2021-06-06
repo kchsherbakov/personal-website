@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import HelloSection from "./HelloSection";
 import {Parallax} from "react-scroll-parallax";
-import {AboutSection} from "./AboutSection";
+import AboutSection from "./AboutSection";
 import {Contacts} from "./ContactsSection";
 import ExperienceSection from "./ExperienceSection";
 
@@ -10,8 +10,8 @@ class Content extends Component {
         return (
             <div className="content">
                 <div className="content__container">
-                    <HelloSection showHello={this.showHello}
-                                  hideHello={this.hideHello}/>
+                    <HelloSection showHello={this.props.showHello}
+                                  hideHello={this.props.hideHello}/>
                     <ParallaxImage/>
                     <AboutSection/>
                     <ExperienceSection {...this.props}/>

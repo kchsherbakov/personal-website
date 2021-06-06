@@ -1,17 +1,14 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {withTranslation} from "react-i18next";
 import axios from "axios"
-
-const StrapiContext = React.createContext({});
 
 class StrapiProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            index: {},
-            about: {},
-            experience: {},
-            errorLoading: false,
+            appdata: {},
+            isLoading: true,
+            errorLoading: null,
         }
     }
 
@@ -20,17 +17,19 @@ class StrapiProvider extends Component {
     }
 
     loadData() {
-        let index = axios.get(this.formatUrl('/index'));
-        let experience = axios.get(this.formatUrl("/experiences"));
-
-        axios.all([index, experience]).then(axios.spread((...responses) => {
+        axios.get(this.formatUrl('/app-data')).then(response => {
             this.setState({
-                index: responses[0].data,
-                experience: responses[1].data,
+                appdata: response.data,
+                isLoading: false,
+                errorLoading: null
+            });
+        }).catch(e => {
+            this.setState({
+                isLoading: false,
+                errorLoading: e,
             })
-        })).catch(errors => {
-            console.log(errors);
-        })
+            console.log(e);
+        });
     }
 
     formatUrl(endpoint) {
@@ -38,12 +37,10 @@ class StrapiProvider extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <StrapiContext.Provider value={{
-                index: this.state.index,
-                about: this.state.about,
-                experience: this.state.experience,
+                appdata: this.state.appdata,
+                isLoading: this.state.isLoading,
                 errorLoading: this.state.errorLoading,
             }}>
                 {this.props.children}
@@ -52,5 +49,6 @@ class StrapiProvider extends Component {
     }
 }
 
+export const StrapiContext = React.createContext({});
 export default withTranslation()(StrapiProvider);
 

@@ -12,7 +12,9 @@
     "what_i_do": "I build software."
   },
   "about": {
-    "title": "about"
+    "title": "about",
+    "who_am_i_1": "Technology <i class=\"__accent-font\">enthusiast</i> <br/> and coffee <i class=\"__accent-font\">lover</i>.",
+    "things_i_know": "Things I <br/> know how to do, <br/> <i class=\"__accent-font\">well</i>."
   },
   "experience": {
     "title": "experience",
