@@ -6,6 +6,8 @@
   "resume": "resume",
   "scroll": "Scroll",
   "to_top": "top",
+  "just_a_sec": "Just a sec...",
+  "loading_data": "I'm loading actual information about myself",
   "index": {
     "hello": "Hi, my name is",
     "name": "Konstantin Chsherbakov.",

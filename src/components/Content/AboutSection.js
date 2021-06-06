@@ -8,43 +8,42 @@ class AboutSection extends Component {
 
     render() {
         const {t} = this.props;
-        const {appdata, isLoading} = this.context;
+        const {appdata, isLoading, errorLoading} = this.context;
 
-        if (isLoading) {
-            return (
-                'Data loding'
-            )
-        } else {
-            return (
-                <section id="about-section" className="about">
-                    <div className="about__padding __padding">
-                        <div className="about__heading">
-                            <h2 className="about__title __title-font">{t('about.title')}</h2>
-                        </div>
-                        <div className="about__bio">
-                            <h2 className="about__pre-phrase __title-font"
-                                dangerouslySetInnerHTML={{__html: t('about.who_am_i_1')}}/>
-                            <p className="about__text"
-                               dangerouslySetInnerHTML={{__html: appdata.aboutMeFull}}/>
-                        </div>
-                        <Parallax y={[20, -80]}>
-                            <div className="about__skills about__skills-padding skills">
-                                <div className="skills__pre-phrase __title-font">
-                                    <h2 dangerouslySetInnerHTML={{__html: t('about.things_i_know')}}/>
-                                </div>
-                                <div className="skills__container row">
-                                    {appdata.aboutTech.map((t,i) => {
-                                        return (
-                                            <SkillsCategory key={i} title={t.title} values={t.values}/>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                        </Parallax>
+        return (
+            <section id="about-section" className="about">
+                <div className="about__padding __padding">
+                    <div className="about__heading">
+                        <h2 className="about__title __title-font">{t('about.title')}</h2>
                     </div>
-                </section>
-            )
-        }
+                    <div className="about__bio">
+                        <h2 className="about__pre-phrase __title-font"
+                            dangerouslySetInnerHTML={{__html: t('about.who_am_i_1')}}/>
+                        <p className="about__text"
+                           dangerouslySetInnerHTML={{__html: appdata.aboutMeFull}}/>
+                    </div>
+                    <Parallax y={[20, -80]}>
+                        <div className="about__skills about__skills-padding skills">
+                            <div className="skills__pre-phrase __title-font">
+                                <h2 dangerouslySetInnerHTML={{__html: t('about.things_i_know')}}/>
+                            </div>
+                            <div className="skills__container row">
+                                {
+                                    isLoading || errorLoading !== undefined
+                                        ? 'Data loading...'
+                                        : (appdata.aboutTech.map((t, i) => {
+                                            return (
+                                                <SkillsCategory key={i} title={t.title} values={t.values}/>
+                                            )
+                                        }))
+                                }
+
+                            </div>
+                        </div>
+                    </Parallax>
+                </div>
+            </section>
+        )
     }
 }
 

@@ -171,7 +171,7 @@ html {
           position: fixed;
           top: 10px;
           left: $border-size-m;
-          z-index: 1000;
+          z-index: 200;
         }
 
         @media (min-width: $min-width-l) {
@@ -196,7 +196,7 @@ html {
         @include hidden;
         margin: 0;
         padding: 0;
-        z-index: 1000;
+        z-index: 200;
         list-style: none;
 
         @media (min-width: $min-width-m) {
@@ -233,7 +233,7 @@ html {
 
       &__pages {
         @include hidden;
-        z-index: 1000;
+        z-index: 200;
         counter-reset: nav-section-counter -1;
         margin: 0;
         padding: 0;
@@ -302,7 +302,7 @@ html {
 
       &__socials {
         @include hidden;
-        z-index: 1000;
+        z-index: 200;
         padding: 0;
         list-style: none;
 
@@ -371,7 +371,7 @@ html {
         text-decoration: none;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
         cursor: pointer;
-        z-index: 1000;
+        z-index: 600;
         transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
         @media (min-width: $min-width-m) {
@@ -559,15 +559,15 @@ html {
   // region Popup
 
   .popup {
-    display: none !important;
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1000;
-    transform: translate(0, -100vh);
-    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, visibility 500ms linear 0ms;
+    //transform: translate(0, -100vh);
+    //transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms, visibility 500ms linear 0ms;
     background-color: rgba(#000, 0.6);
 
     &__padding {

@@ -6,6 +6,7 @@ import {ScrollToTop} from './components/ScrollToTop'
 import {Borders} from "./components/Borders";
 import {Content} from "./components/Content/Content";
 import Footer from "./components/Footer";
+import {StrapiDataLoader} from "./components/Providers/StrapiDataLoader";
 
 class App extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class App extends Component {
         return (
             <div
                 className={`page-home ${this.state.menuOpen ? 'menu_open' : ''} ${this.state.helloVisible ? 'hello_visible' : ''}`}>
+                <StrapiDataLoader/>
                 <Header toggleMenu={this.toggleMenu}/>
                 <Menu toggleMenu={this.toggleMenu}/>
                 <Borders/>

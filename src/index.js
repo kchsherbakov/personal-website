@@ -7,11 +7,12 @@ import i18n from './i18n'
 import {BrowserRouter} from 'react-router-dom';
 import {ParallaxProvider} from "react-scroll-parallax";
 import StrapiProvider from "./components/Providers/StrapiProvider";
+import LoaderWrapper from "./components/LoaderWrapper";
 
 ReactDOM.render(
     <BrowserRouter>
         <ParallaxProvider>
-            <Suspense fallback="Temp loading...">
+            <Suspense fallback={LoaderWrapper}>
                 <I18nextProvider i18n={i18n}>
                     <StrapiProvider>
                         <App/>
