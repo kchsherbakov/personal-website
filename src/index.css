@@ -735,22 +735,6 @@ html body {
     height: 200vh;
     overflow: auto; } }
 
-.page-home .content .content__container .image-section-parallax {
-  position: relative; }
-
-.page-home .content .content__container .image-section-parallax__bgimage {
-  width: 100%;
-  height: 180px;
-  background-image: url("/img/landscape-mountains.jpg");
-  background-size: cover;
-  background-position: center; }
-
-@media (min-width: 768px) {
-  .page-home .content .content__container .image-section-parallax__bgimage {
-    z-index: 100;
-    height: 70vh;
-    width: auto; } }
-
 .page-home .content .content__container .about__padding {
   padding-bottom: 0; }
 
@@ -1127,7 +1111,7 @@ html body {
 .page-home .content .content__container .experience .timeline .timeline-item__date-diff {
   text-transform: lowercase !important; }
 
-.page-home .content .content__container .experience .timeline .timeline-item__date:before {
+.page-home .content .content__container .experience .timeline .timeline-item__date:before, .page-home .content .content__container .experience .timeline .timeline-item__date-diff:before {
   content: " \02022 ";
   padding-left: 2px;
   padding-right: 4px; }

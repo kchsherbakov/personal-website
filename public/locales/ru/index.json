@@ -20,20 +20,22 @@
   },
   "experience": {
     "title": "опыт работы",
-    "legend": "legend",
-    "position": "Position",
-    "education": "Education",
-    "open_source": "Open source",
-    "app_or_feature": "App or Feature",
-    "milestone": "Milestone",
+    "who_am_i_2": "Разработчик, который фокусируется <br> на написании <i class=\"__accent-font\">чистого</i> и <i     class=\"__accent-font\">эффективного</i> <br> кода.",
+    "legend": "Легенда",
+    "position": "Должность",
+    "education": "Образование",
+    "open_source": "Открытый проект",
+    "app_or_feature": "Приложение или фича",
+    "milestone": "Достижение",
+    "data_less": "Свернуть",
+    "data_more": "Читать дальше",
+    "present": "По настоящее время",
     "dates": {
-      "yearsAndMonths": "$t(experience.dates.years, {\"context\": '{{years}}', \"count\": {{years}} }) $t(experience.dates.months, {\"context\": '{{months}}', \"count\": {{months}}})",
-      "years": "{{count}} year",
-      "years_0": "",
-      "years_plural": "{{count}} years",
-      "months": "{{count}} month",
-      "months_0": "",
-      "months_plural": "{{count}} months"
+      "yearsAndMonths": "$t(experience.dates.years, {\"count\": {{years}} }) $t(experience.dates.months, {\"count\": {{months}}})",
+      "years": "{{count}} год(-а)",
+      "years_plural": "{{count}} лет",
+      "months": "{{count}} месяц(-ев)",
+      "months_plural": "{{count}} месяцев"
     }
   },
   "contacts": {

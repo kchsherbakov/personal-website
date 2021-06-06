@@ -2,6 +2,8 @@ import React, {Component, useContext} from "react";
 import {StrapiContext} from "../Providers/StrapiProvider";
 import {withTranslation} from "react-i18next";
 import {Parallax} from "react-scroll-parallax";
+import {withWindowDimensions} from "../../helpers/dimensions";
+import {vars} from "../../vars";
 
 class AboutSection extends Component {
     static contextType = StrapiContext;
@@ -9,6 +11,7 @@ class AboutSection extends Component {
     render() {
         const {t} = this.props;
         const {appdata, isLoading, errorLoading} = this.context;
+        const parallaxDisabled = this.props.windowWidth < vars.mediaQueries.minWidth.l;
 
         return (
             <section id="about-section" className="about">
@@ -22,14 +25,14 @@ class AboutSection extends Component {
                         <p className="about__text"
                            dangerouslySetInnerHTML={{__html: appdata.aboutMeFull}}/>
                     </div>
-                    <Parallax y={[20, -80]}>
+                    <Parallax y={[20, -80]} disabled={parallaxDisabled}>
                         <div className="about__skills about__skills-padding skills">
                             <div className="skills__pre-phrase __title-font">
                                 <h2 dangerouslySetInnerHTML={{__html: t('about.things_i_know')}}/>
                             </div>
                             <div className="skills__container row">
                                 {
-                                    isLoading || errorLoading !== undefined
+                                    isLoading || errorLoading !== null
                                         ? 'Data loading...'
                                         : (appdata.aboutTech.map((t, i) => {
                                             return (
@@ -37,7 +40,6 @@ class AboutSection extends Component {
                                             )
                                         }))
                                 }
-
                             </div>
                         </div>
                     </Parallax>
@@ -66,4 +68,4 @@ const SkillsCategory = ({title, values}) => {
     )
 }
 
-export default withTranslation()(AboutSection);
+export default withTranslation()(withWindowDimensions(AboutSection));

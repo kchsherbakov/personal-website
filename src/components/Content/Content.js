@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Parallax} from "react-scroll-parallax";
+import {ParallaxBanner} from "react-scroll-parallax";
 import HelloSection from "./HelloSection";
 import AboutSection from "./AboutSection";
 import Contacts from "./ContactsSection";
@@ -24,9 +24,13 @@ class Content extends Component {
 
 const ParallaxImage = () => {
     return (
-        <Parallax className="image-section-parallax" y={[-20, 20]} disabled={true}>
-            <div className="image-section-parallax__bgimage"/>
-        </Parallax>
+        <ParallaxBanner layers={[
+            {
+                image: '/img/landscape-mountains.jpg',
+                amount: 0.3,
+            }
+        ]}
+        />
     )
 }
 

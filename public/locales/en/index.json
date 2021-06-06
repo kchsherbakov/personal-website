@@ -20,19 +20,21 @@
   },
   "experience": {
     "title": "experience",
+    "who_am_i_2": "Developer who focuses <br/> on writing <i class=\"__accent-font\">clean</i> and <i class=\"__accent-font\">efficient</i> <br/> code.",
     "legend": "legend",
     "position": "Position",
     "education": "Education",
     "open_source": "Open source",
     "app_or_feature": "App or Feature",
     "milestone": "Milestone",
+    "data_less": "Less",
+    "data_more": "Read more",
+    "present": "Present",
     "dates": {
-      "yearsAndMonths": "$t(experience.dates.years, {\"context\": '{{years}}', \"count\": {{years}} }) $t(experience.dates.months, {\"context\": '{{months}}', \"count\": {{months}}})",
+      "yearsAndMonths": "$t(experience.dates.years, {\"count\": {{years}} }) $t(experience.dates.months, {\"count\": {{months}}})",
       "years": "{{count}} year",
-      "years_0": "",
       "years_plural": "{{count}} years",
       "months": "{{count}} month",
-      "months_0": "",
       "months_plural": "{{count}} months"
     }
   },
