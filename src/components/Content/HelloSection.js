@@ -54,14 +54,14 @@ class HelloSection extends Component {
     }
 
     render() {
-        const {t} = this.props;
+        const {t, i18n} = this.props;
         const {appdata} = this.context;
 
         return (
             <div className="intro">
                 <section className={`intro__hello hello ${this.state.helloVisible ? '' : '__hidden'} `}>
                     <div className="hello__padding __padding">
-                        {this.props.lang === 'ru' ? <HelloTextRu/> : <HelloTextEn/>}
+                        {i18n.language === 'ru' ? <HelloTextRu/> : <HelloTextEn/>}
                         <div className="hello__page-color"/>
                         <span
                             className={`hello__scroll-text __console-font ${this.state.scrollVisible ? '' : 'hello__scroll-text_hidden'}`}>
