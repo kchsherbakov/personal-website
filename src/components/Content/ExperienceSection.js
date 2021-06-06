@@ -192,12 +192,10 @@ class CollapsibleDescription extends Component {
                     <p ref={(descriptionFull) => {
                         this.descriptionFull = descriptionFull
                     }}
-                       className={`timeline-item__description timeline-item__description_size_full ${this.state.showFull ? '' : '__hidden'}`}>
-                        {this.props.description}
-                    </p>
-                    <p className={`timeline-item__description timeline-item__description_size_truncated ${!this.state.showFull ? '' : '__hidden'}`}>
-                        {this.props.description}
-                    </p>
+                       className={`timeline-item__description timeline-item__description_size_full ${this.state.showFull ? '' : '__hidden'}`}
+                       dangerouslySetInnerHTML={{__html: this.props.description}}/>
+                    <p className={`timeline-item__description timeline-item__description_size_truncated ${!this.state.showFull ? '' : '__hidden'}`}
+                       dangerouslySetInnerHTML={{__html: this.props.description}}/>
                 </div>
                 <label htmlFor={this.state.id}
                        className="timeline-item__expander-label"
