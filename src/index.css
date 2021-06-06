@@ -1322,7 +1322,15 @@ html body {
   background-color: #f8f8f8;
   overflow: hidden; }
 
+.page-home .page-not-found__scene {
+  display: flex;
+  height: 150px;
+  align-items: center;
+  justify-content: center; }
+
 .page-home .page-not-found__404 {
+  position: absolute;
+  will-change: transform;
   z-index: 10; }
 
 .page-home .page-not-found__404 svg {
@@ -1335,11 +1343,6 @@ html body {
 @media (min-width: 992px) {
   .page-home .page-not-found__404 svg {
     width: 300px; } }
-
-.page-home .page-not-found__404_color_accent {
-  z-index: 0;
-  top: 10px;
-  left: 10px; }
 
 .page-home .page-not-found__404_color_accent svg {
   fill: #1e7fc6; }

@@ -1653,10 +1653,15 @@ html {
     overflow: hidden;
 
     &__scene {
-      // Custom styles
+      display: flex;
+      height: 150px;
+      align-items: center;
+      justify-content: center;
     }
 
     &__404 {
+      position: absolute;
+      will-change: transform;
       z-index: 10;
 
       svg {
@@ -1673,10 +1678,6 @@ html {
     }
 
     &__404_color_accent {
-      z-index: 0;
-      top: 10px;
-      left: 10px;
-
       svg {
         fill: $accent-color;
       }

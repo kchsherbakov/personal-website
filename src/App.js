@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {withTranslation} from "react-i18next";
 import Header from './components/Header'
 import Menu from './components/Menu'
@@ -7,6 +7,8 @@ import {Borders} from "./components/Borders";
 import {Content} from "./components/Content/Content";
 import Footer from "./components/Footer";
 import {StrapiDataLoader} from "./components/Providers/StrapiDataLoader";
+import {Route, Switch} from "react-router-dom";
+import NotFound from "./components/NotFound";
 
 class App extends Component {
     constructor(props) {
@@ -42,17 +44,28 @@ class App extends Component {
         return (
             <div
                 className={`page-home ${this.state.menuOpen ? 'menu_open' : ''} ${this.state.helloVisible ? 'hello_visible' : ''}`}>
-                <StrapiDataLoader/>
                 <Header toggleMenu={this.toggleMenu}/>
                 <Menu toggleMenu={this.toggleMenu}/>
                 <Borders/>
-                <ScrollToTop/>
-                <Content showHello={this.showHello}
-                         hideHello={this.hideHello}/>
-                <Footer/>
+
+                <Switch>
+                    <Route exact path="/" render={() => <SPA showHello={this.showHello} hideHello={this.hideHello}/>}/>
+                    <Route component={NotFound}/>
+                </Switch>
             </div>
         )
     }
+}
+
+const SPA = ({showHello, hideHello}) => {
+    return (
+        <Fragment>
+            <StrapiDataLoader/>
+            <ScrollToTop/>
+            <Content showHello={showHello} hideHello={hideHello}/>
+            <Footer/>
+        </Fragment>
+    )
 }
 
 export default withTranslation()(App);

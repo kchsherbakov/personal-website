@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <div className="header__nav nav">
-                    <a className="nav__logo" href="https://kchsherbakov.com">
+                    <a className="nav__logo" href="/">
                         <img src="/img/logo.svg" alt="Konstantin Chsherbakov"/>
                     </a>
                     <a id="menu-toggle" className="nav__menu-toggle" onClick={this.props.toggleMenu}>
