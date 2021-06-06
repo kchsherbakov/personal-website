@@ -12,7 +12,7 @@ import LoaderWrapper from "./components/LoaderWrapper";
 ReactDOM.render(
     <BrowserRouter>
         <ParallaxProvider>
-            <Suspense fallback={LoaderWrapper}>
+            <Suspense fallback={<LoaderWrapper/>}>
                 <I18nextProvider i18n={i18n}>
                     <StrapiProvider>
                         <App/>

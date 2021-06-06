@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
 import {StrapiContext} from "../Providers/StrapiProvider";
+import {withWindowDimensions} from "../../helpers/dimensions";
 
 class HelloSection extends Component {
     static contextType = StrapiContext;
@@ -11,8 +12,6 @@ class HelloSection extends Component {
         this.state = {
             helloVisible: true,
             scrollVisible: true,
-            viewportHeight: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
-
         };
     }
 
@@ -39,17 +38,15 @@ class HelloSection extends Component {
 
         // Hide intro sections, otherwise 'hello' and 'greetings'
         // sections will overlay other content
-        let greetingsSection = document.getElementById('greetings-section');
-        if (window.scrollY > 2 * this.state.viewportHeight) {
+        const {windowHeight} = this.props;
+        if (window.scrollY > 1.8 * windowHeight) {
             this.setState({
                 helloVisible: false,
             });
-            greetingsSection.style.setProperty('display', 'none', 'important');
         } else {
             this.setState({
                 helloVisible: true
             });
-            greetingsSection.style.setProperty('display', 'flex', 'important');
         }
     }
 
@@ -59,7 +56,7 @@ class HelloSection extends Component {
 
         return (
             <div className="intro">
-                <section className={`intro__hello hello ${this.state.helloVisible ? '' : '__hidden'} `}>
+                <section className={`intro__hello hello ${this.state.helloVisible ? '' : '__invisible'} `}>
                     <div className="hello__padding __padding">
                         {i18n.language === 'ru' ? <HelloTextRu/> : <HelloTextEn/>}
                         <div className="hello__page-color"/>
@@ -70,7 +67,7 @@ class HelloSection extends Component {
                     </span>
                     </div>
                 </section>
-                <section id="greetings-section" className="intro__greetings greetings ">
+                <section className={`intro__greetings greetings ${this.state.helloVisible ? '' : '__invisible'}`}>
                     <div className="greetings__padding __padding">
                         <p className="greetings__text __console-font">
                             {t('index.hello')}
@@ -172,4 +169,4 @@ const HelloTextRu = () => {
     )
 }
 
-export default withTranslation()(HelloSection)
+export default withTranslation()(withWindowDimensions(HelloSection))

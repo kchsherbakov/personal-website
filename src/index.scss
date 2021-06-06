@@ -50,6 +50,10 @@ $content-container-bottom-margin-l: 100px + $border-size-l;
   src: url("/fonts/gilroy/Gilroy-ExtraBold.otf");
 }
 
+@mixin invisible {
+  visibility: hidden;
+}
+
 @mixin hidden {
   display: none;
 }
@@ -1778,6 +1782,10 @@ html {
   @media (min-width: $min-width-xl) {
     padding: $top-bottom-padding-xl $right-padding-xl $top-bottom-padding-xl $left-padding-xl;
   }
+}
+
+.__invisible {
+  @include invisible;
 }
 
 .__hidden {

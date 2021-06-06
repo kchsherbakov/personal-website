@@ -1,4 +1,4 @@
-import React, {Component, useContext} from "react";
+import React, {Component} from "react";
 import {StrapiContext} from "../Providers/StrapiProvider";
 import {withTranslation} from "react-i18next";
 import {Parallax} from "react-scroll-parallax";

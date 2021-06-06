@@ -8,8 +8,6 @@ import {
 } from "../../helpers/dateUtils";
 import {Parallax} from "react-scroll-parallax";
 import {StrapiContext} from "../Providers/StrapiProvider";
-import {withWindowDimensions} from "../../helpers/dimensions";
-import {vars} from "../../vars";
 
 const experienceTypes = {
     position: "position",
@@ -52,7 +50,6 @@ class ExperienceSection extends Component {
     render() {
         const {t} = this.props;
         const {appdata, isLoading, errorLoading} = this.context;
-        const showParallaxContainer = this.props.windowWidth >= vars.mediaQueries.minWidth.xl;
         const timelineComponents = this.mapExperienceToComponents(appdata, isLoading, errorLoading)
 
         return (
@@ -307,4 +304,4 @@ const Milestone = ({data, props}) => {
     )
 }
 
-export default withTranslation()(withWindowDimensions(ExperienceSection))
+export default withTranslation()(ExperienceSection)

@@ -1,5 +1,3 @@
-import React from "react";
-
 export function dateToMonthAndYearOnly(date, locale) {
     let options = {year: "numeric", month: "short"};
     let parsed = new Date(date);

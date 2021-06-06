@@ -1432,6 +1432,9 @@ html body {
   .__padding {
     padding: 10vh 165px 10vh 15vw; } }
 
+.__invisible {
+  visibility: hidden; }
+
 .__hidden {
   display: none; }
 

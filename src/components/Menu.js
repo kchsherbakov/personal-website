@@ -2,10 +2,6 @@ import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
 
 class Menu extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {t} = this.props;
 
@@ -33,22 +29,24 @@ class Menu extends Component {
                         </li>
                         <li className="menu-nav__item">
                             <a className="menu-nav__link menu-nav__link_type_mail"
-                               href="/resume" target="_blank">{t('resume')}</a>
+                               href="/resume" target="_blank" rel="noopener noreferrer">{t('resume')}</a>
                         </li>
                     </ul>
                     <ul className="menu__socials">
                         <li className="menu__socials-item">
-                            <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank">
+                            <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank"
+                               rel="noopener noreferrer">
                                 <img src="/img/linkedin-logo.svg" alt="LinkedIn"/>
                             </a>
                         </li>
                         <li className="menu__socials-item">
-                            <a href="https://github.com/kchsherbakov" target="_blank">
+                            <a href="https://github.com/kchsherbakov" target="_blank" rel="noopener noreferrer">
                                 <img src="/img/github-logo.svg" alt="GitHub"/>
                             </a>
                         </li>
                         <li className="menu__socials-item">
-                            <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank">
+                            <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank"
+                               rel="noopener noreferrer">
                                 <img src="/img/stackoverflow-logo.svg" alt="StackOverflow"/>
                             </a>
                         </li>

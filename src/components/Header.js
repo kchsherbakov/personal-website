@@ -2,9 +2,6 @@ import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const {t} = this.props;
@@ -41,22 +38,24 @@ class Header extends Component {
                             <a className="nav__page-link" href="#contacts-section">{t('contacts.title')}</a>
                         </li>
                         <li className="nav__hello-button-item">
-                            <a href="/resume" target="_blank">{t('resume')}</a>
+                            <a href="/resume" target="_blank" rel="noopener noreferrer">{t('resume')}</a>
                         </li>
                     </ul>
                     <ul className="nav__socials">
                         <li className="nav__socials-item">
-                            <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank">
+                            <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank"
+                               rel="noopener noreferrer">
                                 <img src="/img/linkedin-logo.svg" alt="LinkedIn"/>
                             </a>
                         </li>
                         <li className="nav__socials-item">
-                            <a href="https://github.com/kchsherbakov" target="_blank">
+                            <a href="https://github.com/kchsherbakov" target="_blank" rel="noopener noreferrer">
                                 <img src="/img/github-logo.svg" alt="GitHub"/>
                             </a>
                         </li>
                         <li className="nav__socials-item">
-                            <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank">
+                            <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank"
+                               rel="noopener noreferrer">
                                 <img src="/img/stackoverflow-logo.svg" alt="StackOverflow"/>
                             </a>
                         </li>
