@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import HelloSection from "./HelloSection";
 import {Parallax} from "react-scroll-parallax";
+import HelloSection from "./HelloSection";
 import AboutSection from "./AboutSection";
-import {Contacts} from "./ContactsSection";
+import Contacts from "./ContactsSection";
 import ExperienceSection from "./ExperienceSection";
 
 class Content extends Component {

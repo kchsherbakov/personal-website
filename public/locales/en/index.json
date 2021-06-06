@@ -37,7 +37,9 @@
     }
   },
   "contacts": {
-    "title": "contacts"
+    "title": "contacts",
+    "get_in_touch": "get in touch",
+    "say_hello": "say hello"
   },
   "footer": {
     "designed_by": "Designed & Build by Konstantin Chsherbakov"
