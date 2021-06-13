@@ -1,6 +1,7 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import {useTranslation} from "react-i18next";
+import {vars} from "../vars";
 
 export const PagesNavigation = () => {
     const {t} = useTranslation();
@@ -19,7 +20,7 @@ export const PagesNavigation = () => {
                             href="#contacts-section">{t('contacts.title')}</AnchorLink>
             </li>
             <li className="nav__page-item">
-                <a href="/resume" className="nav__page-link nav__resume-link" target="_blank" rel="noopener noreferrer">{t('resume')}</a>
+                <a href={vars.static.resumeUrl} target="_blank" className="nav__page-link nav__resume-link" rel="noopener noreferrer">{t('resume')}</a>
             </li>
         </ul>
     )
