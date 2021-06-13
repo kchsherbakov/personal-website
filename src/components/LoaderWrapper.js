@@ -1,6 +1,7 @@
 import React from "react";
 import {CircleLoader} from "react-spinners";
 import styled from "styled-components";
+import {vars} from "../vars";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const LoaderWrapper = () => {
                 <h2 className="popup__title __title-font">Just a sec...</h2>
                 <p className="popup__text">I'm loading actual information about myself</p>
                 <StyledContainer>
-                    <CircleLoader loading={true} color={"#1e7fc6"} size={100}/>
+                    <CircleLoader loading={true} color={vars.colors.accentColor} size={100}/>
                 </StyledContainer>
             </div>
         </div>

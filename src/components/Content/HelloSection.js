@@ -137,8 +137,8 @@ const HelloTextEn = () => {
                     <circle className="line" cx="283.51" cy="262.69" r="60.68"
                             style={helloStyles}/>
                 </g>
-                <g id="hello_dot">
-                    <circle className="dot" cx="403.17" cy="316.01" r="25.67"
+                <g className="dot">
+                    <circle cx="403.17" cy="316.01" r="25.67"
                             transform="matrix(1,0,0,1,0,0)"
                             style={dotStyles}/>
                 </g>
@@ -161,7 +161,7 @@ const HelloTextRu = () => {
                     fill="black"/>
                 <path d="M39 67.3V61.1H51.5V53.5H39V47.7H52.75V40H31V75H53V67.3H39Z" fill="black"/>
                 <path d="M84 40H58V47.7H67V75H75V47.7H84V40Z" fill="black"/>
-                <path
+                <path className="dot"
                     d="M95 75C98.2842 75 101 72.2842 101 69C101 65.7158 98.2842 63 95 63C91.7158 63 89 65.7158 89 69C89 72.2842 91.7158 75 95 75Z"
                     fill="#1E7FC6"/>
             </svg>

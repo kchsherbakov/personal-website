@@ -19,7 +19,7 @@ No media query for `xs` since this is the default in Bootstrap
 @import "./css/bootstrap-grid.min.css";
 
 // Global parameters
-$accent-color: #1e7fc6;
+$accent-color: #23B6AD;
 $background-color: #f8f8f8;
 
 $border-size-m: 40px;
@@ -1195,7 +1195,7 @@ html {
 
         &__bg-scroll {
           height: 250px;
-          background-color: #9acced;
+          background-color: $accent-color;
           overflow: hidden;
           margin-left: calc(-#{$left-right-padding-l} + #{$border-size-l});
 
