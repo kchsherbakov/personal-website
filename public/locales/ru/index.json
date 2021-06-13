@@ -33,7 +33,6 @@
     "data_more": "Читать дальше",
     "present": "По настоящее время",
     "dates": {
-      "yearsAndMonths": "$t(experience.dates.years, {\"count\": {{years}} }) $t(experience.dates.months, {\"count\": {{months}}})",
       "years": "{{count}} год(-а)",
       "years_plural": "{{count}} лет",
       "months": "{{count}} месяц(-ев)",

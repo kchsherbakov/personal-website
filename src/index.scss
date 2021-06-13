@@ -196,7 +196,7 @@ html {
         }
       }
 
-      &__lang-switch {
+      .lang-switch {
         @include hidden;
         margin: 0;
         padding: 0;
@@ -216,21 +216,23 @@ html {
         }
       }
 
-      &__lang-switch-item {
+      .lang-switch-item {
         display: block;
         text-transform: lowercase;
 
-        a {
+        button {
+          cursor: pointer;
           padding: 0;
           color: #dcdcdc;
           font-size: 1.4rem;
           font-weight: bold;
-          text-decoration: none;
+          background: none;
+          border: none;
         }
       }
 
-      &__lang-switch-item_active {
-        a {
+      .lang-switch-item_active {
+        button {
           color: #000;
         }
       }
@@ -453,31 +455,28 @@ html {
       }
     }
 
-    &__lang-switch {
+    .lang-switch {
       margin: 0 0 40px 0;
       list-style: none;
       padding: 0;
     }
 
-    &__lang-switch-item {
+    .lang-switch-item {
       display: inline-block;
       text-transform: lowercase;
 
-      a {
+      button {
         color: #dcdcdc;
-        text-decoration: none;
         outline: none;
         font-size: 1.4rem;
         font-weight: bold;
-
-        &:visited {
-          color: #dcdcdc;
-        }
+        background: none;
+        border: none;
       }
     }
 
-    &__lang-switch-item_active {
-      a {
+    .lang-switch-item_active {
+      button {
         color: #000 !important;
       }
     }

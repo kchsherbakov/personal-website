@@ -5,6 +5,7 @@ import axios from "axios"
 class StrapiProvider extends Component {
     constructor(props) {
         super(props);
+        this.loadData = this.loadData.bind(this);
         this.state = {
             appdata: {},
             isLoading: true,
@@ -17,7 +18,8 @@ class StrapiProvider extends Component {
     }
 
     loadData() {
-        axios.get(this.formatUrl('/app-data')).then(response => {
+        const url = `${process.env.REACT_APP_STRAPI_HOST}/app-data?_locale=${this.props.i18n.language}`
+        axios.get(url).then(response => {
             this.setState({
                 appdata: response.data,
                 isLoading: false,
@@ -32,16 +34,13 @@ class StrapiProvider extends Component {
         });
     }
 
-    formatUrl(endpoint) {
-        return `${process.env.REACT_APP_STRAPI_HOST}${endpoint}?_locale=${this.props.i18n.language}`;
-    }
-
     render() {
         return (
             <StrapiContext.Provider value={{
                 appdata: this.state.appdata,
                 isLoading: this.state.isLoading,
                 errorLoading: this.state.errorLoading,
+                loadData: this.loadData,
             }}>
                 {this.props.children}
             </StrapiContext.Provider>

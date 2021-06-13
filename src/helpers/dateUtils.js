@@ -13,5 +13,13 @@ export function getDatesDifferencesVerbose(startDate, endDate, t) {
     let diffYears = diffDate.getFullYear() - 1970;
     let diffMonths = diffDate.getMonth() + 1; // Includes last month to the count
 
-    return t('experience.dates.yearsAndMonths', {years: diffYears, months: diffMonths}).trim();
+    let text = '';
+    if (diffYears > 0) {
+        text += t('experience.dates.years', {count: diffYears}) + ', ';
+    }
+    if (diffMonths > 0) {
+        text += t('experience.dates.months', {count: diffMonths});
+    }
+
+    return text.trim();
 }

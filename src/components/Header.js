@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
+import {LangSwitcher} from "./LangSwitcher";
 
 class Header extends Component {
 
@@ -19,14 +20,7 @@ class Header extends Component {
                             <span className="nav__menu-toggle-icon-line"/>
                         </div>
                     </a>
-                    <ul className="nav__lang-switch __console-font">
-                        <li className="nav__lang-switch-item nav__lang-switch-item_active">
-                            <a href="/en">{t('lng_en_label')}</a>
-                        </li>
-                        <li className="nav__lang-switch-item">
-                            <a href="/ru">{t('lng_ru_label')}</a>
-                        </li>
-                    </ul>
+                    <LangSwitcher/>
                     <ul className="nav__pages __console-font">
                         <li className="nav__page-item">
                             <a className="nav__page-link" href="#about-section">{t('about.title')}</a>

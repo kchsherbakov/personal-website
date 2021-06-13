@@ -114,7 +114,7 @@ html body {
   .page-home .header .nav__logo img {
     width: 30px; } }
 
-.page-home .header .nav__lang-switch {
+.page-home .header .nav .lang-switch {
   display: none;
   margin: 0;
   padding: 0;
@@ -122,29 +122,31 @@ html body {
   list-style: none; }
 
 @media (min-width: 768px) {
-  .page-home .header .nav__lang-switch {
+  .page-home .header .nav .lang-switch {
     display: block;
     position: fixed;
     top: 40px;
     right: 5px; } }
 
 @media (min-width: 992px) {
-  .page-home .header .nav__lang-switch {
+  .page-home .header .nav .lang-switch {
     top: 60px;
     right: 15px; } }
 
-.page-home .header .nav__lang-switch-item {
+.page-home .header .nav .lang-switch-item {
   display: block;
   text-transform: lowercase; }
 
-.page-home .header .nav__lang-switch-item a {
+.page-home .header .nav .lang-switch-item button {
+  cursor: pointer;
   padding: 0;
   color: #dcdcdc;
   font-size: 1.4rem;
   font-weight: bold;
-  text-decoration: none; }
+  background: none;
+  border: none; }
 
-.page-home .header .nav__lang-switch-item_active a {
+.page-home .header .nav .lang-switch-item_active button {
   color: #000; }
 
 .page-home .header .nav__pages {
@@ -335,26 +337,24 @@ html body {
   .page-home .menu__container {
     width: calc(100% - 45px - 10vw * 2); } }
 
-.page-home .menu__lang-switch {
+.page-home .menu .lang-switch {
   margin: 0 0 40px 0;
   list-style: none;
   padding: 0; }
 
-.page-home .menu__lang-switch-item {
+.page-home .menu .lang-switch-item {
   display: inline-block;
   text-transform: lowercase; }
 
-.page-home .menu__lang-switch-item a {
+.page-home .menu .lang-switch-item button {
   color: #dcdcdc;
-  text-decoration: none;
   outline: none;
   font-size: 1.4rem;
-  font-weight: bold; }
+  font-weight: bold;
+  background: none;
+  border: none; }
 
-.page-home .menu__lang-switch-item a:visited {
-  color: #dcdcdc; }
-
-.page-home .menu__lang-switch-item_active a {
+.page-home .menu .lang-switch-item_active button {
   color: #000 !important; }
 
 .page-home .menu__nav {

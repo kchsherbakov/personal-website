@@ -1,22 +1,16 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
+import {LangSwitcher} from "./LangSwitcher";
 
 class Menu extends Component {
     render() {
-        const {t} = this.props;
+        const {t, i18n} = this.props;
 
         return (
             <div className="menu">
                 <div className="menu__background"/>
                 <div className="menu__container __padding">
-                    <ul className="menu__lang-switch __console-font">
-                        <li className="menu__lang-switch-item menu__lang-switch-item_active">
-                            <a href="/en">{t('lng_en_label')}</a>
-                        </li>
-                        <li className="menu__lang-switch-item">
-                            <a href="/ru">{t('lng_ru_label')}</a>
-                        </li>
-                    </ul>
+                    <LangSwitcher/>
                     <ul className="menu__nav menu-nav __console-font" onClick={this.props.toggleMenu}>
                         <li className="menu-nav__item">
                             <a className="menu-nav__link" href="#about-section">{t('about.title')}</a>

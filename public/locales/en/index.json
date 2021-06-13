@@ -33,7 +33,6 @@
     "data_more": "Read more",
     "present": "Present",
     "dates": {
-      "yearsAndMonths": "$t(experience.dates.years, {\"count\": {{years}} }) $t(experience.dates.months, {\"count\": {{months}}})",
       "years": "{{count}} year",
       "years_plural": "{{count}} years",
       "months": "{{count}} month",
