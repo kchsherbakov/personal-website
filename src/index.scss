@@ -277,7 +277,8 @@ html {
         }
       }
 
-      &__hello-button-item {
+      &__resume-link {
+        color: $accent-color;
         margin-left: 20px;
         display: inline-block;
         background-color: white;
@@ -287,6 +288,10 @@ html {
         @media (min-width: $min-width-l) {
           padding: 5px 15px;
           border: 1px solid $accent-color;
+        }
+
+        &:before {
+          content: none;
         }
 
         &:hover {
@@ -346,11 +351,9 @@ html {
             }
           }
         }
-
-
       }
 
-      &__socials-item_rotated {
+      &__socials-item_email {
         margin-top: 20px;
         writing-mode: vertical-rl;
 
@@ -481,22 +484,21 @@ html {
       }
     }
 
-    &__nav {
-      font-size: 1.4rem;
-      margin-top: 140px;
-      margin-bottom: 20px;
-      padding: 0;
-      list-style: none;
-    }
+    .nav {
+      &__pages {
+        margin-top: 140px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        padding: 0;
+        counter-reset: nav-section-counter -1;
+        list-style: none;
+      }
 
-    &-nav {
-      counter-reset: nav-section-counter -1;
-
-      &__item {
+      &__page-item {
         margin-top: 10px;
       }
 
-      &__link {
+      &__page-link {
         text-decoration: none;
         outline: none;
         color: #000;
@@ -510,34 +512,38 @@ html {
         }
       }
 
-      &__link_type_mail {
+      &__resume-link {
         color: $accent-color;
       }
-    }
 
-    &__socials {
-      padding: 0;
-      list-style: none;
-    }
+      &__socials {
+        padding: 0;
+        list-style: none;
+      }
 
-    &__socials-item {
-      display: inline-block;
-      max-height: 25px;
-      max-width: 25px;
-      margin-right: 10px;
+      &__socials-item {
+        display: inline-block;
+        max-height: 25px;
+        max-width: 25px;
+        margin-right: 10px;
 
-      a {
-        text-decoration: none;
-        outline: none;
+        a {
+          text-decoration: none;
+          outline: none;
 
-        img {
-          max-height: 25px;
-          width: auto;
+          img {
+            max-height: 25px;
+            width: auto;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
         }
       }
 
-      &:last-child {
-        margin-right: 0;
+      &__socials-item_email {
+        display: none;
       }
     }
 

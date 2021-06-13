@@ -1,12 +1,11 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
 import {LangSwitcher} from "./LangSwitcher";
+import {PagesNavigation} from "./PagesNavigation";
+import {SocialsNavigation} from "./SocialsNavigation";
 
 class Header extends Component {
-
     render() {
-        const {t} = this.props;
-
         return (
             <header className="header">
                 <div className="header__nav nav">
@@ -21,42 +20,8 @@ class Header extends Component {
                         </div>
                     </a>
                     <LangSwitcher/>
-                    <ul className="nav__pages __console-font">
-                        <li className="nav__page-item">
-                            <a className="nav__page-link" href="#about-section">{t('about.title')}</a>
-                        </li>
-                        <li className="nav__page-item">
-                            <a className="nav__page-link" href="#experience-section">{t('experience.title')}</a>
-                        </li>
-                        <li className="nav__page-item">
-                            <a className="nav__page-link" href="#contacts-section">{t('contacts.title')}</a>
-                        </li>
-                        <li className="nav__hello-button-item">
-                            <a href="/resume" target="_blank" rel="noopener noreferrer">{t('resume')}</a>
-                        </li>
-                    </ul>
-                    <ul className="nav__socials">
-                        <li className="nav__socials-item">
-                            <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank"
-                               rel="noopener noreferrer">
-                                <img src="/img/linkedin-logo.svg" alt="LinkedIn"/>
-                            </a>
-                        </li>
-                        <li className="nav__socials-item">
-                            <a href="https://github.com/kchsherbakov" target="_blank" rel="noopener noreferrer">
-                                <img src="/img/github-logo.svg" alt="GitHub"/>
-                            </a>
-                        </li>
-                        <li className="nav__socials-item">
-                            <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank"
-                               rel="noopener noreferrer">
-                                <img src="/img/stackoverflow-logo.svg" alt="StackOverflow"/>
-                            </a>
-                        </li>
-                        <li className="nav__socials-item nav__socials-item_rotated">
-                            <a href="mailto:k.chsherbakov@outlook.com">k.chsherbakov@outlook.com</a>
-                        </li>
-                    </ul>
+                    <PagesNavigation/>
+                    <SocialsNavigation/>
                 </div>
             </header>
         );
