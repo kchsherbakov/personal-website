@@ -8,6 +8,8 @@
   "to_top": "top",
   "just_a_sec": "Just a sec...",
   "loading_data": "I'm loading actual information about myself",
+  "oops": "Oops...",
+  "error_loading_data": "Error occurred while loading data. Please, try refreshing the page",
   "index": {
     "hello": "Hi, my name is",
     "name": "Konstantin Chsherbakov.",
