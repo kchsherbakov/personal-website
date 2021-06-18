@@ -23,6 +23,12 @@ class App extends Component {
         }
     }
 
+    componentDidMount() {
+        const {t} = this.props;
+        document.title = t('page_title');
+        document.description = t('page_description');
+    }
+
     toggleMenu() {
         this.setState({
             menuOpen: !this.state.menuOpen
