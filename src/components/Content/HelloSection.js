@@ -58,7 +58,7 @@ class HelloSection extends Component {
             <div className="intro">
                 <section className={`intro__hello hello ${this.state.helloVisible ? '' : '__invisible'} `}>
                     <div className="hello__padding __padding">
-                        {i18n.language === 'ru' ? <HelloTextRu/> : <HelloTextEn/>}
+                        {i18n.languages[0] === 'ru' ? <HelloTextRu/> : <HelloTextEn/>}
                         <div className="hello__page-color"/>
                         <span
                             className={`hello__scroll-text __console-font ${this.state.scrollVisible ? '' : 'hello__scroll-text_hidden'}`}>

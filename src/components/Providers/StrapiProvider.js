@@ -18,7 +18,7 @@ class StrapiProvider extends Component {
     }
 
     loadData() {
-        const url = `${process.env.REACT_APP_STRAPI_HOST}/app-data?_locale=${this.props.i18n.language}`
+        const url = `${process.env.REACT_APP_STRAPI_HOST}/app-data?_locale=${this.props.i18n.languages[0]}`
         axios.get(url).then(response => {
             this.setState({
                 appdata: response.data,

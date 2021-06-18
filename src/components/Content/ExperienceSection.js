@@ -150,7 +150,7 @@ const TagsContainer = ({tags}) => {
 const StrapiImage = ({logo, alt}) => {
     let url = '/img/image-placeholder.svg'; // placeholder
     if (logo) {
-        url = `http://localhost:1338${logo.url}`
+        url = `${process.env.REACT_APP_STRAPI_HOST}${logo.url}`
     }
 
     return (
@@ -208,14 +208,16 @@ class CollapsibleDescription extends Component {
 }
 
 const Position = ({data, props}) => {
+    const lang = props.i18n.languages[0];
+
     return (
         <div className="timeline__item timeline__item_type_position timeline-item">
             <div className="timeline-item__header">
                 <span className="timeline-item__type-name">{props.t('experience.position')}</span>
                 <span className="timeline-item__date">
-                    {dateToMonthAndYearOnly(data.startDate, props.i18n.language)}
+                    {dateToMonthAndYearOnly(data.startDate, lang)}
                     <RightArrow/>
-                    {!data.endDate ? props.t('experience.present') : dateToMonthAndYearOnly(data.endDate, props.i18n.language)}
+                    {!data.endDate ? props.t('experience.present') : dateToMonthAndYearOnly(data.endDate, lang)}
                 </span>
                 <span className="timeline-item__date-diff">
                     {getDatesDifferencesVerbose(data.startDate, data.endDate, props.t)}
@@ -243,14 +245,16 @@ const Position = ({data, props}) => {
 }
 
 const Education = ({data, props}) => {
+    const lang = props.i18n.languages[0];
+
     return (
         <div className="timeline__item timeline__item_type_education timeline-item">
             <div className="timeline-item__header">
                 <span className="timeline-item__type-name">{props.t('experience.education')}</span>
                 <span className="timeline-item__date">
-                    {dateToMonthAndYearOnly(data.startDate, props.i18n.language)}
+                    {dateToMonthAndYearOnly(data.startDate, lang)}
                     <RightArrow/>
-                    {!data.endDate ? props.t('experience.present') : dateToMonthAndYearOnly(data.endDate, props.i18n.language)}
+                    {!data.endDate ? props.t('experience.present') : dateToMonthAndYearOnly(data.endDate, lang)}
                 </span>
             </div>
             <div className="timeline-item__content row">
@@ -275,12 +279,14 @@ const Education = ({data, props}) => {
 }
 
 const Milestone = ({data, props}) => {
+    const lang = props.i18n.languages[0];
+
     return (
         <div className="timeline__item timeline__item_type_milestone timeline-item">
             <div className="timeline-item__header">
                 <span className="timeline-item__type-name">{props.t('experience.milestone')}</span>
                 <span
-                    className="timeline-item__date">{dateToMonthAndYearOnly(data.startDate, props.i18n.language)}</span>
+                    className="timeline-item__date">{dateToMonthAndYearOnly(data.startDate, lang)}</span>
             </div>
             <div className="timeline-item__content row">
                 <div className="timeline-item__logo col-12">

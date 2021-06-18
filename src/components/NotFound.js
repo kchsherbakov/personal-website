@@ -5,7 +5,7 @@ const NotFound = () => {
     const {t} = useTranslation();
 
     return (
-        <div className="page-not-found d-flex flex-column justify-content-center align-items-center __padding">
+        <div className="page-not-found d-flex flex-column justify-content-center align-items-center">
             <div className="page-not-found__scene">
                 <div className="page-not-found__404">
                     <Svg/>
