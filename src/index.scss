@@ -1683,6 +1683,8 @@ html {
     }
 
     &__404_color_accent {
+      transform: scale(0.9,0.9);
+
       svg {
         fill: $accent-color;
       }

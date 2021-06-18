@@ -1,21 +1,18 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {useSpring, animated} from 'react-spring'
-
-const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-const foregroundTrans = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
-const backgroundTrans = (x, y) => `translate3d(${x / 8}px,${y / 8}px,0)`;
 
 const NotFound = () => {
     const {t} = useTranslation();
-    const [props, set] = useSpring(() => ({xy: [0, 0], config: {mass: 10, tension: 450, friction: 140}}));
 
     return (
-        <div className="page-not-found d-flex flex-column justify-content-center align-items-center __padding"
-             onMouseMove={({clientX: x, clientY: y}) => set({xy: calc(x, y)})}>
+        <div className="page-not-found d-flex flex-column justify-content-center align-items-center __padding">
             <div className="page-not-found__scene">
-                <BackgroundElement style={{transform: props.xy.to(backgroundTrans)}}/>
-                <ForegroundElement style={{transform: props.xy.to(foregroundTrans)}}/>
+                <div className="page-not-found__404">
+                    <Svg/>
+                </div>
+                <div className="page-not-found__404 page-not-found__404_color_accent">
+                    <Svg/>
+                </div>
             </div>
             <h2 className="page-not-found__title __title-font">{t('notFound.title')}</h2>
             <p className="page-not-found__text" dangerouslySetInnerHTML={{__html: t('notFound.text')}}/>
@@ -26,22 +23,6 @@ const NotFound = () => {
                 </a>
             </div>
         </div>
-    )
-}
-
-const ForegroundElement = ({style}) => {
-    return (
-        <animated.div className="page-not-found__404" style={style}>
-            <Svg/>
-        </animated.div>
-    )
-}
-
-const BackgroundElement = ({style}) => {
-    return (
-        <animated.div className="page-not-found__404 page-not-found__404_color_accent" style={style}>
-            <Svg/>
-        </animated.div>
     )
 }
 
