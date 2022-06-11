@@ -6,7 +6,6 @@ import {vars} from "../vars";
 const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
-  color: #1e7fc6;
   margin-top: 30px;
 `;
 

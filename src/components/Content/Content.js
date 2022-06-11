@@ -24,9 +24,9 @@ class Content extends Component {
 
 const ParallaxImage = () => {
     return (
-        <ParallaxBanner style={{ aspectRatio: '2 / 1' }} layers={[
+        <ParallaxBanner style={{height: '80vh'}} layers={[
             {
-                image: '/img/landscape-mountains.jpg',
+                image: '/img/landscape-mountains.jpeg',
                 speed: -20,
             }
         ]}
