@@ -47,7 +47,7 @@ $content-container-bottom-margin-l: 100px + $border-size-l;
 
 @font-face {
   font-family: Gilroy;
-  src: url("/fonts/gilroy/Gilroy-ExtraBold.otf");
+  src: url("/public/fonts/gilroy/Gilroy-ExtraBold.otf");
 }
 
 @mixin invisible {
@@ -1339,13 +1339,13 @@ html {
             margin-top: 0 !important;
 
             &:before {
-              background-image: url("/img/timeline-info-icon.svg");
+              background-image: url("/public/img/timeline-info-icon.svg");
             }
           }
 
           &__item_type_position {
             &:before {
-              background-image: url("/img/timeline-position-icon.svg");
+              background-image: url("/public/img/timeline-position-icon.svg");
             }
           }
 
@@ -1363,13 +1363,13 @@ html {
             }
 
             &:before {
-              background-image: url("/img/timeline-education-icon.svg");
+              background-image: url("/public/img/timeline-education-icon.svg");
             }
           }
 
           &__item_type_open-source {
             &:before {
-              background-image: url("/img/timeline-opensource-icon.svg");
+              background-image: url("/public/img/timeline-opensource-icon.svg");
             }
           }
 
@@ -1383,7 +1383,7 @@ html {
             }
 
             &:before {
-              background-image: url("/img/timeline-milestone-icon.svg");
+              background-image: url("/public/img/timeline-milestone-icon.svg");
             }
           }
 

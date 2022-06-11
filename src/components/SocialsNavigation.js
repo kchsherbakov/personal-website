@@ -6,18 +6,18 @@ export const SocialsNavigation = () => {
             <li className="nav__socials-item">
                 <a href="https://linkedin.com/in/konstantin-chsherbakov-7b2ab5128" target="_blank"
                    rel="noopener noreferrer">
-                    <img src="/img/linkedin-logo.svg" alt="LinkedIn"/>
+                    <img src={process.env.PUBLIC_URL + "/img/linkedin-logo.svg"} alt="LinkedIn"/>
                 </a>
             </li>
             <li className="nav__socials-item">
                 <a href="https://github.com/kchsherbakov" target="_blank" rel="noopener noreferrer">
-                    <img src="/img/github-logo.svg" alt="GitHub"/>
+                    <img src={process.env.PUBLIC_URL + "/img/github-logo.svg"} alt="GitHub"/>
                 </a>
             </li>
             <li className="nav__socials-item">
                 <a href="https://stackoverflow.com/users/5033823/konstantin-chsherbakov" target="_blank"
                    rel="noopener noreferrer">
-                    <img src="/img/stackoverflow-logo.svg" alt="StackOverflow"/>
+                    <img src={process.env.PUBLIC_URL + "/img/stackoverflow-logo.svg"} alt="StackOverflow"/>
                 </a>
             </li>
             <li className="nav__socials-item nav__socials-item_email">

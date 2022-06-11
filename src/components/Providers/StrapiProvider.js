@@ -18,10 +18,15 @@ class StrapiProvider extends Component {
     }
 
     loadData() {
-        const url = `${process.env.REACT_APP_STRAPI_HOST}/app-data?_locale=${this.props.i18n.languages[0]}`
-        axios.get(url).then(response => {
+        const url = `${process.env.REACT_APP_STRAPI_HOST}/api/app-data?populate=experiences.orgLogo&locale=${this.props.i18n.languages[0]}`
+        axios.get(url, {
+            headers: {
+                Authorization: `Bearer ${process.env.REACT_APP_STRAPI_API_TOKEN}`
+            }
+        }).then(response => {
+            let data = response.data.data.attributes;
             this.setState({
-                appdata: response.data,
+                appdata: data,
                 isLoading: false,
                 errorLoading: null
             });

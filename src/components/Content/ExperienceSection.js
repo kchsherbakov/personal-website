@@ -59,13 +59,14 @@ class ExperienceSection extends Component {
                         <h2 className="experience__title __title-font">{t('experience.title')}</h2>
                     </div>
                     <div id="experience__container" className="experience__container d-xl-flex flex-xl-row">
-                        <Parallax className="experience__bg-scroll-container d-xl-flex flex-xl-column" y={[-20, 120]}>
+                        <Parallax className="experience__bg-scroll-container d-xl-flex flex-xl-column" translateY={[0, 60]} speed={1}>
                             <h2 className="experience__pre-phrase __title-font"
                                 dangerouslySetInnerHTML={{__html: t('experience.who_am_i_2')}}/>
-                            <Parallax className="experience__bg-scroll d-xl-flex justify-content-center"
-                                      x={['-100px', '100px']} y={['100px', '-100px']}>
-                                <p className="__title-font">XP</p>
-                            </Parallax>
+                            <div className="experience__bg-scroll d-xl-flex justify-content-center">
+                                <Parallax translateX={['-100px', '100px']} translateY={['100px', '-100px']}>
+                                    <p className="__title-font">XP</p>
+                                </Parallax>
+                            </div>
                         </Parallax>
                         <div id="timeline-feed" className="experience__timeline-feed timeline">
                             <div className="timeline__line"/>
@@ -76,35 +77,35 @@ class ExperienceSection extends Component {
                                 <div className="timeline-item__content row">
                                     <div className="timeline-item__legend-icon col-4">
                                         <img className="timeline-item__legend-icon-image"
-                                             src="/img/timeline-education-icon.svg" alt="Education"/>
+                                             src={process.env.PUBLIC_URL + "/img/timeline-education-icon.svg"} alt="Education"/>
                                         <p className="timeline-item__legend-text">
                                             {t('experience.education')}
                                         </p>
                                     </div>
                                     <div className="timeline-item__legend-icon col-4">
                                         <img className="timeline-item__legend-icon-image"
-                                             src="/img/timeline-position-icon.svg" alt="Position"/>
+                                             src={process.env.PUBLIC_URL + "/img/timeline-position-icon.svg"} alt="Position"/>
                                         <p className="timeline-item__legend-text">
                                             {t('experience.position')}
                                         </p>
                                     </div>
                                     <div className="timeline-item__legend-icon col-4">
                                         <img className="timeline-item__legend-icon-image"
-                                             src="/img/timeline-opensource-icon.svg" alt="Open source"/>
+                                             src={process.env.PUBLIC_URL + "/img/timeline-opensource-icon.svg"} alt="Open source"/>
                                         <p className="timeline-item__legend-text">
                                             {t('experience.open_source')}
                                         </p>
                                     </div>
                                     <div className="timeline-item__legend-icon col-4">
                                         <img className="timeline-item__legend-icon-image"
-                                             src="/img/timeline-app-or-feature-icon.svg" alt="App or Feature"/>
+                                             src={process.env.PUBLIC_URL + "/img/timeline-app-or-feature-icon.svg"} alt="App or Feature"/>
                                         <p className="timeline-item__legend-text">
                                             {t('experience.app_or_feature')}
                                         </p>
                                     </div>
                                     <div className="timeline-item__legend-icon col-4">
                                         <img className="timeline-item__legend-icon-image"
-                                             src="/img/timeline-milestone-icon.svg" alt="Open source"/>
+                                             src={process.env.PUBLIC_URL + "/img/timeline-milestone-icon.svg"} alt="Open source"/>
                                         <p className="timeline-item__legend-text">
                                             {t('experience.milestone')}
                                         </p>
@@ -148,9 +149,9 @@ const TagsContainer = ({tags}) => {
 }
 
 const StrapiImage = ({logo, alt}) => {
-    let url = '/img/image-placeholder.svg'; // placeholder
+    let url = process.env.PUBLIC_URL + '/img/image-placeholder.svg'; // placeholder
     if (logo) {
-        url = `${process.env.REACT_APP_STRAPI_HOST}${logo.url}`
+        url = `${process.env.REACT_APP_STRAPI_HOST}${logo.data.attributes.url}`
     }
 
     return (

@@ -19,7 +19,7 @@ No media query for `xs` since this is the default in Bootstrap
 @import url(./css/bootstrap-grid.min.css);
 @font-face {
   font-family: Gilroy;
-  src: url("/fonts/gilroy/Gilroy-ExtraBold.otf"); }
+  src: url("/public/fonts/gilroy/Gilroy-ExtraBold.otf"); }
 
 html {
   font-size: 62.5%;
@@ -878,9 +878,9 @@ html {
       .page-home .content .content__container .experience .timeline__item_type_legend {
         margin-top: 0 !important; }
         .page-home .content .content__container .experience .timeline__item_type_legend:before {
-          background-image: url("/img/timeline-info-icon.svg"); }
+          background-image: url("/public/img/timeline-info-icon.svg"); }
       .page-home .content .content__container .experience .timeline__item_type_position:before {
-        background-image: url("/img/timeline-position-icon.svg"); }
+        background-image: url("/public/img/timeline-position-icon.svg"); }
       .page-home .content .content__container .experience .timeline__item_type_education .timeline-item__title {
         margin-top: 10px; }
       .page-home .content .content__container .experience .timeline__item_type_education .timeline-item__text {
@@ -888,15 +888,15 @@ html {
       .page-home .content .content__container .experience .timeline__item_type_education .timeline-item__logo {
         max-width: 100% !important; }
       .page-home .content .content__container .experience .timeline__item_type_education:before {
-        background-image: url("/img/timeline-education-icon.svg"); }
+        background-image: url("/public/img/timeline-education-icon.svg"); }
       .page-home .content .content__container .experience .timeline__item_type_open-source:before {
-        background-image: url("/img/timeline-opensource-icon.svg"); }
+        background-image: url("/public/img/timeline-opensource-icon.svg"); }
       .page-home .content .content__container .experience .timeline__item_type_milestone .timeline-item__logo {
         max-width: 100% !important; }
       .page-home .content .content__container .experience .timeline__item_type_milestone .timeline-item__text {
         padding-left: 0; }
       .page-home .content .content__container .experience .timeline__item_type_milestone:before {
-        background-image: url("/img/timeline-milestone-icon.svg"); }
+        background-image: url("/public/img/timeline-milestone-icon.svg"); }
       .page-home .content .content__container .experience .timeline .timeline-item__header {
         font-family: Gilroy, sans-serif;
         font-weight: 900;

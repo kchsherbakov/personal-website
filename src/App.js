@@ -7,7 +7,7 @@ import {Borders} from "./components/Borders";
 import {Content} from "./components/Content/Content";
 import Footer from "./components/Footer";
 import {StrapiDataLoader} from "./components/Providers/StrapiDataLoader";
-import {Route, Switch} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import NotFound from "./components/NotFound";
 import {vars} from "./vars";
 
@@ -54,18 +54,18 @@ class App extends Component {
                 <Header toggleMenu={this.toggleMenu}/>
                 <Menu toggleMenu={this.toggleMenu}/>
                 <Borders/>
-                <Switch>
-                    <Route exact path="/" render={() => <SPA showHello={this.showHello} hideHello={this.hideHello}/>}/>
-                    <Route exact path="/resume" render={() => {
-                        window.location.href = vars.static.resumeUrl;
-                        return null;
-                    }
-                    }/>
-                    <Route component={NotFound}/>
-                </Switch>
+                <Routes>
+                    <Route index element={<SPA showHello={this.showHello} hideHello={this.hideHello}/>}/>
+                    <Route exact path="/resume" element={<ResumeNavigator/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
             </div>
         )
     }
+}
+
+const ResumeNavigator = () => {
+    window.location.href = vars.static.resumeUrl;
 }
 
 const SPA = ({showHello, hideHello}) => {

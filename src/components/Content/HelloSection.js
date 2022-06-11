@@ -62,7 +62,7 @@ class HelloSection extends Component {
                         <div className="hello__page-color"/>
                         <span
                             className={`hello__scroll-text __console-font ${this.state.scrollVisible ? '' : 'hello__scroll-text_hidden'}`}>
-                        <img src="/img/left-arrow-white-icon.svg" alt="Scroll down"/>
+                        <img src={process.env.PUBLIC_URL + "/img/left-arrow-white-icon.svg"} alt="Scroll down"/>
                             {t('scroll')}
                     </span>
                     </div>

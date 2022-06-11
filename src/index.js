@@ -1,5 +1,5 @@
 import React, {Suspense} from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css'
 import App from './App';
 import {I18nextProvider} from 'react-i18next';
@@ -9,7 +9,8 @@ import {ParallaxProvider} from "react-scroll-parallax";
 import StrapiProvider from "./components/Providers/StrapiProvider";
 import LoaderWrapper from "./components/LoaderWrapper";
 
-ReactDOM.render(
+const app = ReactDOM.createRoot(document.getElementById('app'));
+app.render(
     <BrowserRouter>
         <ParallaxProvider>
             <Suspense fallback={<LoaderWrapper/>}>
@@ -21,4 +22,4 @@ ReactDOM.render(
             </Suspense>
         </ParallaxProvider>
     </BrowserRouter>,
-    document.getElementById('app'));
+    );

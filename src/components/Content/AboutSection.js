@@ -25,7 +25,7 @@ class AboutSection extends Component {
                         <p className="about__text"
                            dangerouslySetInnerHTML={{__html: appdata.aboutMeFull}}/>
                     </div>
-                    <Parallax y={[20, -80]} disabled={parallaxDisabled}>
+                    <Parallax translateY={[20, -80]} disabled={parallaxDisabled}>
                         <div className="about__skills about__skills-padding skills">
                             <div className="skills__pre-phrase __title-font">
                                 <h2 dangerouslySetInnerHTML={{__html: t('about.things_i_know')}}/>

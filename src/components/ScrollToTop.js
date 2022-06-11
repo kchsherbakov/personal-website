@@ -36,7 +36,7 @@ export function ScrollToTop() {
         <ScrollDiv bottom={bottom} className="scroll-to-top d-none d-lg-block">
             <a onClick={scrollToTop}>
                     <span className="__console-font">
-                        <img src="/img/left-arrow-black-icon.svg" alt="Scroll to top"/>
+                        <img src={process.env.PUBLIC_URL + "/img/left-arrow-black-icon.svg"} alt="Scroll to top"/>
                         {t('to_top')}
                     </span>
             </a>
