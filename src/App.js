@@ -1,82 +1,25 @@
-import React, {Component, Fragment} from "react";
-import {withTranslation} from "react-i18next";
-import Header from './components/Header'
-import Menu from './components/Menu'
-import {ScrollToTop} from './components/ScrollToTop'
-import {Borders} from "./components/Borders";
-import {Content} from "./components/Content/Content";
-import Footer from "./components/Footer";
-import {StrapiDataLoader} from "./components/Providers/StrapiDataLoader";
-import {Route, Routes} from "react-router-dom";
-import NotFound from "./components/NotFound";
-import {vars} from "./vars";
+import logo from './logo.svg';
+import './App.css';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.toggleMenu = this.toggleMenu.bind(this);
-        this.showHello = this.showHello.bind(this);
-        this.hideHello = this.hideHello.bind(this);
-        this.state = {
-            menuOpen: false,
-            helloVisible: false,
-        }
-    }
-
-    componentDidMount() {
-        const {t} = this.props;
-        document.title = t('page_title');
-        document.description = t('page_description');
-    }
-
-    toggleMenu() {
-        this.setState({
-            menuOpen: !this.state.menuOpen
-        })
-    }
-
-    showHello() {
-        this.setState({
-            helloVisible: true,
-        })
-    }
-
-    hideHello() {
-        this.setState({
-            helloVisible: false,
-        })
-    }
-
-    render() {
-        return (
-            <div
-                className={`page-home ${this.state.menuOpen ? 'menu_open' : ''} ${this.state.helloVisible ? 'hello_visible' : ''}`}>
-                <Header toggleMenu={this.toggleMenu}/>
-                <Menu toggleMenu={this.toggleMenu}/>
-                <Borders/>
-                <Routes>
-                    <Route index element={<SPA showHello={this.showHello} hideHello={this.hideHello}/>}/>
-                    <Route exact path="/resume" element={<ResumeNavigator/>}/>
-                    <Route path="*" element={<NotFound/>}/>
-                </Routes>
-            </div>
-        )
-    }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-const ResumeNavigator = () => {
-    window.location.href = vars.static.resumeUrl;
-}
-
-const SPA = ({showHello, hideHello}) => {
-    return (
-        <Fragment>
-            <StrapiDataLoader/>
-            <ScrollToTop/>
-            <Content showHello={showHello} hideHello={hideHello}/>
-            <Footer/>
-        </Fragment>
-    )
-}
-
-export default withTranslation()(App);
+export default App;
