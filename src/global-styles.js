@@ -15,6 +15,14 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: inherit;
     }
     
+    .flex {
+        display: flex;
+    }
+    
+    .flex-col {
+        flex-direction: column;
+    }
+    
     .text-gray-400 {
         color: #9CA3AF;
     }
@@ -26,6 +34,11 @@ const GlobalStyle = createGlobalStyle`
     .gap-1 {
         row-gap: 1rem;
         column-gap: 1rem;
+    }
+    
+    .gap-2 {
+        row-gap: 2rem;
+        column-gap: 2rem;
     }
     
     .gap-3 {
