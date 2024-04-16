@@ -3,6 +3,7 @@ import styled from "styled-components";
 const ListItemLinks = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
     
     & img {

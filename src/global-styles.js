@@ -57,6 +57,22 @@ const GlobalStyle = createGlobalStyle`
         row-gap: 3rem;
         column-gap: 3rem;
     }
+
+    .flex-w-fit {
+        width: fit-content;
+    }
+
+    .hover-text-black {
+        &:hover {
+            color: #000;
+        }
+    }
+
+    .transition {
+        transition-duration: .3s;
+        transition-property: color, background-color;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    }
 `;
 
 export default GlobalStyle;

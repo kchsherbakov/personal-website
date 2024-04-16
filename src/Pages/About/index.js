@@ -1,5 +1,5 @@
-import A from "../Components/A";
-import H1 from "../Components/H1";
+import A from "../../Components/A";
+import H1 from "../../Components/H1";
 
 export default function About() {
     return (
@@ -12,7 +12,7 @@ export default function About() {
                 <br/>
                 I am driven by curiosity and strive for a high level of craftsmanship and excellence in my work.
             </p>
-            <A className="text-gray-400" href="mailto://k.chsherbakov@outlook.com">Connect</A>
+            <A className="text-gray-400 transition hover-text-black" href="mailto://k.chsherbakov@outlook.com">Connect</A>
         </div>
     );
 }

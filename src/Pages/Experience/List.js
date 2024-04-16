@@ -3,7 +3,7 @@ import styled from "styled-components";
 const List = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
 `;
 
 export default List;
