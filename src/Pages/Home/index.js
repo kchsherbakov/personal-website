@@ -17,7 +17,6 @@ export default function Home() {
             </div>
             <div className="flex flex-col flex-w-fit gap-1">
                 <A className="flex-w-fit" href="/experience">Experience</A>
-                <A className="flex-w-fit" href="/education">Education</A>
                 <A className="flex-w-fit" href="/About">About</A>
             </div>
             <div className="flex flex-col gap-1">
