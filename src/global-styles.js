@@ -9,38 +9,50 @@ const GlobalStyle = createGlobalStyle`
         font-size: 16px;
         font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         background-color: #fff;
+        padding: 0;
+        margin: 0;
     }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    p {
+        padding: inherit;
+        margin: inherit;
+    }
+
     a {
         color: inherit;
         text-decoration: inherit;
     }
-    
+
     .flex {
         display: flex;
     }
-    
+
     .flex-col {
         flex-direction: column;
     }
-    
+
     .text-gray-400 {
         color: #9CA3AF;
     }
-    
+
     .text-gray-600 {
         color: #4B5563;
     }
-    
+
     .gap-1 {
         row-gap: 1rem;
         column-gap: 1rem;
     }
-    
+
     .gap-2 {
         row-gap: 2rem;
         column-gap: 2rem;
     }
-    
+
     .gap-3 {
         row-gap: 3rem;
         column-gap: 3rem;

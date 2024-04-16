@@ -8,7 +8,7 @@ const ADecorationNone = styled.a`
 
 export default function Home() {
     return (
-        <deiv className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
             <div>
                 <H1>Konstantin Chsherbakov</H1>
                 <ADecorationNone className={"text-gray-400"} href={"https://abr.kz"} target={"_blank"}>
@@ -27,6 +27,6 @@ export default function Home() {
                     LinkedIn
                 </A>
             </div>
-        </deiv>
+        </div>
     );
 }

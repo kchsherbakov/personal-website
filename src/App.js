@@ -6,6 +6,7 @@ import GlobalStyle from "./global-styles";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Logo from "./Components/Logo";
+import Index from "./Pages/Experience";
 
 const AppWrapper = styled.div`
     display: flex;
@@ -22,8 +23,9 @@ export default function App() {
             <Logo/>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home />}/>
-                    <Route path="/about" element={<About />}/>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/experience" element={<Index/>}/>
+                    <Route path="/about" element={<About/>}/>
                 </Routes>
             </BrowserRouter>
             <GlobalStyle/>
