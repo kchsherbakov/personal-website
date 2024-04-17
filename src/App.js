@@ -1,82 +1,50 @@
-import React, {Component, Fragment} from "react";
-import {withTranslation} from "react-i18next";
-import Header from './components/Header'
-import Menu from './components/Menu'
-import {ScrollToTop} from './components/ScrollToTop'
-import {Borders} from "./components/Borders";
-import {Content} from "./components/Content/Content";
-import Footer from "./components/Footer";
-import {StrapiDataLoader} from "./components/Providers/StrapiDataLoader";
-import {Route, Routes} from "react-router-dom";
-import NotFound from "./components/NotFound";
-import {vars} from "./vars";
+import React from 'react';
+import styled from 'styled-components';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.toggleMenu = this.toggleMenu.bind(this);
-        this.showHello = this.showHello.bind(this);
-        this.hideHello = this.hideHello.bind(this);
-        this.state = {
-            menuOpen: false,
-            helloVisible: false,
-        }
+import GlobalStyle from "./global-styles";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Logo from "./Components/Logo";
+import Experience from "./Pages/Experience";
+
+const AppWrapper = styled.div`
+    display: block;
+
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
+`;
 
-    componentDidMount() {
-        const {t} = this.props;
-        document.title = t('page_title');
-        document.description = t('page_description');
+const ContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    justify-content: flex-start;
+
+    @media (min-width: 768px) {
+        width: 100%;
+        min-width: 512px;
+        max-width: 36rem;
     }
+`;
 
-    toggleMenu() {
-        this.setState({
-            menuOpen: !this.state.menuOpen
-        })
-    }
-
-    showHello() {
-        this.setState({
-            helloVisible: true,
-        })
-    }
-
-    hideHello() {
-        this.setState({
-            helloVisible: false,
-        })
-    }
-
-    render() {
-        return (
-            <div
-                className={`page-home ${this.state.menuOpen ? 'menu_open' : ''} ${this.state.helloVisible ? 'hello_visible' : ''}`}>
-                <Header toggleMenu={this.toggleMenu}/>
-                <Menu toggleMenu={this.toggleMenu}/>
-                <Borders/>
-                <Routes>
-                    <Route index element={<SPA showHello={this.showHello} hideHello={this.hideHello}/>}/>
-                    <Route exact path="/resume" element={<ResumeNavigator/>}/>
-                    <Route path="*" element={<NotFound/>}/>
-                </Routes>
-            </div>
-        )
-    }
-}
-
-const ResumeNavigator = () => {
-    window.location.href = vars.static.resumeUrl;
-}
-
-const SPA = ({showHello, hideHello}) => {
+export default function App() {
     return (
-        <Fragment>
-            <StrapiDataLoader/>
-            <ScrollToTop/>
-            <Content showHello={showHello} hideHello={hideHello}/>
-            <Footer/>
-        </Fragment>
-    )
+        <AppWrapper>
+            <ContentWrapper>
+                <Logo/>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/experience" element={<Experience/>}/>
+                        <Route path="/about" element={<About/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </ContentWrapper>
+            <GlobalStyle/>
+        </AppWrapper>
+    );
 }
-
-export default withTranslation()(App);
